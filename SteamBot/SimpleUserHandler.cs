@@ -973,6 +973,10 @@ namespace SteamBot
                     // Item has no attributes... or something.
                 }
             }
+            if (!string.IsNullOrWhiteSpace(inventoryItem.CustomName))
+                name += " (Custom Name: " + inventoryItem.CustomName + ")";
+            if (!string.IsNullOrWhiteSpace(inventoryItem.CustomDescription))
+                name += " (Custom Desc.: " + inventoryItem.CustomDescription + ")";
             if (id)
                 name += " :" + inventoryItem.Id;
             if (!isGifted && !isUnusual)
