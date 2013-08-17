@@ -16,32 +16,14 @@ namespace SteamTrade
             string cachefile = "d2_items_game.cache";
             string result = "";
 
-            HttpWebResponse response = SteamWeb.Request(url, "GET");
-            DateTime SchemaLastModified = DateTime.Now;
-
-            try
+            using (var wc = new WebClient { Proxy = null })
             {
-                SchemaLastModified = DateTime.Parse(response.Headers["Last-Modified"]);
-            }
-            catch
-            {
-                SchemaLastModified = DateTime.Now;
-            }
-
-            if (!System.IO.File.Exists(cachefile) || (SchemaLastModified > System.IO.File.GetCreationTime(cachefile)))
-            {
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                result = reader.ReadToEnd();
+                result = wc.DownloadString(url);
                 File.WriteAllText(cachefile, result);
-                System.IO.File.SetCreationTime(cachefile, SchemaLastModified);
             }
-            else
-            {
-                TextReader reader = new StreamReader(cachefile);
-                result = reader.ReadToEnd();
-                reader.Close();
-            }
-            response.Close();
+
+            var parser = new ValveFormat.ValveFormatParser(cachefile);
+            parser.LoadFile();
             return new ItemsGame {Response = result};
         }
 
