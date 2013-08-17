@@ -87,6 +87,27 @@ namespace SteamTrade
             }
         }
 
+        public string GetRarityColorFromName(string name)
+        {
+            if (name.Contains("(common)"))
+                return "#b0c3d9";
+            if (name.Contains("(uncommon)"))
+                return "#5e98d9";
+            if (name.Contains("(rare)"))
+                return "#4b69ff";
+            if (name.Contains("(mythical)"))
+                return "#8847ff";
+            if (name.Contains("(legendary)"))
+                return "#d32ce6";
+            if (name.Contains("(ancient)"))
+                return "#eb4b4b";
+            if (name.Contains("(immortal)"))
+                return "#e4ae39";
+            if (name.Contains("(arcana)"))
+                return "#ade55c";
+            return "#dddddd";
+        }
+
         protected class ItemsGameResult
         {
             public ItemsGame result { get; set; }
