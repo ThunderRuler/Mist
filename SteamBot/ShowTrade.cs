@@ -454,8 +454,11 @@ namespace MistClient
                                 }
                                 else
                                 {
-                                    //text_log.SelectionColor = ColorTranslator.FromHtml("#FFD700");
-                                    text_log.SelectionColor = Color.DarkGoldenrod;
+                                    text_log.SelectionColor =
+                                        ColorTranslator.FromHtml(
+                                            SteamTrade.Trade.CurrentItemsGame.GetRarityColor(
+                                                SteamTrade.Trade.CurrentItemsGame.GetItemRarity(itemID.ToString()).
+                                                    ToLower()));
                                     text_log.AppendText(itemName);
                                     text_log.SelectionColor = prevColor;
                                 }
@@ -615,8 +618,11 @@ namespace MistClient
                             }
                             else
                             {
-                                //text_log.SelectionColor = ColorTranslator.FromHtml("#FFD700");
-                                text_log.SelectionColor = Color.DarkGoldenrod;
+                                text_log.SelectionColor =
+                                        ColorTranslator.FromHtml(
+                                            SteamTrade.Trade.CurrentItemsGame.GetRarityColor(
+                                                SteamTrade.Trade.CurrentItemsGame.GetItemRarity(item.Id.ToString()).
+                                                    ToLower()));
                                 text_log.AppendText(itemName);
                                 text_log.SelectionColor = prevColor;
                             }
@@ -845,8 +851,11 @@ namespace MistClient
                             }
                             else
                             {
-                                //text_log.SelectionColor = ColorTranslator.FromHtml("#FFD700");
-                                text_log.SelectionColor = Color.DarkGoldenrod;
+                                text_log.SelectionColor =
+                                        ColorTranslator.FromHtml(
+                                            SteamTrade.Trade.CurrentItemsGame.GetRarityColor(
+                                                SteamTrade.Trade.CurrentItemsGame.GetItemRarity(itemID.ToString()).
+                                                    ToLower()));
                                 text_log.AppendText(itemName);
                                 text_log.SelectionColor = prevColor;
                             }
