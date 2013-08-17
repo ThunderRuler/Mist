@@ -41,7 +41,7 @@ namespace MistClient
         {
             InitializeComponent();
             Util.LoadTheme(metroStyleManager1);
-            this.Text = "Friends - Mist v" + mist_ver;
+            this.Text = "Friends - Mist v" + mist_ver + " (Dota 2 Edition)";
             this.steam_name.Text = username;
             this.bot = bot;            
             this.steam_name.ContextMenuStrip = menu_status;

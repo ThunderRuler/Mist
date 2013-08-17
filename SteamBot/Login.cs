@@ -29,7 +29,7 @@ namespace MistClient
         public Login(Log log)
         {
             InitializeComponent();
-            this.Text = "Login - Mist v" + Friends.mist_ver;
+            this.Text = "Login - Mist v" + Friends.mist_ver + " (Dota 2)";
             MakePortable(Properties.Settings.Default);
             this.log = log;
             LoadTheme();
