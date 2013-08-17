@@ -688,23 +688,37 @@ namespace SteamBot
 
         string QualityToName(int quality)
         {
-            if (quality == 1)
-                return "Genuine";
-            if (quality == 3)
-                return "Vintage";
-            if (quality == 5)
-                return "Unusual";
-            if (quality == 6)
-                return "Unique";
-            if (quality == 7)
-                return "Community";
-            if (quality == 9)
-                return "Self-Made";
-            if (quality == 11)
-                return "Strange";
-            if (quality == 13)
-                return "Haunted";
-            return "";
+            switch (quality)
+            {
+                case 1:
+                    return "Genuine";
+                case 2:
+                    return "Vintage";
+                case 3:
+                    return "Unusual";
+                case 4:
+                    return "Unique";
+                case 5:
+                    return "Community";
+                case 6:
+                    return "Valve";
+                case 7:
+                    return "Self-Made";
+                case 8:
+                    return "Customized";
+                case 9:
+                    return "Strange";
+                case 10:
+                    return "Completed";
+                case 11:
+                    return "Haunted";
+                case 12:
+                    return "Tournament";
+                case 13:
+                    return "Favored";
+                default:
+                    return "";
+            }
         }
 
         string EffectToName(float effect)

@@ -59,7 +59,7 @@ namespace SteamTrade
         {
             return Items.ContainsKey(defindex)
                        ? CultureInfo.InvariantCulture.TextInfo.ToTitleCase(Items[defindex])
-                       : "unknown";
+                       : "Unknown";
         }
 
         public string GetRarityColor(string rarity)
@@ -83,7 +83,7 @@ namespace SteamTrade
                 case "arcana":
                     return "#ade55c";
                 default:
-                    return "#ffffff";
+                    return "#dddddd";
             }
         }
 
