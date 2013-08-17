@@ -37,7 +37,6 @@ namespace MistClient
             {
                 pictureBox1.Image = MistClient.Properties.Resources.mist;
             }
-            updatechecker.RunWorkerAsync();
             if (Properties.Settings.Default.Username != "")
                 text_username.Text = Properties.Settings.Default.Username;
             if (Properties.Settings.Default.apiKey != "")
