@@ -15,7 +15,7 @@ namespace SteamTrade
         {
             var url = "http://api.steampowered.com/IEconItems_570/GetSchema/v0001/?key=" + apiKey + "&language=en";
 
-            string cachefile="tf_schema.cache";
+            string cachefile="d2_schema.cache";
             string result = "";
 
             HttpWebResponse response = SteamWeb.Request(url, "GET");
