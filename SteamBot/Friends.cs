@@ -536,7 +536,7 @@ namespace MistClient
                 e.Cancel = true;
                 Visible = false;
                 ShowInTaskbar = false;
-                if (trayIcon != null)
+                if (trayIcon != null && trayIcon.Icon != null)
                 {
                     trayIcon.Visible = true;
                     trayIcon.ShowBalloonTip(5000, "Mist has been minimized to tray", "To restore Mist, double-click the tray icon.", ToolTipIcon.Info);
