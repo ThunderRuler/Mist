@@ -106,7 +106,6 @@ namespace MistClient
                         name += " #" + (item.Attributes[count].FloatValue);
                     }
                 }
-                name += " (Level " + item.Level + ")";
                 try
                 {
                     int size = item.Attributes.Length;
