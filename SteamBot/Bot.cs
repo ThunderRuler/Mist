@@ -506,7 +506,7 @@ namespace SteamBot
                                 }
                             }));
                         }).Start();
-                    }
+                    }   
                     else
                     {
                         if (friend.Relationship == EFriendRelationship.None)

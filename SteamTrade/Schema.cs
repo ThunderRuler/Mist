@@ -13,7 +13,7 @@ namespace SteamTrade
     {
         public static Schema FetchSchema (string apiKey)
         {
-            var url = "http://api.steampowered.com/IEconItems_440/GetSchema/v0001/?key=" + apiKey + "&language=en";
+            var url = "http://api.steampowered.com/IEconItems_570/GetSchema/v0001/?key=" + apiKey + "&language=en";
 
             string cachefile="tf_schema.cache";
             string result = "";

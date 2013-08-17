@@ -38,8 +38,8 @@ namespace MistClient
         {
             string cookies = Trade.cookies.GetCookieHeader(new Uri(trade_url));
             cookies += "; steamMachineAuth76561198065838051=" + SteamBot.Bot.MachineAuthData
-                + "; strInventoryLastContext=440_2; "
-            + "bCompletedTradeTutorial=true; strTradeLastInventoryContext=440_2";
+                + "; strInventoryLastContext=570_2; "
+            + "bCompletedTradeTutorial=true; strTradeLastInventoryContext=570_2";
             Console.WriteLine(cookies);
             InternetSetCookie(trade_url, null, cookies);
             webBrowser1.Navigate(trade_url);

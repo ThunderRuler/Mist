@@ -75,7 +75,7 @@ namespace SteamTrade
             var data = new NameValueCollection ();
 
             data.Add ("sessionid", sessionIdEsc);
-            data.Add ("appid", "440");
+            data.Add ("appid", "570");
             data.Add ("contextid", "2");
             data.Add ("itemid", "" + itemid);
             data.Add ("slot", "" + slot);
@@ -102,7 +102,7 @@ namespace SteamTrade
             var data = new NameValueCollection ();
 
             data.Add ("sessionid", sessionIdEsc);
-            data.Add ("appid", "440");
+            data.Add ("appid", "570");
             data.Add ("contextid", "2");
             data.Add ("itemid", "" + itemid);
             data.Add ("slot", "" + slot);
