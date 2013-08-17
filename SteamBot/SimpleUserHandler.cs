@@ -654,8 +654,6 @@ namespace SteamBot
                         {
                             // Item has no attributes... or something.
                         }
-                        if (item.IsNotCraftable)
-                            name += " (Uncraftable)";
                         if (currentItem.Name == "Wrapped Gift")
                         {
                             // Untested!

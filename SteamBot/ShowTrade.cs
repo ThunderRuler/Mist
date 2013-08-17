@@ -673,8 +673,6 @@ namespace MistClient
             {
                 // Item has no attributes... or something.
             }
-            if (inventoryItem.IsNotCraftable)
-                name += " (Uncraftable)";
             if (currentItem.Name == "Wrapped Gift")
             {
                 // Untested!
