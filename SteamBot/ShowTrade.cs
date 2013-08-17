@@ -650,6 +650,7 @@ namespace MistClient
             if (QualityToName(type) != "Unique")
                 name += QualityToName(type) + " ";
             name += currentItem.ItemName;
+            name += " (" + SteamTrade.Trade.CurrentItemsGame.GetItemRarity(schemaItem.Defindex.ToString()) + ")";
 
             if (currentItem.CraftMaterialType == "supply_crate")
             {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -52,6 +53,38 @@ namespace SteamTrade
                 }
             }
             return dict;
+        }
+
+        public string GetItemRarity(string defindex)
+        {
+            return Items.ContainsKey(defindex)
+                       ? CultureInfo.InvariantCulture.TextInfo.ToTitleCase(Items[defindex])
+                       : "unknown";
+        }
+
+        public string GetRarityColor(string rarity)
+        {
+            switch (rarity)
+            {
+                case "common":
+                    return "#b0c3d9";
+                case "uncommon":
+                    return "#5e98d9";
+                case "rare":
+                    return "#4b69ff";
+                case "mythical":
+                    return "#8847ff";
+                case "legendary":
+                    return "#d32ce6";
+                case "ancient":
+                    return "#eb4b4b";
+                case "immortal":
+                    return "#e4ae39";
+                case "arcana":
+                    return "#ade55c";
+                default:
+                    return "#ffffff";
+            }
         }
 
         protected class ItemsGameResult
