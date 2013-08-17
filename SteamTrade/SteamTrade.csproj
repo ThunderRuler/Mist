@@ -95,6 +95,12 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ValveFormat\ValveFormat.csproj">
+      <Project>{8EFEF957-69EE-46C7-8728-E2D460BA8807}</Project>
+      <Name>ValveFormat</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /y $(ProjectDir)$(OutDir)$(TargetFileName) $(SolutionDir)Bin\$(ConfigurationName)\lib\</PostBuildEvent>

@@ -9,6 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MistClient</RootNamespace>
     <AssemblyName>Mist</AssemblyName>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -21,7 +22,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -56,14 +56,6 @@
   <ItemGroup>
     <Reference Include="Ionic.Zip.Reduced">
       <HintPath>..\Lib\Ionic.Zip.Reduced.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Bin\Debug\lib\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net, Version=2.0.0.420, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Bin\Debug\lib\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -299,38 +291,46 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lib\Newtonsoft.Json\Src\Newtonsoft.Json\Newtonsoft.Json.csproj">
+      <Project>{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}</Project>
+      <Name>Newtonsoft.Json</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lib\ObjectListView\ObjectListView2010.csproj">
-      <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
+      <Project>{18FEDA0C-D147-4286-B39A-01204808106A}</Project>
       <Name>ObjectListView2010</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lib\protobuf-net\protobuf-net\protobuf-net.csproj">
+      <Project>{8374E4D7-2A91-48F1-9360-09B09CF27C3F}</Project>
+      <Name>protobuf-net</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lib\SteamKit2\SteamKit2\SteamKit2.csproj">
-      <Project>{beb5bf07-bb56-402a-97a3-a41c6444c6a5}</Project>
+      <Project>{BEB5BF07-BB56-402A-97A3-A41C6444C6A5}</Project>
       <Name>SteamKit2</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lib\ToastNotifications\ToastNotifications.csproj">
-      <Project>{380d8d88-386c-4c50-9a54-800f79fdf7d2}</Project>
+      <Project>{380D8D88-386C-4C50-9A54-800F79FDF7D2}</Project>
       <Name>ToastNotifications</Name>
     </ProjectReference>
     <ProjectReference Include="..\MetroFramework.Design\MetroFramework.Design.csproj">
-      <Project>{7316584d-9a16-4280-a8ab-6d45198c6e4d}</Project>
+      <Project>{7316584D-9A16-4280-A8AB-6D45198C6E4D}</Project>
       <Name>MetroFramework.Design</Name>
     </ProjectReference>
     <ProjectReference Include="..\MetroFramework.Fonts\MetroFramework.Fonts.csproj">
-      <Project>{5a2fcae8-c2fa-41bd-90ea-16103ea07b26}</Project>
+      <Project>{5A2FCAE8-C2FA-41BD-90EA-16103EA07B26}</Project>
       <Name>MetroFramework.Fonts</Name>
     </ProjectReference>
     <ProjectReference Include="..\MetroFramework\MetroFramework.csproj">
-      <Project>{bb41ac8b-cbed-4387-a7e0-4567edb3f57f}</Project>
+      <Project>{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}</Project>
       <Name>MetroFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\SteamTrade\SteamTrade.csproj">
-      <Project>{6cec0333-81eb-40ee-85d1-941363626fc7}</Project>
+      <Project>{6CEC0333-81EB-40EE-85D1-941363626FC7}</Project>
       <Name>SteamTrade</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
-    <PostBuildEvent>cd $(OutDir)
-del *.dll</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>xcopy /y $(SolutionDir)Lib\Ionic.Zip.Reduced.dll $(SolutionDir)Bin\$(ConfigurationName)\lib\</PreBuildEvent>

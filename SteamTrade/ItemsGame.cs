@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
+using ValveFormat;
 
 namespace SteamTrade
 {
@@ -9,7 +11,9 @@ namespace SteamTrade
     {
         public string Response;
 
-        public Dictionary<string, string> Items; 
+        public ValveFormatParser Parser;
+
+        public Dictionary<string, string> Items;
 
         public static ItemsGame FetchItemsGame(string url)
         {
@@ -24,7 +28,30 @@ namespace SteamTrade
 
             var parser = new ValveFormat.ValveFormatParser(cachefile);
             parser.LoadFile();
-            return new ItemsGame {Response = result};
+            var dict = ParseFile(parser);
+            return new ItemsGame { Response = result, Parser = parser, Items = dict};
+        }
+
+        private static Dictionary<string, string> ParseFile(ValveFormatParser parser)
+        {
+            var root = parser.RootNode;
+            var dict = new Dictionary<string, string>();
+            foreach (var node1 in root.SubNodes)
+            {
+                if (node1.Key != "items") continue;
+                foreach (var node2 in node1.SubNodes)
+                {
+                    var defindex = node2.Key;
+                    var rarity = "common";
+                    foreach (var node3 in node2.SubNodes.Where(node3 => node3.Key == "item_rarity"))
+                    {
+                        rarity = node3.Value;
+                        break;
+                    }
+                    dict.Add(defindex, rarity);
+                }
+            }
+            return dict;
         }
 
         protected class ItemsGameResult
