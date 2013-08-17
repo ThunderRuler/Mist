@@ -10,6 +10,7 @@ namespace SteamTrade
     {
         #region Static Public data
         public static Schema CurrentSchema = null;
+        public static ItemsGame CurrentItemsGame = null;
         #endregion
 
         // current bot's sid

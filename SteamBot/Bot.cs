@@ -380,6 +380,7 @@ namespace SteamBot
                     try
                     {
                         Trade.CurrentSchema = Schema.FetchSchema(apiKey);
+                        Trade.CurrentItemsGame = ItemsGame.FetchItemsGame(Trade.CurrentSchema.ItemsGameUrl);
                     }
                     catch (Exception ex)
                     {
