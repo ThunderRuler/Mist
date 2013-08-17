@@ -80,6 +80,7 @@ namespace MistClient
                 if (QualityToName(type) != "Unique")
                     name += QualityToName(type) + " ";
                 name += currentItem.ItemName;
+                name += " (" + SteamTrade.Trade.CurrentItemsGame.GetItemRarity(item.Defindex.ToString()) + ")";
                 if (QualityToName(type) == "Unusual")
                 {
                     isUnusual = true;
