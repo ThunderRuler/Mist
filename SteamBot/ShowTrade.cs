@@ -252,7 +252,7 @@ namespace MistClient
             }
             else
             {
-                text_log.SelectionColor = ColorTranslator.FromHtml(SteamTrade.Trade.CurrentItemsGame.GetRarityColorFromName(itemName.ToLower()));
+                text_log.SelectionColor = ColorTranslator.FromHtml(SteamTrade.Trade.CurrentItemsGame.GetRarityColorFromName(itemName));
                 text_log.AppendText(itemName);
                 text_log.SelectionColor = prevColor;
             }
@@ -455,9 +455,7 @@ namespace MistClient
                                 {
                                     text_log.SelectionColor =
                                         ColorTranslator.FromHtml(
-                                            SteamTrade.Trade.CurrentItemsGame.GetRarityColor(
-                                                SteamTrade.Trade.CurrentItemsGame.GetItemRarity(itemID.ToString()).
-                                                    ToLower()));
+                                            SteamTrade.Trade.CurrentItemsGame.GetRarityColorFromName(itemName));
                                     text_log.AppendText(itemName);
                                     text_log.SelectionColor = prevColor;
                                 }
@@ -619,9 +617,7 @@ namespace MistClient
                             {
                                 text_log.SelectionColor =
                                         ColorTranslator.FromHtml(
-                                            SteamTrade.Trade.CurrentItemsGame.GetRarityColor(
-                                                SteamTrade.Trade.CurrentItemsGame.GetItemRarity(item.Id.ToString()).
-                                                    ToLower()));
+                                            SteamTrade.Trade.CurrentItemsGame.GetRarityColorFromName(itemName));
                                 text_log.AppendText(itemName);
                                 text_log.SelectionColor = prevColor;
                             }
@@ -852,9 +848,7 @@ namespace MistClient
                             {
                                 text_log.SelectionColor =
                                         ColorTranslator.FromHtml(
-                                            SteamTrade.Trade.CurrentItemsGame.GetRarityColor(
-                                                SteamTrade.Trade.CurrentItemsGame.GetItemRarity(itemID.ToString()).
-                                                    ToLower()));
+                                            SteamTrade.Trade.CurrentItemsGame.GetRarityColorFromName(itemName));
                                 text_log.AppendText(itemName);
                                 text_log.SelectionColor = prevColor;
                             }

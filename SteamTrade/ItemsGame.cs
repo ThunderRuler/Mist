@@ -87,8 +87,9 @@ namespace SteamTrade
             }
         }
 
-        public string GetRarityColorFromName(string name)
+        public string GetRarityColorFromName(string itemname)
         {
+            var name = itemname.ToLower();
             if (name.Contains("(common)"))
                 return "#b0c3d9";
             if (name.Contains("(uncommon)"))
