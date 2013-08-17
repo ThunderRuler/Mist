@@ -634,7 +634,6 @@ namespace SteamBot
                                 }
                             }
                         }
-                        name += " (Level " + item.Level + ")";
                         try
                         {
                             int size = item.Attributes.Length;
@@ -931,7 +930,6 @@ namespace SteamBot
                     name += " #" + (inventoryItem.Attributes[count].FloatValue);
                 }
             }
-            name += " (Level " + inventoryItem.Level + ")";
             try
             {
                 int size = inventoryItem.Attributes.Length;

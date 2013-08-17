@@ -193,7 +193,6 @@ namespace MistClient
                     name += " #" + (inventoryItem.Attributes[count].FloatValue);
                 }
             }
-            name += " (Level " + inventoryItem.Level + ")";
             try
             {
                 int size = inventoryItem.Attributes.Length;
