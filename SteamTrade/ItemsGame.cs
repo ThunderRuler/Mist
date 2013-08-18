@@ -21,13 +21,29 @@ namespace SteamTrade
             string cachefile = "d2_items_game.cache";
             string result = "";
 
-            using (var wc = new WebClient { Proxy = null })
+            if (File.Exists(cachefile) && File.Exists(cachefile + ".dat"))
             {
-                result = wc.DownloadString(url);
-                File.WriteAllText(cachefile, result);
+                var prevurl = File.ReadAllText(cachefile + ".dat");
+                if (prevurl != url)
+                {
+                    using (var wc = new WebClient { Proxy = null })
+                    {
+                        result = wc.DownloadString(url);
+                        File.WriteAllText(cachefile, result);
+                        File.WriteAllText(cachefile + ".dat", url);
+                    }
+                }
             }
-
-            var parser = new ValveFormat.ValveFormatParser(cachefile);
+            else
+            {
+                using (var wc = new WebClient {Proxy = null})
+                {
+                    result = wc.DownloadString(url);
+                    File.WriteAllText(cachefile, result);
+                    File.WriteAllText(cachefile + ".dat", url);
+                }
+            }
+            var parser = new ValveFormatParser(cachefile);
             parser.LoadFile();
             var dict = ParseFile(parser);
             return new ItemsGame { Response = result, Parser = parser, Items = dict};
