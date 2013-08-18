@@ -476,8 +476,6 @@ namespace MistClient
                     MessageBoxDefaultButton.Button1);
         }
 
-        
-
         private void steamRepToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // This is a proxy for SteamRep's beta API. Not recommended for heavy/wide usage.
@@ -552,7 +550,8 @@ namespace MistClient
         {
             MessageBox.Show("Mist is written by waylaidwanderer (http://steamcommunity.com/id/waylaidwanderer)."
                 + "\nA large part of it was built using the underlying functions of SteamBot (https://github.com/Jessecar96/SteamBot/), and I thank all of SteamBot's contributors"
-                + " for making Mist possible.",
+                + " for making Mist possible."
+                + "\nThis has been edited by Deathmax to work with Dota 2.",
                         "About",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information,
