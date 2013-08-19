@@ -415,7 +415,7 @@ namespace SteamBot
 
                 IsLoggedIn = true;
                 displayName = SteamFriends.GetPersonaName();
-                ConnectToGC(570);
+                ConnectToGC(13540830642081628378);
                 Thread.Sleep(500);
                 DisconnectFromGC();
                 try
