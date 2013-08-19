@@ -14,6 +14,7 @@ using SteamTrade;
 using System.Media;
 using ToastNotifications;
 using SteamKit2.Internal;
+using SteamKit2.GC;
 
 namespace SteamBot
 {
@@ -37,6 +38,7 @@ namespace SteamBot
         public SteamClient SteamClient;
         public SteamTrading SteamTrade;
         public SteamUser SteamUser;
+        public SteamGameCoordinator SteamGC;
 
         // The current trade; if the bot is not in a trade, this is
         // null.
@@ -129,6 +131,7 @@ namespace SteamBot
             SteamTrade = SteamClient.GetHandler<SteamTrading>();
             SteamUser = SteamClient.GetHandler<SteamUser>();
             SteamFriends = SteamClient.GetHandler<SteamFriends>();
+            SteamGC = SteamClient.GetHandler<SteamGameCoordinator>();
             log.Info ("Connecting...");
             main.Invoke((Action)(() =>
             {
@@ -412,7 +415,7 @@ namespace SteamBot
 
                 IsLoggedIn = true;
                 displayName = SteamFriends.GetPersonaName();
-                ConnectToGC(13540830642081628378);
+                ConnectToGC(570);
                 Thread.Sleep(500);
                 DisconnectFromGC();
                 try
