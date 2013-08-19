@@ -321,7 +321,7 @@ namespace MetroFramework.Controls
 
             Size textSize = TextRenderer.MeasureText(Text, MetroFonts.Tile(tileTextFontSize, tileTextFontWeight));
 
-            TextFormatFlags flags = TextFormatFlags.LeftAndRightPadding | TextFormatFlags.EndEllipsis;
+            TextFormatFlags flags = TextFormatFlags.LeftAndRightPadding | TextFormatFlags.WordBreak;
             Rectangle clientRectangle = ClientRectangle;
 
             switch (TextAlign)
