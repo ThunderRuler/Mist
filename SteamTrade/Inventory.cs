@@ -55,6 +55,10 @@ namespace SteamTrade
             Items = apiInventory.items;
             IsPrivate = (apiInventory.status == "15");
             IsGood = (apiInventory.status == "1");
+            foreach (var item in Items)
+            {
+                item.InventoryToken = new InventoryToken(item._InventoryToken);
+            }
         }
 
         /// <summary>
@@ -131,6 +135,11 @@ namespace SteamTrade
 
             [JsonProperty("contained_item")]
             public Item ContainedItem { get; set; }
+
+            [JsonProperty("inventory")]
+            public uint _InventoryToken { get; set; }
+
+            public InventoryToken InventoryToken { get; set; }
         }
 
         public class ItemAttribute
@@ -143,6 +152,22 @@ namespace SteamTrade
 
             [JsonProperty("float_value")]
             public float FloatValue { get; set; }
+        }
+        
+        public class InventoryToken
+        {
+            public bool Equipped;
+
+            public bool InBackpack;
+
+            public int Slot;
+
+            public InventoryToken(uint token)
+            {
+                InBackpack = (token & (1 << 29)) == 0;
+                Slot = InBackpack ? (int) ((token << 16) >> 16) : -1;
+                Equipped = ((token << 2) >> 18) > 0;
+            }
         }
 
         protected class InventoryResult
