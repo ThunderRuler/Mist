@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -60,14 +62,15 @@ namespace MistClient
             BackpackTF.CurrentSchema = BackpackTF.FetchSchema();
             foreach (Inventory.Item item in inventory)
             {
-                if (item.InventoryToken.Slot != -1 && !ItemList.ContainsKey(item.InventoryToken.Slot))
-                    ItemList.Add(item.InventoryToken.Slot, item);
+                if (item.ItemPosition != -1 && !ItemList.ContainsKey(item.ItemPosition))
+                    ItemList.Add(item.ItemPosition, item);
             }
             UpdateBP();
         }
 
         void UpdateBP()
         {
+            Invoke((Action) (() => lnkPage.Text = pageNum.ToString()));
             var h = 0;
             for (var i = (1 + (64*(pageNum-1))); i <= (64*(pageNum)); i++, h++)
             {
@@ -85,6 +88,17 @@ namespace MistClient
                                          tile.Text = GetItemName(currentItem, ItemList[i]);
                                          tile.TileTextFontSize = MetroTileTextSize.Small;
                                      }));
+            }
+        }
+
+        void ClearBP()
+        {
+            for (var i = 1; i <= 64; i++)
+            {
+                var tile = (MetroTile)Controls.Find("metroTile" + i, true)[0];
+                tile.TileImage = new Bitmap(1, 1);
+                tile.UseTileImage = false;
+                tile.Text = "";
             }
         }
 
@@ -335,15 +349,27 @@ namespace MistClient
 
         public Bitmap getImageFromURL(string url)
         {
-            HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(url);
-            myRequest.Method = "GET";
-            HttpWebResponse myResponse = (HttpWebResponse)myRequest.GetResponse();
-            System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(myResponse.GetResponseStream());
-            myResponse.Close();
-            return ResizeImage(bmp, new Size(116, 78));
+            System.Drawing.Bitmap bmp;
+            var cache = Path.Combine("cache", Path.GetFileName(new Uri(url).LocalPath));
+            if (File.Exists(cache))
+            {
+                bmp = new Bitmap(cache);
+            }
+            else
+            {
+                HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(url);
+                myRequest.Method = "GET";
+                HttpWebResponse myResponse = (HttpWebResponse)myRequest.GetResponse();
+                var newbmp = new System.Drawing.Bitmap(myResponse.GetResponseStream());
+                myResponse.Close();
+                bmp = ResizeImage(newbmp, new Size(116, 78));
+                bmp.Save(cache);
+            }
+
+            return bmp;
         }
 
-        public static Bitmap ResizeImage(Bitmap imgToResize, Size size)
+        private Bitmap ResizeImage(Bitmap imgToResize, Size size)
         {
             try
             {
@@ -373,12 +399,42 @@ namespace MistClient
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-
+            if (pageNum == 1) return;
+            pageNum--;
+            ClearBP();
+            try
+            {
+                loadBP.Abort();
+                Invoke((Action) (() =>
+                                     {
+                                         loadBP = new Thread(UpdateBP);
+                                         loadBP.Start();
+                                     }));
+            }
+            catch (Exception ex)
+            {
+                Bot.Print(ex);
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
+            if (pageNum == 10) return;
+            pageNum++;
+            ClearBP();
+            try
+            {
+                loadBP.Abort();
+                Invoke((Action)(() =>
+                {
+                    loadBP = new Thread(UpdateBP);
+                    loadBP.Start();
+                }));
+            }
+            catch (Exception ex)
+            {
+                Bot.Print(ex);
+            }
         }
     }
 }
