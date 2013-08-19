@@ -362,6 +362,12 @@ namespace MistClient
             showBP.Activate();            
         }
 
+        private void showIdBackpackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewBackpack viewBackpack = new ViewBackpack(bot);
+            viewBackpack.ShowDialog();
+        }
+
         private void openChatToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bot.main.Invoke((Action)(() =>

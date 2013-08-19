@@ -103,6 +103,18 @@
     <Compile Include="ChatTab.Designer.cs">
       <DependentUpon>ChatTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowBackpackGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowBackpackGrid.Designer.cs">
+      <DependentUpon>ShowBackpackGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBackpack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewBackpack.Designer.cs">
+      <DependentUpon>ViewBackpack.cs</DependentUpon>
+    </Compile>
     <Compile Include="FlashWindow.cs" />
     <Compile Include="ListBackpack.cs" />
     <Compile Include="ListFriendRequests.cs" />
@@ -201,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChatTab.resx">
       <DependentUpon>ChatTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowBackpackGrid.resx">
+      <DependentUpon>ShowBackpackGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBackpack.resx">
+      <DependentUpon>ViewBackpack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Friends.resx">
       <DependentUpon>Friends.cs</DependentUpon>
@@ -327,6 +345,9 @@
       <Project>{6CEC0333-81EB-40EE-85D1-941363626FC7}</Project>
       <Name>SteamTrade</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="D2GC\" />
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>
