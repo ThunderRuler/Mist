@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
+using BrightIdeasSoftware;
 using SteamBot;
 using MetroFramework.Forms;
 
@@ -43,6 +44,15 @@ namespace MistClient
             {
                 while (true)
                 {
+                    if (loading)
+                    {
+                        Invoke((Action) (() => list_inventory.EmptyListMsg = "Loading..."));
+                    }
+                    else
+                    {
+                        if (bot.CurrentTrade != null)
+                            Invoke((Action) (() => list_inventory.EmptyListMsg = ""));
+                    }
                     if (bot.CurrentTrade == null)
                     {
                         bot.main.Invoke((Action)(this.Close));
@@ -75,6 +85,7 @@ namespace MistClient
                         }
                         break;
                     }
+                    Thread.Sleep(100);
                 }
             });
             checkExpired.Start();
