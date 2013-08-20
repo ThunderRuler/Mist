@@ -109,6 +109,12 @@
     <Compile Include="ShowBackpackGrid.Designer.cs">
       <DependentUpon>ShowBackpackGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowItemDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowItemDetails.Designer.cs">
+      <DependentUpon>ShowItemDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewBackpack.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowBackpackGrid.resx">
       <DependentUpon>ShowBackpackGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowItemDetails.resx">
+      <DependentUpon>ShowItemDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewBackpack.resx">
       <DependentUpon>ViewBackpack.cs</DependentUpon>

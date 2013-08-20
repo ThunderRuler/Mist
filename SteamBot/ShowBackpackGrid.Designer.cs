@@ -126,6 +126,7 @@
             this.metroTile8.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile8.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile8.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // btnBack
             // 
@@ -180,6 +181,7 @@
             this.metroTile7.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile7.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile7.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile6
             // 
@@ -199,6 +201,7 @@
             this.metroTile6.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile6.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile6.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile5
             // 
@@ -218,6 +221,7 @@
             this.metroTile5.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile5.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile5.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile4
             // 
@@ -237,6 +241,7 @@
             this.metroTile4.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile4.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile4.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile3
             // 
@@ -256,6 +261,7 @@
             this.metroTile3.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile3.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile3.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile2
             // 
@@ -275,6 +281,7 @@
             this.metroTile2.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile2.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile2.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile1
             // 
@@ -294,6 +301,7 @@
             this.metroTile1.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile1.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile1.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile9
             // 
@@ -313,6 +321,7 @@
             this.metroTile9.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile9.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile9.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile10
             // 
@@ -332,6 +341,7 @@
             this.metroTile10.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile10.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile10.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile11
             // 
@@ -351,6 +361,7 @@
             this.metroTile11.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile11.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile11.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile12
             // 
@@ -370,6 +381,7 @@
             this.metroTile12.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile12.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile12.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile12.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile13
             // 
@@ -389,6 +401,7 @@
             this.metroTile13.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile13.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile13.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile13.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile14
             // 
@@ -408,6 +421,7 @@
             this.metroTile14.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile14.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile14.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile14.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile15
             // 
@@ -427,6 +441,7 @@
             this.metroTile15.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile15.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile15.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile15.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile16
             // 
@@ -446,6 +461,7 @@
             this.metroTile16.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile16.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile16.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile16.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile17
             // 
@@ -465,6 +481,7 @@
             this.metroTile17.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile17.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile17.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile17.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile18
             // 
@@ -484,6 +501,7 @@
             this.metroTile18.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile18.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile18.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile18.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile19
             // 
@@ -503,6 +521,7 @@
             this.metroTile19.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile19.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile19.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile19.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile20
             // 
@@ -522,6 +541,7 @@
             this.metroTile20.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile20.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile20.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile20.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile21
             // 
@@ -541,6 +561,7 @@
             this.metroTile21.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile21.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile21.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile21.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile22
             // 
@@ -560,6 +581,7 @@
             this.metroTile22.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile22.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile22.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile22.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile23
             // 
@@ -579,6 +601,7 @@
             this.metroTile23.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile23.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile23.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile23.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile24
             // 
@@ -598,6 +621,7 @@
             this.metroTile24.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile24.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile24.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile24.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile25
             // 
@@ -617,6 +641,7 @@
             this.metroTile25.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile25.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile25.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile25.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile26
             // 
@@ -636,6 +661,7 @@
             this.metroTile26.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile26.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile26.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile26.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile27
             // 
@@ -655,6 +681,7 @@
             this.metroTile27.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile27.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile27.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile27.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile28
             // 
@@ -674,6 +701,7 @@
             this.metroTile28.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile28.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile28.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile28.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile29
             // 
@@ -693,6 +721,7 @@
             this.metroTile29.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile29.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile29.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile29.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile30
             // 
@@ -712,6 +741,7 @@
             this.metroTile30.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile30.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile30.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile30.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile31
             // 
@@ -731,6 +761,7 @@
             this.metroTile31.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile31.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile31.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile31.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile32
             // 
@@ -750,6 +781,7 @@
             this.metroTile32.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile32.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile32.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile32.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile33
             // 
@@ -769,6 +801,7 @@
             this.metroTile33.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile33.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile33.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile33.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile34
             // 
@@ -788,6 +821,7 @@
             this.metroTile34.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile34.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile34.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile34.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile35
             // 
@@ -807,6 +841,7 @@
             this.metroTile35.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile35.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile35.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile35.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile36
             // 
@@ -826,6 +861,7 @@
             this.metroTile36.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile36.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile36.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile36.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile37
             // 
@@ -845,6 +881,7 @@
             this.metroTile37.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile37.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile37.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile37.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile38
             // 
@@ -864,6 +901,7 @@
             this.metroTile38.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile38.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile38.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile38.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile39
             // 
@@ -883,6 +921,7 @@
             this.metroTile39.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile39.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile39.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile39.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile40
             // 
@@ -902,6 +941,7 @@
             this.metroTile40.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile40.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile40.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile40.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile41
             // 
@@ -921,6 +961,7 @@
             this.metroTile41.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile41.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile41.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile41.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile42
             // 
@@ -940,6 +981,7 @@
             this.metroTile42.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile42.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile42.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile42.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile43
             // 
@@ -959,6 +1001,7 @@
             this.metroTile43.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile43.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile43.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile43.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile44
             // 
@@ -978,6 +1021,7 @@
             this.metroTile44.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile44.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile44.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile44.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile45
             // 
@@ -997,6 +1041,7 @@
             this.metroTile45.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile45.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile45.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile45.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile46
             // 
@@ -1016,6 +1061,7 @@
             this.metroTile46.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile46.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile46.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile46.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile47
             // 
@@ -1035,6 +1081,7 @@
             this.metroTile47.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile47.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile47.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile47.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile48
             // 
@@ -1054,6 +1101,7 @@
             this.metroTile48.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile48.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile48.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile48.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile49
             // 
@@ -1073,6 +1121,7 @@
             this.metroTile49.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile49.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile49.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile49.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile50
             // 
@@ -1092,6 +1141,7 @@
             this.metroTile50.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile50.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile50.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile50.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile51
             // 
@@ -1111,6 +1161,7 @@
             this.metroTile51.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile51.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile51.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile51.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile52
             // 
@@ -1130,6 +1181,7 @@
             this.metroTile52.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile52.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile52.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile52.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile53
             // 
@@ -1149,6 +1201,7 @@
             this.metroTile53.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile53.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile53.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile53.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile54
             // 
@@ -1168,6 +1221,7 @@
             this.metroTile54.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile54.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile54.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile54.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile55
             // 
@@ -1187,6 +1241,7 @@
             this.metroTile55.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile55.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile55.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile55.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile56
             // 
@@ -1206,6 +1261,7 @@
             this.metroTile56.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile56.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile56.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile56.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile57
             // 
@@ -1225,6 +1281,7 @@
             this.metroTile57.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile57.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile57.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile57.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile58
             // 
@@ -1244,6 +1301,7 @@
             this.metroTile58.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile58.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile58.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile58.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile59
             // 
@@ -1263,6 +1321,7 @@
             this.metroTile59.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile59.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile59.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile59.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile60
             // 
@@ -1282,6 +1341,7 @@
             this.metroTile60.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile60.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile60.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile60.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile61
             // 
@@ -1301,6 +1361,7 @@
             this.metroTile61.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile61.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile61.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile61.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile62
             // 
@@ -1320,6 +1381,7 @@
             this.metroTile62.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile62.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile62.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile62.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile63
             // 
@@ -1339,6 +1401,7 @@
             this.metroTile63.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile63.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile63.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile63.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroTile64
             // 
@@ -1358,6 +1421,7 @@
             this.metroTile64.Click += new System.EventHandler(this.metroTile_Click);
             this.metroTile64.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile64.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
+            this.metroTile64.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
             // 
             // metroProgressSpinner1
             // 

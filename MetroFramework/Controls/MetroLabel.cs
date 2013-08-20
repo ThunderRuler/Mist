@@ -242,13 +242,13 @@ namespace MetroFramework.Controls
 
                 if (!baseTextBox.Visible)
                 {
-                    TextRenderer.DrawText(e.Graphics, Text, MetroFonts.Label(metroLabelSize, metroLabelWeight), ClientRectangle, foreColor, backColor, MetroPaint.GetTextFormatFlags(TextAlign));
+                    TextRenderer.DrawText(e.Graphics, Text, MetroFonts.Label(metroLabelSize, metroLabelWeight), ClientRectangle, foreColor, backColor, MetroPaint.GetTextFormatFlags(TextAlign) | TextFormatFlags.WordBreak);
                 }
             }
             else
             {
                 DestroyBaseTextbox();
-                TextRenderer.DrawText(e.Graphics, Text, MetroFonts.Label(metroLabelSize, metroLabelWeight), ClientRectangle, foreColor, backColor, MetroPaint.GetTextFormatFlags(TextAlign));
+                TextRenderer.DrawText(e.Graphics, Text, MetroFonts.Label(metroLabelSize, metroLabelWeight), ClientRectangle, foreColor, backColor, MetroPaint.GetTextFormatFlags(TextAlign) | TextFormatFlags.WordBreak);
             }            
         }
 

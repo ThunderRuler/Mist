@@ -106,8 +106,8 @@ namespace MistClient
                                          {
                                              tile.TileImage = img;
                                              tile.UseTileImage = true;
-                                             tile.Tag = new TileTag {ImageUrl = currentItem.ImageURL};
                                          }
+                                         tile.Tag = new TileTag { ImageUrl = currentItem.ImageURL , Item = invitem};
                                          tile.Text = GetItemName(currentItem, invitem);
                                          tile.ForeColor =
                                                  ColorTranslator.FromHtml(
@@ -535,9 +535,28 @@ namespace MistClient
             tile.TileImage = bmp;
         }
 
+        private void metroTile_MouseMove(object sender, MouseEventArgs e)
+        {
+            var tile = (MetroTile)sender;
+            if (tile.Tag == null) return;
+            var tag = (TileTag)tile.Tag;
+            if (tag.Item == null) return;
+            var item = tag.Item;
+            if (item == null) return;
+            var schemaitem = Trade.CurrentSchema.GetItem(item.Defindex);
+            var name = string.IsNullOrWhiteSpace(item.CustomName)
+                           ? schemaitem.ItemName
+                           : string.Format("\"{0}\" ({1})", item.CustomName, schemaitem.ItemName);
+            var type = schemaitem.ItemTypeName;
+            var desc = string.IsNullOrWhiteSpace(item.CustomDescription)
+                           ? schemaitem.ItemDescription
+                           : string.Format("\"{0}\" ({1})", item.CustomDescription, schemaitem.ItemDescription);
+        }
+
         public class TileTag
         {
             public string ImageUrl;
+            public Inventory.Item Item;
             public bool Selected;
         }
     }
