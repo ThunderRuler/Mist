@@ -51,6 +51,7 @@
             this.offlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.showBackpackToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.showIdBackpackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeProfileNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.showOnlineFriendsOnlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +64,7 @@
             this.setColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setColorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.useGridBackpackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutMistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitMistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,7 +92,6 @@
             this.column_friend1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.column_status1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.column_sid1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.showIdBackpackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_friend.SuspendLayout();
             this.menu_status.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarBox)).BeginInit();
@@ -271,6 +272,13 @@
             this.showBackpackToolStripMenuItem1.Text = "Show Backpack";
             this.showBackpackToolStripMenuItem1.Click += new System.EventHandler(this.showBackpackToolStripMenuItem1_Click);
             // 
+            // showIdBackpackToolStripMenuItem
+            // 
+            this.showIdBackpackToolStripMenuItem.Name = "showIdBackpackToolStripMenuItem";
+            this.showIdBackpackToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.showIdBackpackToolStripMenuItem.Text = "Show Backpack (Steam Id)";
+            this.showIdBackpackToolStripMenuItem.Click += new System.EventHandler(this.showIdBackpackToolStripMenuItem_Click);
+            // 
             // changeProfileNameToolStripMenuItem
             // 
             this.changeProfileNameToolStripMenuItem.Name = "changeProfileNameToolStripMenuItem";
@@ -301,7 +309,8 @@
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logConversationsToolStripMenuItem,
             this.minimizeToTrayToolStripMenuItem,
-            this.themeToolStripMenuItem});
+            this.themeToolStripMenuItem,
+            this.useGridBackpackToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -363,6 +372,15 @@
             this.setColorToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.setColorToolStripMenuItem1.Text = "Set Color";
             this.setColorToolStripMenuItem1.Click += new System.EventHandler(this.setColorToolStripMenuItem1_Click);
+            // 
+            // useGridBackpackToolStripMenuItem
+            // 
+            this.useGridBackpackToolStripMenuItem.Checked = true;
+            this.useGridBackpackToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.useGridBackpackToolStripMenuItem.Name = "useGridBackpackToolStripMenuItem";
+            this.useGridBackpackToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.useGridBackpackToolStripMenuItem.Text = "Use Grid Backpack";
+            this.useGridBackpackToolStripMenuItem.Click += new System.EventHandler(this.useGridBackpackToolStripMenuItem_Click);
             // 
             // aboutMistToolStripMenuItem
             // 
@@ -639,17 +657,11 @@
             this.column_sid1.IsVisible = false;
             this.column_sid1.Text = "SteamID";
             // 
-            // showIdBackpackToolStripMenuItem
-            // 
-            this.showIdBackpackToolStripMenuItem.Name = "showIdBackpackToolStripMenuItem";
-            this.showIdBackpackToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.showIdBackpackToolStripMenuItem.Text = "Show Backpack (Steam Id)";
-            this.showIdBackpackToolStripMenuItem.Click += new System.EventHandler(this.showIdBackpackToolStripMenuItem_Click);
-            // 
             // Friends
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.None;
             this.ClientSize = new System.Drawing.Size(284, 499);
             this.Controls.Add(this.friends_list);
             this.Controls.Add(this.label_addfriend);
@@ -746,5 +758,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem showOnlineFriendsOnlyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showIdBackpackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem useGridBackpackToolStripMenuItem;
     }
 }

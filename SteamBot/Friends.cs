@@ -348,18 +348,36 @@ namespace MistClient
         {
             // Your backpack
             ulong sid = bot.SteamUser.SteamID;
-            ShowBackpack showBP = new ShowBackpack(bot, sid);
-            showBP.Show();
-            showBP.Activate();
+            if (Properties.Settings.Default.NewBackpack)
+            {
+                ShowBackpackGrid showBP = new ShowBackpackGrid(bot, sid);
+                showBP.Show();
+                showBP.Activate();
+            }
+            else
+            {
+                ShowBackpack showBP = new ShowBackpack(bot, sid);
+                showBP.Show();
+                showBP.Activate();
+            }
         }
 
         private void showBackpackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Friend's backpack
             ulong sid = Convert.ToUInt64(column_sid.GetValue(friends_list.SelectedItem.RowObject));
-            ShowBackpack showBP = new ShowBackpack(bot, sid);
-            showBP.Show();
-            showBP.Activate();            
+            if (Properties.Settings.Default.NewBackpack)
+            {
+                ShowBackpackGrid showBP = new ShowBackpackGrid(bot, sid);
+                showBP.Show();
+                showBP.Activate();
+            }
+            else
+            {
+                ShowBackpack showBP = new ShowBackpack(bot, sid);
+                showBP.Show();
+                showBP.Activate();
+            }          
         }
 
         private void showIdBackpackToolStripMenuItem_Click(object sender, EventArgs e)
@@ -737,9 +755,18 @@ namespace MistClient
             if (list_friendreq.SelectedItem != null)
             {
                 ulong sid = Convert.ToUInt64(column_friendreq_sid.GetValue(list_friendreq.SelectedItem.RowObject));
-                ShowBackpack showBP = new ShowBackpack(bot, sid);
-                showBP.Show();
-                showBP.Activate();
+                if (Properties.Settings.Default.NewBackpack)
+                {
+                    ShowBackpackGrid showBP = new ShowBackpackGrid(bot, sid);
+                    showBP.Show();
+                    showBP.Activate();
+                }
+                else
+                {
+                    ShowBackpack showBP = new ShowBackpack(bot, sid);
+                    showBP.Show();
+                    showBP.Activate();
+                }
             }
         }
 
@@ -978,6 +1005,13 @@ namespace MistClient
             Properties.Settings.Default.OnlineOnly = checkState;
             Properties.Settings.Default.Save();
             friends_list.SetObjects(ListFriends.Get(checkState));
+        }
+
+        private void useGridBackpackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool checkState = useGridBackpackToolStripMenuItem.Checked;
+            Properties.Settings.Default.NewBackpack = checkState;
+            Properties.Settings.Default.Save();
         }
     }
 }

@@ -470,9 +470,18 @@ namespace MistClient
         private void showBackpackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Friend's backpack
-            ShowBackpack showBP = new ShowBackpack(bot, sid);
-            showBP.Show();
-            showBP.Activate();
+            if (Properties.Settings.Default.NewBackpack)
+            {
+                ShowBackpackGrid showBP = new ShowBackpackGrid(bot, sid);
+                showBP.Show();
+                showBP.Activate();
+            }
+            else
+            {
+                ShowBackpack showBP = new ShowBackpack(bot, sid);
+                showBP.Show();
+                showBP.Activate();
+            }
         }
 
         private void steamRepStatusToolStripMenuItem_Click(object sender, EventArgs e)
