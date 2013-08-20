@@ -110,6 +110,9 @@ namespace SteamTrade
             [JsonProperty("item_name")]
             public string ItemName { get; set; }
 
+            [JsonProperty("item_description")]
+            public string ItemDescription { get; set; }
+
             [JsonProperty("craft_material_type")]
             public string CraftMaterialType { get; set; }
 
