@@ -146,6 +146,7 @@
             this.column_userofferings});
             this.list_userofferings.Location = new System.Drawing.Point(416, 87);
             this.list_userofferings.Name = "list_userofferings";
+            this.list_userofferings.ShowItemCountOnGroups = true;
             this.list_userofferings.Size = new System.Drawing.Size(287, 145);
             this.list_userofferings.TabIndex = 7;
             this.list_userofferings.UseCompatibleStateImageBehavior = false;
@@ -403,7 +404,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.None;
             this.ClientSize = new System.Drawing.Size(726, 590);
             this.Controls.Add(this.check_otherready);
             this.Controls.Add(this.check_userready);
