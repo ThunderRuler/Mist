@@ -467,7 +467,7 @@ namespace MistClient
             var desc = string.IsNullOrWhiteSpace(item.CustomDescription)
                            ? schemaitem.ItemDescription
                            : string.Format("\"{0}\" ({1})", item.CustomDescription, schemaitem.ItemDescription);
-            var textarea = ttItem.RtbPCtrl;
+            //var textarea = ttItem.RtbPCtrl;
             
         }
 
