@@ -56,7 +56,7 @@ namespace MistClient
             {
                 bot.main.Invoke((Action)(() =>
                 {
-                    this.Text += " Could not retrieve backpack contents. Backpack is likely private.";
+                    this.Text += " - Could not retrieve backpack contents. Backpack is likely private.";
                     this.metroProgressSpinner1.Spinning = false;
                 }));
                 return;
