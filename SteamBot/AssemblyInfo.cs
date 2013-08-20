@@ -1,7 +1,7 @@
 using System.Reflection;
 
 [assembly: AssemblyTitle("Mist")]
-[assembly: AssemblyDescription("Mist is a portable, open-source Steam client aimed at making TF2 trading/chatting easier and safer")]
+[assembly: AssemblyDescription("Mist is a portable, open-source Steam client aimed at making Dota 2 trading/chatting easier and safer")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Mist")]
 [assembly: AssemblyCopyright("(C) 2013 waylaidwanderer")]
