@@ -52,7 +52,6 @@ namespace MistClient
                 list_inventory.TileSize = new Size(250, 64);
                 ListView_SetSpacing(list_inventory, 70, 10);
             }));
-            BackpackTF.CurrentSchema = BackpackTF.FetchSchema();
             foreach (Inventory.Item item in inventory)
             {                
                 bool isGift = false;

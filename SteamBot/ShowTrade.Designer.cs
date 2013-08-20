@@ -51,7 +51,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disableItemGroupingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewSuggestedItemPricesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.text_search = new System.Windows.Forms.TextBox();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.button_accept = new MetroFramework.Controls.MetroButton();
@@ -270,8 +269,7 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.disableItemGroupingToolStripMenuItem,
-            this.viewSuggestedItemPricesToolStripMenuItem});
+            this.disableItemGroupingToolStripMenuItem});
             this.optionsToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -281,17 +279,9 @@
             // 
             this.disableItemGroupingToolStripMenuItem.CheckOnClick = true;
             this.disableItemGroupingToolStripMenuItem.Name = "disableItemGroupingToolStripMenuItem";
-            this.disableItemGroupingToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.disableItemGroupingToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.disableItemGroupingToolStripMenuItem.Text = "Disable Item Grouping";
             this.disableItemGroupingToolStripMenuItem.Click += new System.EventHandler(this.disableItemGroupingToolStripMenuItem_Click);
-            // 
-            // viewSuggestedItemPricesToolStripMenuItem
-            // 
-            this.viewSuggestedItemPricesToolStripMenuItem.CheckOnClick = true;
-            this.viewSuggestedItemPricesToolStripMenuItem.Name = "viewSuggestedItemPricesToolStripMenuItem";
-            this.viewSuggestedItemPricesToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.viewSuggestedItemPricesToolStripMenuItem.Text = "View Suggested Item Prices";
-            this.viewSuggestedItemPricesToolStripMenuItem.Click += new System.EventHandler(this.viewSuggestedItemPricesToolStripMenuItem_Click);
             // 
             // text_search
             // 
@@ -467,7 +457,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem disableItemGroupingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewSuggestedItemPricesToolStripMenuItem;
         private System.Windows.Forms.TextBox text_search;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private MetroFramework.Controls.MetroButton button_send;

@@ -586,7 +586,6 @@ namespace SteamBot
                 ShowTrade.Show();
                 ShowTrade.Activate();
             }));
-            BackpackTF.CurrentSchema = BackpackTF.FetchSchema();
             // Let's count our inventory
             Thread loadInventory = new Thread(() =>
             {   
@@ -644,8 +643,7 @@ namespace SteamBot
                         {
                             // Item has no attributes... or something.
                         }
-                        string price = Util.GetPrice(item.Defindex, currentItem.ItemQuality, item);
-                        ListInventory.Add(name, item.Id, currentItem.ImageURL, price);
+                        ListInventory.Add(name, item.Id, currentItem.ImageURL);
                     }
                 }
                 try
@@ -835,7 +833,6 @@ namespace SteamBot
                         if (inventoryItem.Attributes[count].Defindex == 134)
                         {
                             name += " (Effect: " + Trade.CurrentSchema.GetEffectName(inventoryItem.Attributes[count].FloatValue) + ")";
-                            price = Util.GetPrice(schemaItem.Defindex, type, inventoryItem, false, (int)inventoryItem.Attributes[count].FloatValue);
                         }
                     }
                 }
@@ -874,26 +871,6 @@ namespace SteamBot
             }
             if (inventoryItem.IsNotCraftable)
                 name += " (Uncraftable)";
-            if (currentItem.Name == "Wrapped Gift")
-            {
-                isGifted = true;
-                // Untested!
-                try
-                {
-                    int size = inventoryItem.Attributes.Length;
-                    for (int count = 0; count < size; count++)
-                    {
-                        var containedItem = Trade.CurrentSchema.GetItem(inventoryItem.ContainedItem.Defindex);
-                        var containedName = GetItemName(containedItem, inventoryItem.ContainedItem, out price, false);
-                        price = Util.GetPrice(inventoryItem.ContainedItem.Defindex, Convert.ToInt32(inventoryItem.ContainedItem.Quality.ToString()), inventoryItem, true);
-                        name += " (Contains: " + containedName + ")";
-                    }
-                }
-                catch
-                {
-                    // Item has no attributes... or something.
-                }
-            }
             if (!string.IsNullOrWhiteSpace(inventoryItem.CustomName))
                 name += " (Custom Name: " + inventoryItem.CustomName + ")";
             if (!string.IsNullOrWhiteSpace(inventoryItem.CustomDescription))
@@ -902,7 +879,6 @@ namespace SteamBot
                 name += " :" + inventoryItem.Id;
             if (!isGifted && !isUnusual)
             {
-                price = Util.GetPrice(currentItem.Defindex, type, inventoryItem);
                 ListBackpack.Add(name, inventoryItem.Defindex, currentItem.ImageURL, price);
             }
             else

@@ -62,7 +62,6 @@ namespace MistClient
                 }));
                 return;
             }
-            BackpackTF.CurrentSchema = BackpackTF.FetchSchema();
             foreach (Inventory.Item item in inventory)
             {
                 if (item.ItemPosition != -1 && !ItemList.ContainsKey(item.ItemPosition))
