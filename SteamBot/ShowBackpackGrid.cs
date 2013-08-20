@@ -109,6 +109,11 @@ namespace MistClient
                                              tile.Tag = new TileTag {ImageUrl = currentItem.ImageURL};
                                          }
                                          tile.Text = GetItemName(currentItem, invitem);
+                                         tile.ForeColor =
+                                                 ColorTranslator.FromHtml(
+                                                     Trade.CurrentItemsGame.GetRarityColor(
+                                                         Trade.CurrentItemsGame.GetItemRarity(
+                                                             currentItem.Defindex.ToString())));
                                          tile.TileTextFontSize = MetroTileTextSize.Small;
                                      }));
             }
@@ -302,7 +307,6 @@ namespace MistClient
             if (QualityToName(type) != "Unique")
                 name += QualityToName(type) + " ";
             name += currentItem.ItemName;
-            name += " (" + SteamTrade.Trade.CurrentItemsGame.GetItemRarity(schemaItem.Defindex.ToString()) + ")";
             if (QualityToName(type) == "Unusual")
             {
                 try
