@@ -98,6 +98,7 @@
             this.metroTile62 = new MetroFramework.Controls.MetroTile();
             this.metroTile63 = new MetroFramework.Controls.MetroTile();
             this.metroTile64 = new MetroFramework.Controls.MetroTile();
+            this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1165,12 +1166,27 @@
             this.metroTile64.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile64.TileImage")));
             this.metroTile64.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // metroProgressSpinner1
+            // 
+            this.metroProgressSpinner1.Location = new System.Drawing.Point(23, 63);
+            this.metroProgressSpinner1.Maximum = 100;
+            this.metroProgressSpinner1.Name = "metroProgressSpinner1";
+            this.metroProgressSpinner1.Size = new System.Drawing.Size(970, 666);
+            this.metroProgressSpinner1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroProgressSpinner1.StyleManager = this.metroStyleManager1;
+            this.metroProgressSpinner1.TabIndex = 131;
+            this.metroProgressSpinner1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // ShowBackpackGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(1020, 781);
+            this.ClientSize = new System.Drawing.Size(1018, 781);
+            this.Controls.Add(this.metroProgressSpinner1);
+            this.Controls.Add(this.lnkPage);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.metroTile57);
             this.Controls.Add(this.metroTile58);
             this.Controls.Add(this.metroTile59);
@@ -1234,9 +1250,6 @@
             this.Controls.Add(this.metroTile5);
             this.Controls.Add(this.metroTile6);
             this.Controls.Add(this.metroTile7);
-            this.Controls.Add(this.lnkPage);
-            this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.metroTile8);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ShowBackpackGrid";
@@ -1320,5 +1333,6 @@
         private MetroFramework.Controls.MetroTile metroTile14;
         private MetroFramework.Controls.MetroTile metroTile15;
         private MetroFramework.Controls.MetroTile metroTile16;
+        private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner1;
     }
 }

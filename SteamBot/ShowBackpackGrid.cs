@@ -57,6 +57,7 @@ namespace MistClient
                 bot.main.Invoke((Action)(() =>
                 {
                     this.Text += " Could not retrieve backpack contents. Backpack is likely private.";
+                    this.metroProgressSpinner1.Spinning = false;
                 }));
                 return;
             }
@@ -72,6 +73,10 @@ namespace MistClient
         void UpdateBP()
         {
             Invoke((Action) (() => lnkPage.Text = pageNum.ToString()));
+            Invoke((Action)(() =>
+            {
+                metroProgressSpinner1.Size = new Size(970, 666);
+            }));
             var h = 0;
             for (var i = (1 + (64*(pageNum-1))); i <= (64*(pageNum)); i++, h++)
             {
@@ -90,6 +95,10 @@ namespace MistClient
                                          tile.TileTextFontSize = MetroTileTextSize.Small;
                                      }));
             }
+            Invoke((Action) (() =>
+                                 {
+                                     metroProgressSpinner1.Size = new Size(0, 0);
+                                 }));
         }
 
         void ClearBP()
