@@ -48,7 +48,7 @@ namespace SteamTrade
             SchemaResult schemaResult = JsonConvert.DeserializeObject<SchemaResult> (result);
             return schemaResult.result ?? null;
         }
-
+            
         [JsonProperty("status")]
         public int Status { get; set; }
 
@@ -60,6 +60,9 @@ namespace SteamTrade
 
         [JsonProperty("originNames")]
         public ItemOrigin[] OriginNames { get; set; }
+
+        [JsonProperty("attribute_controlled_attached_particles")]
+        public Attribute[] Attributes { get; set; }
 
         /// <summary>
         /// Find an SchemaItem by it's defindex.
@@ -82,6 +85,15 @@ namespace SteamTrade
         public List<Item> GetItemsByCraftingMaterial(string material)
         {
             return Items.Where(item => item.CraftMaterialType == material).ToList();
+        }
+
+        public string GetEffectName(float value)
+        {
+            foreach (var effect in Attributes.Where(effect => effect.Id == value))
+            {
+                return effect.Name;
+            }
+            return "";
         }
 
         public class ItemOrigin
@@ -130,6 +142,15 @@ namespace SteamTrade
 
             [JsonProperty("image_url")]
             public string ImageURL { get; set; }
+        }
+
+        public class Attribute
+        {
+            [JsonProperty("id")]
+            public float Id;
+
+            [JsonProperty("name")]
+            public string Name;
         }
 
         protected class SchemaResult
