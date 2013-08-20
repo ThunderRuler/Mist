@@ -46,12 +46,13 @@ namespace MistClient
                 {
                     if (loading)
                     {
-                        Invoke((Action) (() => list_inventory.EmptyListMsg = "Loading..."));
+                        if (!list_inventory.IsDisposed)
+                            Invoke((Action) (() => list_inventory.EmptyListMsg = "Loading..."));
                     }
                     else
                     {
-                        if (bot.CurrentTrade != null)
-                            Invoke((Action) (() => list_inventory.EmptyListMsg = ""));
+                        if (!list_inventory.IsDisposed)
+                            Invoke((Action) (() => list_inventory.EmptyListMsg = "Empty inventory."));
                     }
                     if (bot.CurrentTrade == null)
                     {
