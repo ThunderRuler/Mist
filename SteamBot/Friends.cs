@@ -582,42 +582,6 @@ namespace MistClient
                         MessageBoxDefaultButton.Button1);
         }
 
-        private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string url = "http://www.thectscommunity.com/dev/update_check.php";
-            string response = Util.HTTPRequest(url);
-            if (response != "")
-            {
-                string latestVer = Util.ParseBetween(response, "<version>", "</version>");                                
-                if (latestVer != Friends.mist_ver)
-                {
-                    string[] changelog = Util.GetStringInBetween("<changelog>", "</changelog>", response, false, false);
-                    if (!string.IsNullOrEmpty(changelog[0]))
-                    {
-                        Updater updater = new Updater(latestVer, changelog[0], bot.log);
-                        updater.ShowDialog();
-                        updater.Activate();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Congratulations, Mist is up-to-date! Thank you for using Mist :)",
-                        "Latest Version",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information,
-                        MessageBoxDefaultButton.Button1);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Failed to connect to the update server! Please try again later.",
-                        "Update Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error,
-                        MessageBoxDefaultButton.Button1);
-            }
-        }
-
         public void GrowFriends()
         {
             bot.main.Invoke((Action)(() =>

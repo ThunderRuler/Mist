@@ -66,7 +66,6 @@
             this.setColorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.useGridBackpackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutMistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitMistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.avatarBox = new System.Windows.Forms.PictureBox();
@@ -206,10 +205,9 @@
             this.toolStripMenuItem3,
             this.optionsToolStripMenuItem,
             this.aboutMistToolStripMenuItem,
-            this.checkForUpdatesToolStripMenuItem,
             this.exitMistToolStripMenuItem});
             this.menu_status.Name = "menu_status";
-            this.menu_status.Size = new System.Drawing.Size(214, 374);
+            this.menu_status.Size = new System.Drawing.Size(214, 352);
             // 
             // onlineToolStripMenuItem
             // 
@@ -388,13 +386,6 @@
             this.aboutMistToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.aboutMistToolStripMenuItem.Text = "About Mist";
             this.aboutMistToolStripMenuItem.Click += new System.EventHandler(this.aboutMistToolStripMenuItem_Click);
-            // 
-            // checkForUpdatesToolStripMenuItem
-            // 
-            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.checkForUpdatesToolStripMenuItem.Text = "Check for Updates";
-            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
             // 
             // exitMistToolStripMenuItem
             // 
@@ -661,7 +652,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.None;
             this.ClientSize = new System.Drawing.Size(284, 499);
             this.Controls.Add(this.friends_list);
             this.Controls.Add(this.label_addfriend);
@@ -719,7 +709,6 @@
         private System.Windows.Forms.ToolStripMenuItem steamRepToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem aboutMistToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
         private System.Windows.Forms.PictureBox avatarBox;
         private System.Windows.Forms.ToolStripMenuItem viewGameInfoToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip menu_friendreq;
