@@ -25,6 +25,7 @@ namespace MistClient
         SteamID SID;
         Thread loadBP;
         private Dictionary<int, Inventory.Item> ItemList = new Dictionary<int, Inventory.Item>();
+        private List<Inventory.Item> MisplacedItemList = new List<Inventory.Item>(); 
         private int pageNum = 1;
         private Dictionary<string, Bitmap> ImageCache = new Dictionary<string, Bitmap>(); 
 
@@ -66,12 +67,15 @@ namespace MistClient
             {
                 if (item.ItemPosition != -1 && !ItemList.ContainsKey(item.ItemPosition))
                     ItemList.Add(item.ItemPosition, item);
+                if (item.ItemPosition == -1)
+                    MisplacedItemList.Add(item);
             }
-            UpdateBP();
+            UpdateBP(false);
         }
 
-        void UpdateBP()
+        void UpdateBP(object misplacedobj)
         {
+            var misplaced = (bool) misplacedobj;
             Invoke((Action) (() => lnkPage.Text = pageNum.ToString()));
             Invoke((Action)(() =>
             {
@@ -80,8 +84,20 @@ namespace MistClient
             var h = 0;
             for (var i = (1 + (64*(pageNum-1))); i <= (64*(pageNum)); i++, h++)
             {
-                if (!ItemList.ContainsKey(i)) continue;
-                var currentItem = Trade.CurrentSchema.GetItem(ItemList[i].Defindex);
+                Inventory.Item invitem;
+                if (misplaced)
+                {
+                    if (MisplacedItemList.Count >= i)
+                        invitem = MisplacedItemList[i - 1];
+                    else
+                        break;
+                }
+                else
+                {
+                    if (!ItemList.ContainsKey(i)) continue;
+                    invitem = ItemList[i];
+                }
+                var currentItem = Trade.CurrentSchema.GetItem(invitem.Defindex);
                 var img = getImageFromURL(currentItem.ImageURL);
                 Invoke((Action) (() =>
                                      {
@@ -91,7 +107,7 @@ namespace MistClient
                                              tile.TileImage = img;
                                              tile.UseTileImage = true;
                                          }
-                                         tile.Text = GetItemName(currentItem, ItemList[i]);
+                                         tile.Text = GetItemName(currentItem, invitem);
                                          tile.TileTextFontSize = MetroTileTextSize.Small;
                                      }));
             }
@@ -424,7 +440,7 @@ namespace MistClient
                 Invoke((Action) (() =>
                                      {
                                          loadBP = new Thread(UpdateBP);
-                                         loadBP.Start();
+                                         loadBP.Start(chkMisplaced.Checked);
                                      }));
             }
             catch (Exception ex)
@@ -444,7 +460,25 @@ namespace MistClient
                 Invoke((Action)(() =>
                 {
                     loadBP = new Thread(UpdateBP);
-                    loadBP.Start();
+                    loadBP.Start(chkMisplaced.Checked);
+                }));
+            }
+            catch (Exception ex)
+            {
+                Bot.Print(ex);
+            }
+        }
+
+        private void chkMisplaced_CheckedChanged(object sender, EventArgs e)
+        {
+            ClearBP();
+            try
+            {
+                loadBP.Abort();
+                Invoke((Action)(() =>
+                {
+                    loadBP = new Thread(UpdateBP);
+                    loadBP.Start(chkMisplaced.Checked);
                 }));
             }
             catch (Exception ex)

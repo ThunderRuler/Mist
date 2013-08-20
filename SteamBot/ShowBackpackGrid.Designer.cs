@@ -99,6 +99,7 @@
             this.metroTile63 = new MetroFramework.Controls.MetroTile();
             this.metroTile64 = new MetroFramework.Controls.MetroTile();
             this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
+            this.chkMisplaced = new MetroFramework.Controls.MetroCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1177,12 +1178,27 @@
             this.metroProgressSpinner1.TabIndex = 131;
             this.metroProgressSpinner1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // chkMisplaced
+            // 
+            this.chkMisplaced.AutoSize = true;
+            this.chkMisplaced.Location = new System.Drawing.Point(858, 743);
+            this.chkMisplaced.Name = "chkMisplaced";
+            this.chkMisplaced.Size = new System.Drawing.Size(137, 15);
+            this.chkMisplaced.Style = MetroFramework.MetroColorStyle.Blue;
+            this.chkMisplaced.StyleManager = this.metroStyleManager1;
+            this.chkMisplaced.TabIndex = 132;
+            this.chkMisplaced.Text = "View Misplaced Items";
+            this.chkMisplaced.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.chkMisplaced.UseVisualStyleBackColor = true;
+            this.chkMisplaced.CheckedChanged += new System.EventHandler(this.chkMisplaced_CheckedChanged);
+            // 
             // ShowBackpackGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1018, 781);
+            this.Controls.Add(this.chkMisplaced);
             this.Controls.Add(this.metroProgressSpinner1);
             this.Controls.Add(this.lnkPage);
             this.Controls.Add(this.btnNext);
@@ -1260,6 +1276,7 @@
             this.Load += new System.EventHandler(this.ShowBackpackGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1334,5 +1351,6 @@
         private MetroFramework.Controls.MetroTile metroTile15;
         private MetroFramework.Controls.MetroTile metroTile16;
         private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner1;
+        private MetroFramework.Controls.MetroCheckBox chkMisplaced;
     }
 }
