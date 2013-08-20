@@ -103,6 +103,9 @@
     <Compile Include="ChatTab.Designer.cs">
       <DependentUpon>ChatTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="RichTextBoxPrintCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ShowBackpackGrid.cs">
       <SubType>Form</SubType>
     </Compile>

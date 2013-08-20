@@ -171,73 +171,6 @@ namespace MistClient
             }
         }
 
-        public static string EffectToName(float effect)
-        {
-            if (effect == 6)
-                return "Green Confetti";
-            if (effect == 7)
-                return "Purple Confetti";
-            if (effect == 8)
-                return "Haunted Ghosts";
-            if (effect == 9)
-                return "Green Energy";
-            if (effect == 10)
-                return "Purple Energy";
-            if (effect == 11)
-                return "Circling TF Logo";
-            if (effect == 12)
-                return "Massed Flies";
-            if (effect == 13)
-                return "Burning Flames";
-            if (effect == 14)
-                return "Scorching Flames";
-            if (effect == 15)
-                return "Searing Plasma";
-            if (effect == 16)
-                return "Vivid Plasma";
-            if (effect == 17)
-                return "Sunbeams";
-            if (effect == 18)
-                return "Circling Peace Sign";
-            if (effect == 19)
-                return "Circling Heart";
-            if (effect == 29)
-                return "Stormy Storm";
-            if (effect == 30)
-                return "Blizzardy Storm";
-            if (effect == 31)
-                return "Nuts n' Bolts";
-            if (effect == 32)
-                return "Orbiting Planets";
-            if (effect == 33)
-                return "Orbiting Fire";
-            if (effect == 34)
-                return "Bubbling";
-            if (effect == 35)
-                return "Smoking";
-            if (effect == 36)
-                return "Steaming";
-            if (effect == 37)
-                return "Flaming Lantern";
-            if (effect == 38)
-                return "Cloudy Moon";
-            if (effect == 39)
-                return "Cauldron Bubbles";
-            if (effect == 40)
-                return "Eerie Orbiting Fire";
-            if (effect == 43)
-                return "Knifestorm";
-            if (effect == 44)
-                return "Misty Skull";
-            if (effect == 45)
-                return "Harvest Moon";
-            if (effect == 46)
-                return "It's a Secret to Everybody";
-            if (effect == 47)
-                return "Stormy 13th Hour";
-            return "";
-        }
-
         public static string PaintToName(float color)
         {
             if (color == 3100495)
@@ -317,7 +250,7 @@ namespace MistClient
                     {
                         if (inventoryItem.Attributes[count].Defindex == 134)
                         {
-                            name += " (Effect: " + EffectToName(inventoryItem.Attributes[count].FloatValue) + ")";
+                            name += " (Effect: " + Trade.CurrentSchema.GetEffectName(inventoryItem.Attributes[count].FloatValue) + ")";
                         }
                     }
                 }
@@ -352,24 +285,6 @@ namespace MistClient
             catch
             {
                 // Item has no attributes... or something.
-            }
-            if (currentItem.Name == "Wrapped Gift")
-            {
-                // Untested!
-                try
-                {
-                    int size = inventoryItem.Attributes.Length;
-                    for (int count = 0; count < size; count++)
-                    {
-                        var containedItem = Trade.CurrentSchema.GetItem(inventoryItem.ContainedItem.Defindex);
-                        var containedName = GetItemName(containedItem, inventoryItem.ContainedItem);
-                        name += " (Contains: " + containedName + ")";
-                    }
-                }
-                catch
-                {
-                    // Item has no attributes... or something.
-                }
             }
             if (!string.IsNullOrWhiteSpace(inventoryItem.CustomName))
                 name += " (Custom Name: " + inventoryItem.CustomName + ")";
@@ -553,6 +468,8 @@ namespace MistClient
             var desc = string.IsNullOrWhiteSpace(item.CustomDescription)
                            ? schemaitem.ItemDescription
                            : string.Format("\"{0}\" ({1})", item.CustomDescription, schemaitem.ItemDescription);
+            var textarea = ttItem.RtbPCtrl;
+            
         }
 
         public class TileTag

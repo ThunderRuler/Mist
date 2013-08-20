@@ -100,6 +100,7 @@
             this.metroTile64 = new MetroFramework.Controls.MetroTile();
             this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
             this.chkMisplaced = new MetroFramework.Controls.MetroCheckBox();
+            this.ttItem = (RichToolTip) new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1448,6 +1449,10 @@
             this.chkMisplaced.UseVisualStyleBackColor = true;
             this.chkMisplaced.CheckedChanged += new System.EventHandler(this.chkMisplaced_CheckedChanged);
             // 
+            // ttItem
+            // 
+            this.ttItem.AutomaticDelay = 0;
+            // 
             // ShowBackpackGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1608,5 +1613,6 @@
         private MetroFramework.Controls.MetroTile metroTile16;
         private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner1;
         private MetroFramework.Controls.MetroCheckBox chkMisplaced;
+        private MistClient.RichToolTip ttItem;
     }
 }
