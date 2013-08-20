@@ -26,6 +26,7 @@ namespace MistClient
         Thread loadBP;
         private Dictionary<int, Inventory.Item> ItemList = new Dictionary<int, Inventory.Item>();
         private int pageNum = 1;
+        private Dictionary<string, Bitmap> ImageCache = new Dictionary<string, Bitmap>(); 
 
         public ShowBackpackGrid(Bot bot, SteamID SID)
         {
@@ -351,9 +352,14 @@ namespace MistClient
         {
             System.Drawing.Bitmap bmp;
             var cache = Path.Combine("cache", Path.GetFileName(new Uri(url).LocalPath));
-            if (File.Exists(cache))
+            if (ImageCache.ContainsKey(url))
+            {
+                bmp = ImageCache[url];
+            }
+            else if (File.Exists(cache))
             {
                 bmp = new Bitmap(cache);
+                ImageCache.Add(url, bmp);
             }
             else
             {
@@ -364,6 +370,7 @@ namespace MistClient
                 myResponse.Close();
                 bmp = ResizeImage(newbmp, new Size(116, 78));
                 bmp.Save(cache);
+                ImageCache.Add(url, bmp);
             }
 
             return bmp;
