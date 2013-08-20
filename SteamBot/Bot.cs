@@ -673,14 +673,10 @@ namespace SteamBot
                 IsLoggedIn = false;
                 CloseTrade ();
                 log.Warn ("Disconnected from Steam Network!");
-                main.Invoke((Action)(() =>
-                {
-                    main.label_status.Text = "Disconnected from Steam Network! Retrying...";
-                }));
                 SteamClient.Connect ();
                 main.Invoke((Action)(() =>
                 {
-                    main.label_status.Text = "Connecting to Steam...";
+                    main.label_status.Text = "Disconnected from Steam Network! Retrying...";
                 }));
             });
             #endregion
