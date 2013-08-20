@@ -624,17 +624,6 @@ namespace SteamBot
 
                             }
                         }
-                        if (currentItem.CraftMaterialType == "supply_crate")
-                        {
-                            for (int count = 0; count < item.Attributes.Length; count++)
-                            {
-                                name += " #" + (item.Attributes[count].FloatValue);
-                                if (item.Attributes[count].Defindex == 186)
-                                {
-                                    name += " (Gifted)";
-                                }
-                            }
-                        }
                         try
                         {
                             int size = item.Attributes.Length;
@@ -655,21 +644,6 @@ namespace SteamBot
                         {
                             // Item has no attributes... or something.
                         }
-                        if (currentItem.Name == "Wrapped Gift")
-                        {
-                            // Untested!
-                            try
-                            {                           
-                                var containedItem = Trade.CurrentSchema.GetItem(item.ContainedItem.Defindex);
-                                var containedName = GetItemName(containedItem, item.ContainedItem, out itemValue);
-                                name += " (Contains: " + containedName + ")";
-                            }
-                            catch (Exception ex)
-                            {
-                                Bot.Print(ex);
-                                // Guess this doesn't work :P.
-                            }
-                        }
                         string price = Util.GetPrice(item.Defindex, currentItem.ItemQuality, item);
                         ListInventory.Add(name, item.Id, currentItem.ImageURL, price);
                     }
@@ -679,9 +653,9 @@ namespace SteamBot
                     ShowTrade.loading = false;
                     Bot.main.Invoke((Action)(() => ShowTrade.list_inventory.SetObjects(ListInventory.Get())));
                 }
-                catch
+                catch (Exception ex)
                 {
-
+                    Bot.log.Error(ex.ToString());
                 }
             });
             loadInventory.Start();
