@@ -52,7 +52,7 @@ namespace MistClient
                     }
                     else
                     {
-                        if (!list_inventory.IsDisposed && controlLoaded)
+                        if (!list_inventory.IsDisposed && controlLoaded && !this.IsDisposed)
                             Invoke((Action) (() => list_inventory.EmptyListMsg = "Empty inventory."));
                     }
                     if (bot.CurrentTrade == null)
