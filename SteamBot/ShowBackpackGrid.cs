@@ -106,6 +106,7 @@ namespace MistClient
                                          {
                                              tile.TileImage = img;
                                              tile.UseTileImage = true;
+                                             tile.Tag = new TileTag {ImageUrl = currentItem.ImageURL};
                                          }
                                          tile.Text = GetItemName(currentItem, invitem);
                                          tile.TileTextFontSize = MetroTileTextSize.Small;
@@ -485,6 +486,55 @@ namespace MistClient
             {
                 Bot.Print(ex);
             }
+        }
+
+        private void metroTile_MouseEnter(object sender, EventArgs e)
+        {
+            var tile = (MetroTile) sender;
+            var oldbmp = tile.TileImage;
+            var bmp = new Bitmap(oldbmp);
+            if (bmp.Size == new Size(116, 78) && !((TileTag)tile.Tag).Selected)
+            {
+                using (var g = Graphics.FromImage(bmp))
+                {
+                    g.DrawRectangle(new Pen(Brushes.DarkRed, 3), new Rectangle(0, 0, bmp.Width, bmp.Height));
+                }
+            }
+            tile.TileImage = bmp;
+        }
+
+        private void metroTile_MouseLeave(object sender, EventArgs e)
+        {
+            var tile = (MetroTile)sender;
+            var bmp = tile.TileImage;
+            if (bmp.Size == new Size(116, 78) && !((TileTag)tile.Tag).Selected)
+            {
+                tile.TileImage = getImageFromURL(((TileTag) tile.Tag).ImageUrl);
+            }
+        }
+
+        private void metroTile_Click(object sender, EventArgs e)
+        {
+            var tile = (MetroTile)sender;
+            var tag = (TileTag) tile.Tag;
+            tag.Selected = !tag.Selected;
+            if (!tag.Selected) return;
+            var oldbmp = tile.TileImage;
+            var bmp = new Bitmap(oldbmp);
+            if (bmp.Size == new Size(116, 78) && !((TileTag)tile.Tag).Selected)
+            {
+                using (var g = Graphics.FromImage(bmp))
+                {
+                    g.DrawRectangle(new Pen(Brushes.DarkRed, 3), new Rectangle(0, 0, bmp.Width, bmp.Height));
+                }
+            }
+            tile.TileImage = bmp;
+        }
+
+        public class TileTag
+        {
+            public string ImageUrl;
+            public bool Selected;
         }
     }
 }

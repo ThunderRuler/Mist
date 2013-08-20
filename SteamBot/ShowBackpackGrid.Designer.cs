@@ -123,6 +123,9 @@
             this.metroTile8.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile8.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile8.TileImage")));
             this.metroTile8.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile8.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile8.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile8.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // btnBack
             // 
@@ -174,6 +177,9 @@
             this.metroTile7.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile7.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile7.TileImage")));
             this.metroTile7.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile7.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile7.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile7.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile6
             // 
@@ -190,6 +196,9 @@
             this.metroTile6.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile6.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile6.TileImage")));
             this.metroTile6.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile6.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile6.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile6.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile5
             // 
@@ -206,6 +215,9 @@
             this.metroTile5.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile5.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile5.TileImage")));
             this.metroTile5.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile5.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile5.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile5.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile4
             // 
@@ -222,6 +234,9 @@
             this.metroTile4.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile4.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile4.TileImage")));
             this.metroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile4.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile4.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile4.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile3
             // 
@@ -238,6 +253,9 @@
             this.metroTile3.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile3.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile3.TileImage")));
             this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile3.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile3.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile3.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile2
             // 
@@ -254,6 +272,9 @@
             this.metroTile2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile2.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile2.TileImage")));
             this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile2.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile2.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile2.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile1
             // 
@@ -270,6 +291,9 @@
             this.metroTile1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile1.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile1.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile9
             // 
@@ -286,6 +310,9 @@
             this.metroTile9.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile9.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile9.TileImage")));
             this.metroTile9.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile9.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile9.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile9.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile10
             // 
@@ -302,6 +329,9 @@
             this.metroTile10.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile10.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile10.TileImage")));
             this.metroTile10.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile10.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile10.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile10.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile11
             // 
@@ -318,6 +348,9 @@
             this.metroTile11.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile11.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile11.TileImage")));
             this.metroTile11.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile11.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile11.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile11.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile12
             // 
@@ -334,6 +367,9 @@
             this.metroTile12.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile12.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile12.TileImage")));
             this.metroTile12.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile12.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile12.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile12.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile13
             // 
@@ -350,6 +386,9 @@
             this.metroTile13.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile13.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile13.TileImage")));
             this.metroTile13.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile13.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile13.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile13.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile14
             // 
@@ -366,6 +405,9 @@
             this.metroTile14.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile14.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile14.TileImage")));
             this.metroTile14.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile14.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile14.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile14.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile15
             // 
@@ -382,6 +424,9 @@
             this.metroTile15.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile15.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile15.TileImage")));
             this.metroTile15.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile15.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile15.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile15.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile16
             // 
@@ -398,6 +443,9 @@
             this.metroTile16.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile16.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile16.TileImage")));
             this.metroTile16.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile16.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile16.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile16.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile17
             // 
@@ -414,6 +462,9 @@
             this.metroTile17.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile17.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile17.TileImage")));
             this.metroTile17.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile17.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile17.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile17.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile18
             // 
@@ -430,6 +481,9 @@
             this.metroTile18.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile18.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile18.TileImage")));
             this.metroTile18.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile18.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile18.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile18.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile19
             // 
@@ -446,6 +500,9 @@
             this.metroTile19.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile19.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile19.TileImage")));
             this.metroTile19.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile19.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile19.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile19.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile20
             // 
@@ -462,6 +519,9 @@
             this.metroTile20.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile20.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile20.TileImage")));
             this.metroTile20.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile20.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile20.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile20.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile21
             // 
@@ -478,6 +538,9 @@
             this.metroTile21.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile21.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile21.TileImage")));
             this.metroTile21.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile21.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile21.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile21.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile22
             // 
@@ -494,6 +557,9 @@
             this.metroTile22.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile22.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile22.TileImage")));
             this.metroTile22.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile22.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile22.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile22.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile23
             // 
@@ -510,6 +576,9 @@
             this.metroTile23.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile23.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile23.TileImage")));
             this.metroTile23.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile23.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile23.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile23.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile24
             // 
@@ -526,6 +595,9 @@
             this.metroTile24.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile24.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile24.TileImage")));
             this.metroTile24.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile24.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile24.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile24.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile25
             // 
@@ -542,6 +614,9 @@
             this.metroTile25.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile25.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile25.TileImage")));
             this.metroTile25.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile25.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile25.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile25.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile26
             // 
@@ -558,6 +633,9 @@
             this.metroTile26.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile26.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile26.TileImage")));
             this.metroTile26.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile26.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile26.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile26.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile27
             // 
@@ -574,6 +652,9 @@
             this.metroTile27.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile27.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile27.TileImage")));
             this.metroTile27.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile27.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile27.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile27.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile28
             // 
@@ -590,6 +671,9 @@
             this.metroTile28.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile28.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile28.TileImage")));
             this.metroTile28.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile28.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile28.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile28.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile29
             // 
@@ -606,6 +690,9 @@
             this.metroTile29.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile29.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile29.TileImage")));
             this.metroTile29.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile29.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile29.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile29.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile30
             // 
@@ -622,6 +709,9 @@
             this.metroTile30.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile30.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile30.TileImage")));
             this.metroTile30.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile30.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile30.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile30.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile31
             // 
@@ -638,6 +728,9 @@
             this.metroTile31.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile31.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile31.TileImage")));
             this.metroTile31.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile31.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile31.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile31.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile32
             // 
@@ -654,6 +747,9 @@
             this.metroTile32.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile32.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile32.TileImage")));
             this.metroTile32.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile32.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile32.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile32.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile33
             // 
@@ -670,6 +766,9 @@
             this.metroTile33.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile33.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile33.TileImage")));
             this.metroTile33.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile33.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile33.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile33.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile34
             // 
@@ -686,6 +785,9 @@
             this.metroTile34.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile34.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile34.TileImage")));
             this.metroTile34.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile34.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile34.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile34.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile35
             // 
@@ -702,6 +804,9 @@
             this.metroTile35.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile35.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile35.TileImage")));
             this.metroTile35.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile35.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile35.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile35.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile36
             // 
@@ -718,6 +823,9 @@
             this.metroTile36.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile36.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile36.TileImage")));
             this.metroTile36.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile36.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile36.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile36.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile37
             // 
@@ -734,6 +842,9 @@
             this.metroTile37.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile37.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile37.TileImage")));
             this.metroTile37.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile37.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile37.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile37.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile38
             // 
@@ -750,6 +861,9 @@
             this.metroTile38.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile38.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile38.TileImage")));
             this.metroTile38.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile38.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile38.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile38.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile39
             // 
@@ -766,6 +880,9 @@
             this.metroTile39.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile39.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile39.TileImage")));
             this.metroTile39.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile39.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile39.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile39.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile40
             // 
@@ -782,6 +899,9 @@
             this.metroTile40.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile40.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile40.TileImage")));
             this.metroTile40.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile40.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile40.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile40.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile41
             // 
@@ -798,6 +918,9 @@
             this.metroTile41.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile41.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile41.TileImage")));
             this.metroTile41.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile41.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile41.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile41.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile42
             // 
@@ -814,6 +937,9 @@
             this.metroTile42.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile42.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile42.TileImage")));
             this.metroTile42.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile42.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile42.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile42.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile43
             // 
@@ -830,6 +956,9 @@
             this.metroTile43.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile43.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile43.TileImage")));
             this.metroTile43.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile43.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile43.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile43.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile44
             // 
@@ -846,6 +975,9 @@
             this.metroTile44.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile44.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile44.TileImage")));
             this.metroTile44.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile44.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile44.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile44.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile45
             // 
@@ -862,6 +994,9 @@
             this.metroTile45.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile45.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile45.TileImage")));
             this.metroTile45.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile45.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile45.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile45.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile46
             // 
@@ -878,6 +1013,9 @@
             this.metroTile46.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile46.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile46.TileImage")));
             this.metroTile46.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile46.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile46.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile46.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile47
             // 
@@ -894,6 +1032,9 @@
             this.metroTile47.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile47.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile47.TileImage")));
             this.metroTile47.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile47.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile47.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile47.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile48
             // 
@@ -910,6 +1051,9 @@
             this.metroTile48.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile48.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile48.TileImage")));
             this.metroTile48.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile48.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile48.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile48.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile49
             // 
@@ -926,6 +1070,9 @@
             this.metroTile49.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile49.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile49.TileImage")));
             this.metroTile49.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile49.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile49.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile49.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile50
             // 
@@ -942,6 +1089,9 @@
             this.metroTile50.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile50.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile50.TileImage")));
             this.metroTile50.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile50.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile50.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile50.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile51
             // 
@@ -958,6 +1108,9 @@
             this.metroTile51.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile51.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile51.TileImage")));
             this.metroTile51.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile51.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile51.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile51.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile52
             // 
@@ -974,6 +1127,9 @@
             this.metroTile52.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile52.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile52.TileImage")));
             this.metroTile52.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile52.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile52.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile52.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile53
             // 
@@ -990,6 +1146,9 @@
             this.metroTile53.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile53.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile53.TileImage")));
             this.metroTile53.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile53.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile53.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile53.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile54
             // 
@@ -1006,6 +1165,9 @@
             this.metroTile54.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile54.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile54.TileImage")));
             this.metroTile54.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile54.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile54.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile54.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile55
             // 
@@ -1022,6 +1184,9 @@
             this.metroTile55.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile55.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile55.TileImage")));
             this.metroTile55.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile55.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile55.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile55.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile56
             // 
@@ -1038,6 +1203,9 @@
             this.metroTile56.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile56.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile56.TileImage")));
             this.metroTile56.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile56.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile56.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile56.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile57
             // 
@@ -1054,6 +1222,9 @@
             this.metroTile57.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile57.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile57.TileImage")));
             this.metroTile57.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile57.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile57.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile57.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile58
             // 
@@ -1070,6 +1241,9 @@
             this.metroTile58.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile58.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile58.TileImage")));
             this.metroTile58.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile58.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile58.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile58.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile59
             // 
@@ -1086,6 +1260,9 @@
             this.metroTile59.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile59.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile59.TileImage")));
             this.metroTile59.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile59.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile59.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile59.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile60
             // 
@@ -1102,6 +1279,9 @@
             this.metroTile60.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile60.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile60.TileImage")));
             this.metroTile60.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile60.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile60.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile60.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile61
             // 
@@ -1118,6 +1298,9 @@
             this.metroTile61.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile61.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile61.TileImage")));
             this.metroTile61.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile61.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile61.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile61.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile62
             // 
@@ -1134,6 +1317,9 @@
             this.metroTile62.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile62.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile62.TileImage")));
             this.metroTile62.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile62.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile62.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile62.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile63
             // 
@@ -1150,6 +1336,9 @@
             this.metroTile63.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile63.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile63.TileImage")));
             this.metroTile63.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile63.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile63.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile63.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroTile64
             // 
@@ -1166,6 +1355,9 @@
             this.metroTile64.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile64.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile64.TileImage")));
             this.metroTile64.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile64.Click += new System.EventHandler(this.metroTile_Click);
+            this.metroTile64.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
+            this.metroTile64.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             // 
             // metroProgressSpinner1
             // 
@@ -1198,8 +1390,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1018, 781);
-            this.Controls.Add(this.chkMisplaced);
             this.Controls.Add(this.metroProgressSpinner1);
+            this.Controls.Add(this.chkMisplaced);
             this.Controls.Add(this.lnkPage);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
