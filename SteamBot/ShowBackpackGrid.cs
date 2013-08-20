@@ -114,6 +114,7 @@ namespace MistClient
                                                      Trade.CurrentItemsGame.GetRarityColor(
                                                          Trade.CurrentItemsGame.GetItemRarity(
                                                              currentItem.Defindex.ToString())));
+                                         tile.CustomForeColor = true;
                                          tile.TileTextFontSize = MetroTileTextSize.Small;
                                      }));
             }
@@ -130,6 +131,7 @@ namespace MistClient
                 var tile = (MetroTile)Controls.Find("metroTile" + i, true)[0];
                 tile.TileImage = new Bitmap(1, 1);
                 tile.UseTileImage = false;
+                tile.CustomForeColor = false;
                 tile.Text = "";
             }
         }
