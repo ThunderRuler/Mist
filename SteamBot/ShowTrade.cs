@@ -27,6 +27,7 @@ namespace MistClient
         double YourTotalValue = 0;
         Thread acceptTrade;
         bool tradeCompleted;
+        private bool controlLoaded;
 
         public ShowTrade(Bot bot, string name)
         {
@@ -46,12 +47,12 @@ namespace MistClient
                 {
                     if (loading)
                     {
-                        if (!list_inventory.IsDisposed)
+                        if (!list_inventory.IsDisposed && controlLoaded)
                             Invoke((Action) (() => list_inventory.EmptyListMsg = "Loading..."));
                     }
                     else
                     {
-                        if (!list_inventory.IsDisposed)
+                        if (!list_inventory.IsDisposed && controlLoaded)
                             Invoke((Action) (() => list_inventory.EmptyListMsg = "Empty inventory."));
                     }
                     if (bot.CurrentTrade == null)
@@ -928,6 +929,7 @@ namespace MistClient
             string caution = "What the price checker doesn't do:\n-Factor in the cost of paint\n-Factor in the cost of strange parts\n-Calculate values of low craft numbers\nPrices are not guaranteed to be accurate.";
             priceTip.SetToolTip(label_yourvalue, caution);
             priceTip.SetToolTip(label_othervalue, caution);
+            controlLoaded = true;
         }
 
         public static string ReplaceLastOccurrence(string Source, string Find, string Replace)
