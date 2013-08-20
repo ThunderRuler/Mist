@@ -18,32 +18,44 @@ namespace SteamTrade
             string cachefile="d2_schema.cache";
             string result = "";
 
-            HttpWebResponse response = SteamWeb.Request(url, "GET");
-            DateTime SchemaLastModified = DateTime.Now;
-
             try
             {
-                SchemaLastModified = DateTime.Parse(response.Headers["Last-Modified"]);
-            }
-            catch
-            {
-                SchemaLastModified = DateTime.Now;
-            }
+                HttpWebResponse response = SteamWeb.Request(url, "GET");
+                DateTime SchemaLastModified = DateTime.Now;
 
-            if (!System.IO.File.Exists(cachefile) || (SchemaLastModified > System.IO.File.GetCreationTime(cachefile)))
-            {
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                result = reader.ReadToEnd();
-                File.WriteAllText(cachefile, result);
-                System.IO.File.SetCreationTime(cachefile, SchemaLastModified);
+                try
+                {
+                    SchemaLastModified = DateTime.Parse(response.Headers["Last-Modified"]);
+                }
+                catch
+                {
+                    SchemaLastModified = DateTime.Now;
+                }
+
+                if (!System.IO.File.Exists(cachefile) ||
+                    (SchemaLastModified > System.IO.File.GetCreationTime(cachefile)))
+                {
+                    StreamReader reader = new StreamReader(response.GetResponseStream());
+                    result = reader.ReadToEnd();
+                    File.WriteAllText(cachefile, result);
+                    System.IO.File.SetCreationTime(cachefile, SchemaLastModified);
+                }
+                else
+                {
+                    TextReader reader = new StreamReader(cachefile);
+                    result = reader.ReadToEnd();
+                    reader.Close();
+                }
+                response.Close();
             }
-            else
+            catch (NullReferenceException ex)
             {
-                TextReader reader = new StreamReader(cachefile);
-                result = reader.ReadToEnd();
-                reader.Close();
+                //.net 4.5 will error out on Request.
+                using (var wc = new WebClient() {Proxy = null})
+                {
+                    result = wc.DownloadString(url);
+                }
             }
-            response.Close();
 
             SchemaResult schemaResult = JsonConvert.DeserializeObject<SchemaResult> (result);
             return schemaResult.result ?? null;
