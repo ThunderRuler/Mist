@@ -142,7 +142,7 @@ namespace SteamTrade
 
             public bool InBackpack
             {
-                get { return (InventoryToken & (1 << 29)) == 0; }
+                get { return (InventoryToken & (1 << 30)) == 0; }
             }
         }
 
