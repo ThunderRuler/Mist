@@ -214,6 +214,7 @@
             this.column_otherofferings});
             this.list_otherofferings.Location = new System.Drawing.Point(416, 261);
             this.list_otherofferings.Name = "list_otherofferings";
+            this.list_otherofferings.ShowItemCountOnGroups = true;
             this.list_otherofferings.Size = new System.Drawing.Size(287, 146);
             this.list_otherofferings.TabIndex = 8;
             this.list_otherofferings.UseCompatibleStateImageBehavior = false;
