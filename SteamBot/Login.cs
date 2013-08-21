@@ -63,6 +63,10 @@ namespace MistClient
         {
             text_username.Text = text_username.Text.Trim();
             text_api.Text = text_api.Text.Trim();
+            if (string.IsNullOrWhiteSpace(text_api.Text))
+            {
+                label4_Click(this, null);
+            }
             if (text_username.Text != "" && text_password.Text != "" && text_api.Text != "")
             {
                 try
