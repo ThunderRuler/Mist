@@ -70,7 +70,7 @@ namespace MistClient
             fileSize = sizeMB.ToString("0.00");
             if (fileSize != null)
             {
-                metroLabel1.Text += " (" + fileSize + " MB)";
+                Invoke((Action) (() => metroLabel1.Text += " (" + fileSize + " MB)"));
             }
             // keeps track of the total bytes downloaded so we can update the progress bar
             Int64 iRunningByteTotal = 0;
