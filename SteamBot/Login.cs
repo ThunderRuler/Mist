@@ -57,7 +57,8 @@ namespace MistClient
             settings.Providers.Add(portableSettingsProvider);
             foreach (System.Configuration.SettingsProperty prop in settings.Properties)
                 prop.Provider = portableSettingsProvider;
-            settings.Reload();
+            if (Type.GetType("Mono.Runtime") == null)
+                settings.Reload();
         }
 
         private void button_login_Click(object sender, EventArgs e)
