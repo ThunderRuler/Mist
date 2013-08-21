@@ -16,6 +16,7 @@ using MetroFramework.Forms;
 using SteamBot;
 using SteamKit2;
 using SteamTrade;
+using HtmlRenderer;
 
 namespace MistClient
 {
@@ -27,7 +28,9 @@ namespace MistClient
         private Dictionary<int, Inventory.Item> ItemList = new Dictionary<int, Inventory.Item>();
         private List<Inventory.Item> MisplacedItemList = new List<Inventory.Item>(); 
         private int pageNum = 1;
-        private Dictionary<string, Bitmap> ImageCache = new Dictionary<string, Bitmap>(); 
+        private Dictionary<string, Bitmap> ImageCache = new Dictionary<string, Bitmap>();
+        private HtmlToolTip ttItem = new HtmlToolTip();
+        private DateTime LastPopup = DateTime.UtcNow;
 
         public ShowBackpackGrid(Bot bot, SteamID SID)
         {
@@ -37,6 +40,27 @@ namespace MistClient
             this.Text = bot.SteamFriends.GetFriendPersonaName(SID) + "'s Backpack";
             Util.LoadTheme(metroStyleManager1);
             lnkPage.Text = pageNum.ToString();
+            ttItem.AllowLinksHandling = false;
+            ttItem.AutomaticDelay = 0;
+            ttItem.BaseStylesheet = 
+@".htmltooltip {
+    border:solid 1px #767676;
+    background-color:#464646;
+    background-gradient:#121212;
+    padding: 8px; 
+    Font: 11pt Tahoma;
+    color: #999;
+    width: 300px;
+}
+.name {
+    Font: 17pt Tahoma;
+}
+.type {
+    color: #b0c0d0;
+}
+.effect {
+    color: #fff;
+}";
         }
 
         private void ShowBackpackGrid_Load(object sender, EventArgs e)
@@ -106,7 +130,12 @@ namespace MistClient
                                              tile.TileImage = img;
                                              tile.UseTileImage = true;
                                          }
-                                         tile.Tag = new TileTag { ImageUrl = currentItem.ImageURL , Item = invitem};
+                                         tile.Tag = new TileTag
+                                                        {
+                                                            ImageUrl = currentItem.ImageURL,
+                                                            Item = invitem,
+                                                            TooltipText = GetTooltipText(invitem)
+                                                        };
                                          tile.Text = GetItemName(currentItem, invitem);
                                          tile.ForeColor =
                                                  ColorTranslator.FromHtml(
@@ -240,24 +269,7 @@ namespace MistClient
             var type = Convert.ToInt32(inventoryItem.Quality.ToString());
             if (QualityToName(type) != "Unique")
                 name += QualityToName(type) + " ";
-            name += currentItem.ItemName;
-            if (QualityToName(type) == "Unusual")
-            {
-                try
-                {
-                    for (int count = 0; count < inventoryItem.Attributes.Length; count++)
-                    {
-                        if (inventoryItem.Attributes[count].Defindex == 134)
-                        {
-                            name += " (Effect: " + Trade.CurrentSchema.GetEffectName(inventoryItem.Attributes[count].FloatValue) + ")";
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-
-                }
-            }
+            name += string.IsNullOrWhiteSpace(inventoryItem.CustomName) ? currentItem.ItemName : "\"" + inventoryItem.CustomName + "\"";
             if (currentItem.CraftMaterialType == "supply_crate")
             {
                 for (int count = 0; count < inventoryItem.Attributes.Length; count++)
@@ -285,10 +297,6 @@ namespace MistClient
             {
                 // Item has no attributes... or something.
             }
-            if (!string.IsNullOrWhiteSpace(inventoryItem.CustomName))
-                name += " (Custom Name: " + inventoryItem.CustomName + ")";
-            if (!string.IsNullOrWhiteSpace(inventoryItem.CustomDescription))
-                name += " (Custom Desc.: " + inventoryItem.CustomDescription + ")";
             if (id)
                 name += " :" + inventoryItem.Id;
             return name;
@@ -413,6 +421,8 @@ namespace MistClient
             var tile = (MetroTile) sender;
             var oldbmp = tile.TileImage;
             var bmp = new Bitmap(oldbmp);
+            var tag = (TileTag) tile.Tag;
+            if (tag == null) return;
             if (bmp.Size == new Size(116, 78) && !((TileTag)tile.Tag).Selected)
             {
                 using (var g = Graphics.FromImage(bmp))
@@ -421,6 +431,8 @@ namespace MistClient
                 }
             }
             tile.TileImage = bmp;
+            ttItem.Show(tag.TooltipText, tile);
+            LastPopup = DateTime.UtcNow;
         }
 
         private void metroTile_MouseLeave(object sender, EventArgs e)
@@ -432,6 +444,8 @@ namespace MistClient
             {
                 tile.TileImage = getImageFromURL(((TileTag) tile.Tag).ImageUrl);
             }
+            if ((DateTime.UtcNow - LastPopup).TotalMilliseconds < 100) return;
+            ttItem.Hide(tile);
         }
 
         private void metroTile_Click(object sender, EventArgs e)
@@ -461,7 +475,36 @@ namespace MistClient
             if (tag.Item == null) return;
             var item = tag.Item;
             if (item == null) return;
+        }
+
+        private string GetTooltipText(Inventory.Item item)
+        {
+            var text = "<div align=\"center\">";
             var schemaitem = Trade.CurrentSchema.GetItem(item.Defindex);
+            var name = string.IsNullOrWhiteSpace(item.CustomName)
+                           ? schemaitem.ItemName
+                           : string.Format("\"{0}\" ({1})", item.CustomName, schemaitem.ItemName);
+            var type = schemaitem.ItemTypeName;
+            var desc = string.IsNullOrWhiteSpace(item.CustomDescription)
+                           ? schemaitem.ItemDescription
+                           : string.Format("\"{0}\" ({1})", item.CustomDescription, schemaitem.ItemDescription);
+            text += string.Format(@"<span class=""name"" style=""color:{0}"">{1}</span><br>",
+                                  Trade.CurrentItemsGame.GetRarityColor(
+                                      Trade.CurrentItemsGame.GetItemRarity(item.Defindex.ToString())), name);
+            text += string.Format(@"<span class=""type"">{0}</span><br>", type);
+            if (item.Attributes != null)
+            {
+                foreach (var attribute in item.Attributes)
+                {
+                    if (attribute.Defindex == 134)
+                    {
+                        text += string.Format(@"<span class=""effect"">Effect: {0}</span><br>",
+                                              Trade.CurrentSchema.GetEffectName(attribute.FloatValue));
+                    }
+                }
+            }
+            text += string.Format(@"<span class=""description"">{0}</span>", desc);
+            return text;
         }
 
         public class TileTag
@@ -469,6 +512,7 @@ namespace MistClient
             public string ImageUrl;
             public Inventory.Item Item;
             public bool Selected;
+            public string TooltipText;
         }
     }
 }
