@@ -80,7 +80,7 @@ namespace SteamTrade
 
         public string GetRarityColor(string rarity)
         {
-            switch (rarity)
+            switch (rarity.ToLower())
             {
                 case "common":
                     return "#b0c3d9";
