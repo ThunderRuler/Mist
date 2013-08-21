@@ -21,8 +21,8 @@ namespace SteamBot
             AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
                                                               {
                                                                   MessageBox.Show(
-                                                                      @"A fatal error has occured! Error message has been written to logs\error.log");
-                                                                  File.AppendAllText(Path.Combine("logs", "error.log"),
+                                                                      @"A fatal error has occured! Error message has been written to error.log");
+                                                                  File.AppendAllText("error.log",
                                                                                      eventArgs.ExceptionObject.ToString() +
                                                                                      "\r\n");
                                                               };
