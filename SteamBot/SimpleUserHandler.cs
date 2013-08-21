@@ -591,60 +591,70 @@ namespace SteamBot
             {   
                 Console.WriteLine("Trade window opened.");
                 Console.WriteLine("Loading all inventory items.");
-                if (Bot.CurrentTrade == null)
-                    return;
-                Inventory.Item[] inventory = Trade.MyInventory.Items;
-                foreach (Inventory.Item item in inventory)
+                try
                 {
-                    if (!item.IsNotTradeable)
+                    if (Bot.CurrentTrade == null)
+                        return;
+                    Inventory.Item[] inventory = Trade.MyInventory.Items;
+                    foreach (Inventory.Item item in inventory)
                     {
-                        var currentItem = Trade.CurrentSchema.GetItem(item.Defindex);
-                        string name = "";
-                        string itemValue = "";
-                        var type = Convert.ToInt32(item.Quality.ToString());
-                        if (QualityToName(type) != "Unique")
-                            name += QualityToName(type) + " ";                        
-                        name += currentItem.ItemName;
-                        name += " (" + SteamTrade.Trade.CurrentItemsGame.GetItemRarity(item.Defindex.ToString()) + ")";
-                        if (QualityToName(type) == "Unusual")
+                        if (!item.IsNotTradeable)
                         {
+                            var currentItem = Trade.CurrentSchema.GetItem(item.Defindex);
+                            string name = "";
+                            string itemValue = "";
+                            var type = Convert.ToInt32(item.Quality.ToString());
+                            if (QualityToName(type) != "Unique")
+                                name += QualityToName(type) + " ";
+                            name += currentItem.ItemName;
+                            name += " (" + SteamTrade.Trade.CurrentItemsGame.GetItemRarity(item.Defindex.ToString()) +
+                                    ")";
+                            if (QualityToName(type) == "Unusual")
+                            {
+                                try
+                                {
+                                    for (int count = 0; count < item.Attributes.Length; count++)
+                                    {
+                                        if (item.Attributes[count].Defindex == 134)
+                                        {
+                                            name += " (Effect: " +
+                                                    Trade.CurrentSchema.GetEffectName(item.Attributes[count].FloatValue) +
+                                                    ")";
+                                        }
+                                    }
+                                }
+                                catch (Exception)
+                                {
+                                }
+                            }
                             try
                             {
-                                for (int count = 0; count < item.Attributes.Length; count++)
+                                int size = item.Attributes.Length;
+                                for (int count = 0; count < size; count++)
                                 {
-                                    if (item.Attributes[count].Defindex == 134)
+                                    if (item.Attributes[count].Defindex == 261)
                                     {
-                                        name += " (Effect: " + Trade.CurrentSchema.GetEffectName(item.Attributes[count].FloatValue) + ")";
+                                        string paint = ShowBackpack.PaintToName(item.Attributes[count].FloatValue);
+                                        name += " (Painted: " + paint + ")";
+                                    }
+                                    if (item.Attributes[count].Defindex == 186)
+                                    {
+                                        name += " (Gifted)";
                                     }
                                 }
                             }
-                            catch (Exception)
+                            catch
                             {
-
+                                // Item has no attributes... or something.
                             }
+                            ListInventory.Add(name, item.Id, currentItem.ImageURL);
                         }
-                        try
-                        {
-                            int size = item.Attributes.Length;
-                            for (int count = 0; count < size; count++)
-                            {
-                                if (item.Attributes[count].Defindex == 261)
-                                {
-                                    string paint = ShowBackpack.PaintToName(item.Attributes[count].FloatValue);
-                                    name += " (Painted: " + paint + ")";
-                                }
-                                if (item.Attributes[count].Defindex == 186)
-                                {
-                                    name += " (Gifted)";
-                                }
-                            }
-                        }
-                        catch
-                        {
-                            // Item has no attributes... or something.
-                        }
-                        ListInventory.Add(name, item.Id, currentItem.ImageURL);
                     }
+                }
+                catch (Exception ex)
+                {
+                    Bot.log.Error(ex.ToString());
+                    return;
                 }
                 try
                 {
