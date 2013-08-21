@@ -17,7 +17,15 @@ namespace SteamBot
 
         [STAThread]
         public static void Main(string[] args)
-        {   
+        {
+            AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
+                                                              {
+                                                                  MessageBox.Show(
+                                                                      @"A fatal error has occured! Error message has been written to logs\error.log");
+                                                                  File.AppendAllText(Path.Combine("logs", "error.log"),
+                                                                                     eventArgs.ExceptionObject.ToString() +
+                                                                                     "\r\n");
+                                                              };
             Application.EnableVisualStyles();
             string path = Path.Combine(Environment.ExpandEnvironmentVariables("%systemroot%"), @"Microsoft.NET\Framework\v4.0.30319\System.Core.dll");
             if (!File.Exists(path))
