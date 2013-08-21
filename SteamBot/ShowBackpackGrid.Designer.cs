@@ -114,6 +114,7 @@
             this.metroTile8.BackColor = System.Drawing.Color.Gray;
             this.metroTile8.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile8.CustomBackground = true;
+            this.metroTile8.CustomForeColor = true;
             this.metroTile8.Location = new System.Drawing.Point(23, 651);
             this.metroTile8.Name = "metroTile8";
             this.metroTile8.Size = new System.Drawing.Size(116, 78);
@@ -169,6 +170,7 @@
             this.metroTile7.BackColor = System.Drawing.Color.Gray;
             this.metroTile7.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile7.CustomBackground = true;
+            this.metroTile7.CustomForeColor = true;
             this.metroTile7.Location = new System.Drawing.Point(145, 651);
             this.metroTile7.Name = "metroTile7";
             this.metroTile7.Size = new System.Drawing.Size(116, 78);
@@ -189,6 +191,7 @@
             this.metroTile6.BackColor = System.Drawing.Color.Gray;
             this.metroTile6.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile6.CustomBackground = true;
+            this.metroTile6.CustomForeColor = true;
             this.metroTile6.Location = new System.Drawing.Point(267, 651);
             this.metroTile6.Name = "metroTile6";
             this.metroTile6.Size = new System.Drawing.Size(116, 78);
@@ -209,6 +212,7 @@
             this.metroTile5.BackColor = System.Drawing.Color.Gray;
             this.metroTile5.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile5.CustomBackground = true;
+            this.metroTile5.CustomForeColor = true;
             this.metroTile5.Location = new System.Drawing.Point(389, 651);
             this.metroTile5.Name = "metroTile5";
             this.metroTile5.Size = new System.Drawing.Size(116, 78);
@@ -229,6 +233,7 @@
             this.metroTile4.BackColor = System.Drawing.Color.Gray;
             this.metroTile4.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile4.CustomBackground = true;
+            this.metroTile4.CustomForeColor = true;
             this.metroTile4.Location = new System.Drawing.Point(511, 651);
             this.metroTile4.Name = "metroTile4";
             this.metroTile4.Size = new System.Drawing.Size(116, 78);
@@ -249,6 +254,7 @@
             this.metroTile3.BackColor = System.Drawing.Color.Gray;
             this.metroTile3.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile3.CustomBackground = true;
+            this.metroTile3.CustomForeColor = true;
             this.metroTile3.Location = new System.Drawing.Point(633, 651);
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(116, 78);
@@ -269,6 +275,7 @@
             this.metroTile2.BackColor = System.Drawing.Color.Gray;
             this.metroTile2.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile2.CustomBackground = true;
+            this.metroTile2.CustomForeColor = true;
             this.metroTile2.Location = new System.Drawing.Point(755, 651);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(116, 78);
@@ -289,6 +296,7 @@
             this.metroTile1.BackColor = System.Drawing.Color.Gray;
             this.metroTile1.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile1.CustomBackground = true;
+            this.metroTile1.CustomForeColor = true;
             this.metroTile1.Location = new System.Drawing.Point(877, 651);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(116, 78);
@@ -309,6 +317,7 @@
             this.metroTile9.BackColor = System.Drawing.Color.Gray;
             this.metroTile9.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile9.CustomBackground = true;
+            this.metroTile9.CustomForeColor = true;
             this.metroTile9.Location = new System.Drawing.Point(877, 567);
             this.metroTile9.Name = "metroTile9";
             this.metroTile9.Size = new System.Drawing.Size(116, 78);
@@ -329,6 +338,7 @@
             this.metroTile10.BackColor = System.Drawing.Color.Gray;
             this.metroTile10.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile10.CustomBackground = true;
+            this.metroTile10.CustomForeColor = true;
             this.metroTile10.Location = new System.Drawing.Point(755, 567);
             this.metroTile10.Name = "metroTile10";
             this.metroTile10.Size = new System.Drawing.Size(116, 78);
@@ -349,6 +359,7 @@
             this.metroTile11.BackColor = System.Drawing.Color.Gray;
             this.metroTile11.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile11.CustomBackground = true;
+            this.metroTile11.CustomForeColor = true;
             this.metroTile11.Location = new System.Drawing.Point(633, 567);
             this.metroTile11.Name = "metroTile11";
             this.metroTile11.Size = new System.Drawing.Size(116, 78);
@@ -369,6 +380,7 @@
             this.metroTile12.BackColor = System.Drawing.Color.Gray;
             this.metroTile12.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile12.CustomBackground = true;
+            this.metroTile12.CustomForeColor = true;
             this.metroTile12.Location = new System.Drawing.Point(511, 567);
             this.metroTile12.Name = "metroTile12";
             this.metroTile12.Size = new System.Drawing.Size(116, 78);
@@ -389,6 +401,7 @@
             this.metroTile13.BackColor = System.Drawing.Color.Gray;
             this.metroTile13.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile13.CustomBackground = true;
+            this.metroTile13.CustomForeColor = true;
             this.metroTile13.Location = new System.Drawing.Point(389, 567);
             this.metroTile13.Name = "metroTile13";
             this.metroTile13.Size = new System.Drawing.Size(116, 78);
@@ -409,6 +422,7 @@
             this.metroTile14.BackColor = System.Drawing.Color.Gray;
             this.metroTile14.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile14.CustomBackground = true;
+            this.metroTile14.CustomForeColor = true;
             this.metroTile14.Location = new System.Drawing.Point(267, 567);
             this.metroTile14.Name = "metroTile14";
             this.metroTile14.Size = new System.Drawing.Size(116, 78);
@@ -429,6 +443,7 @@
             this.metroTile15.BackColor = System.Drawing.Color.Gray;
             this.metroTile15.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile15.CustomBackground = true;
+            this.metroTile15.CustomForeColor = true;
             this.metroTile15.Location = new System.Drawing.Point(145, 567);
             this.metroTile15.Name = "metroTile15";
             this.metroTile15.Size = new System.Drawing.Size(116, 78);
@@ -449,6 +464,7 @@
             this.metroTile16.BackColor = System.Drawing.Color.Gray;
             this.metroTile16.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile16.CustomBackground = true;
+            this.metroTile16.CustomForeColor = true;
             this.metroTile16.Location = new System.Drawing.Point(23, 567);
             this.metroTile16.Name = "metroTile16";
             this.metroTile16.Size = new System.Drawing.Size(116, 78);
@@ -469,6 +485,7 @@
             this.metroTile17.BackColor = System.Drawing.Color.Gray;
             this.metroTile17.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile17.CustomBackground = true;
+            this.metroTile17.CustomForeColor = true;
             this.metroTile17.Location = new System.Drawing.Point(877, 483);
             this.metroTile17.Name = "metroTile17";
             this.metroTile17.Size = new System.Drawing.Size(116, 78);
@@ -489,6 +506,7 @@
             this.metroTile18.BackColor = System.Drawing.Color.Gray;
             this.metroTile18.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile18.CustomBackground = true;
+            this.metroTile18.CustomForeColor = true;
             this.metroTile18.Location = new System.Drawing.Point(755, 483);
             this.metroTile18.Name = "metroTile18";
             this.metroTile18.Size = new System.Drawing.Size(116, 78);
@@ -509,6 +527,7 @@
             this.metroTile19.BackColor = System.Drawing.Color.Gray;
             this.metroTile19.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile19.CustomBackground = true;
+            this.metroTile19.CustomForeColor = true;
             this.metroTile19.Location = new System.Drawing.Point(633, 483);
             this.metroTile19.Name = "metroTile19";
             this.metroTile19.Size = new System.Drawing.Size(116, 78);
@@ -529,6 +548,7 @@
             this.metroTile20.BackColor = System.Drawing.Color.Gray;
             this.metroTile20.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile20.CustomBackground = true;
+            this.metroTile20.CustomForeColor = true;
             this.metroTile20.Location = new System.Drawing.Point(511, 483);
             this.metroTile20.Name = "metroTile20";
             this.metroTile20.Size = new System.Drawing.Size(116, 78);
@@ -549,6 +569,7 @@
             this.metroTile21.BackColor = System.Drawing.Color.Gray;
             this.metroTile21.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile21.CustomBackground = true;
+            this.metroTile21.CustomForeColor = true;
             this.metroTile21.Location = new System.Drawing.Point(389, 483);
             this.metroTile21.Name = "metroTile21";
             this.metroTile21.Size = new System.Drawing.Size(116, 78);
@@ -569,6 +590,7 @@
             this.metroTile22.BackColor = System.Drawing.Color.Gray;
             this.metroTile22.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile22.CustomBackground = true;
+            this.metroTile22.CustomForeColor = true;
             this.metroTile22.Location = new System.Drawing.Point(267, 483);
             this.metroTile22.Name = "metroTile22";
             this.metroTile22.Size = new System.Drawing.Size(116, 78);
@@ -589,6 +611,7 @@
             this.metroTile23.BackColor = System.Drawing.Color.Gray;
             this.metroTile23.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile23.CustomBackground = true;
+            this.metroTile23.CustomForeColor = true;
             this.metroTile23.Location = new System.Drawing.Point(145, 483);
             this.metroTile23.Name = "metroTile23";
             this.metroTile23.Size = new System.Drawing.Size(116, 78);
@@ -609,6 +632,7 @@
             this.metroTile24.BackColor = System.Drawing.Color.Gray;
             this.metroTile24.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile24.CustomBackground = true;
+            this.metroTile24.CustomForeColor = true;
             this.metroTile24.Location = new System.Drawing.Point(23, 483);
             this.metroTile24.Name = "metroTile24";
             this.metroTile24.Size = new System.Drawing.Size(116, 78);
@@ -629,6 +653,7 @@
             this.metroTile25.BackColor = System.Drawing.Color.Gray;
             this.metroTile25.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile25.CustomBackground = true;
+            this.metroTile25.CustomForeColor = true;
             this.metroTile25.Location = new System.Drawing.Point(877, 399);
             this.metroTile25.Name = "metroTile25";
             this.metroTile25.Size = new System.Drawing.Size(116, 78);
@@ -649,6 +674,7 @@
             this.metroTile26.BackColor = System.Drawing.Color.Gray;
             this.metroTile26.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile26.CustomBackground = true;
+            this.metroTile26.CustomForeColor = true;
             this.metroTile26.Location = new System.Drawing.Point(755, 399);
             this.metroTile26.Name = "metroTile26";
             this.metroTile26.Size = new System.Drawing.Size(116, 78);
@@ -669,6 +695,7 @@
             this.metroTile27.BackColor = System.Drawing.Color.Gray;
             this.metroTile27.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile27.CustomBackground = true;
+            this.metroTile27.CustomForeColor = true;
             this.metroTile27.Location = new System.Drawing.Point(633, 399);
             this.metroTile27.Name = "metroTile27";
             this.metroTile27.Size = new System.Drawing.Size(116, 78);
@@ -689,6 +716,7 @@
             this.metroTile28.BackColor = System.Drawing.Color.Gray;
             this.metroTile28.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile28.CustomBackground = true;
+            this.metroTile28.CustomForeColor = true;
             this.metroTile28.Location = new System.Drawing.Point(511, 399);
             this.metroTile28.Name = "metroTile28";
             this.metroTile28.Size = new System.Drawing.Size(116, 78);
@@ -709,6 +737,7 @@
             this.metroTile29.BackColor = System.Drawing.Color.Gray;
             this.metroTile29.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile29.CustomBackground = true;
+            this.metroTile29.CustomForeColor = true;
             this.metroTile29.Location = new System.Drawing.Point(389, 399);
             this.metroTile29.Name = "metroTile29";
             this.metroTile29.Size = new System.Drawing.Size(116, 78);
@@ -729,6 +758,7 @@
             this.metroTile30.BackColor = System.Drawing.Color.Gray;
             this.metroTile30.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile30.CustomBackground = true;
+            this.metroTile30.CustomForeColor = true;
             this.metroTile30.Location = new System.Drawing.Point(267, 399);
             this.metroTile30.Name = "metroTile30";
             this.metroTile30.Size = new System.Drawing.Size(116, 78);
@@ -749,6 +779,7 @@
             this.metroTile31.BackColor = System.Drawing.Color.Gray;
             this.metroTile31.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile31.CustomBackground = true;
+            this.metroTile31.CustomForeColor = true;
             this.metroTile31.Location = new System.Drawing.Point(145, 399);
             this.metroTile31.Name = "metroTile31";
             this.metroTile31.Size = new System.Drawing.Size(116, 78);
@@ -769,6 +800,7 @@
             this.metroTile32.BackColor = System.Drawing.Color.Gray;
             this.metroTile32.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile32.CustomBackground = true;
+            this.metroTile32.CustomForeColor = true;
             this.metroTile32.Location = new System.Drawing.Point(23, 399);
             this.metroTile32.Name = "metroTile32";
             this.metroTile32.Size = new System.Drawing.Size(116, 78);
@@ -789,6 +821,7 @@
             this.metroTile33.BackColor = System.Drawing.Color.Gray;
             this.metroTile33.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile33.CustomBackground = true;
+            this.metroTile33.CustomForeColor = true;
             this.metroTile33.Location = new System.Drawing.Point(877, 315);
             this.metroTile33.Name = "metroTile33";
             this.metroTile33.Size = new System.Drawing.Size(116, 78);
@@ -809,6 +842,7 @@
             this.metroTile34.BackColor = System.Drawing.Color.Gray;
             this.metroTile34.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile34.CustomBackground = true;
+            this.metroTile34.CustomForeColor = true;
             this.metroTile34.Location = new System.Drawing.Point(755, 315);
             this.metroTile34.Name = "metroTile34";
             this.metroTile34.Size = new System.Drawing.Size(116, 78);
@@ -829,6 +863,7 @@
             this.metroTile35.BackColor = System.Drawing.Color.Gray;
             this.metroTile35.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile35.CustomBackground = true;
+            this.metroTile35.CustomForeColor = true;
             this.metroTile35.Location = new System.Drawing.Point(633, 315);
             this.metroTile35.Name = "metroTile35";
             this.metroTile35.Size = new System.Drawing.Size(116, 78);
@@ -849,6 +884,7 @@
             this.metroTile36.BackColor = System.Drawing.Color.Gray;
             this.metroTile36.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile36.CustomBackground = true;
+            this.metroTile36.CustomForeColor = true;
             this.metroTile36.Location = new System.Drawing.Point(511, 315);
             this.metroTile36.Name = "metroTile36";
             this.metroTile36.Size = new System.Drawing.Size(116, 78);
@@ -869,6 +905,7 @@
             this.metroTile37.BackColor = System.Drawing.Color.Gray;
             this.metroTile37.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile37.CustomBackground = true;
+            this.metroTile37.CustomForeColor = true;
             this.metroTile37.Location = new System.Drawing.Point(389, 315);
             this.metroTile37.Name = "metroTile37";
             this.metroTile37.Size = new System.Drawing.Size(116, 78);
@@ -889,6 +926,7 @@
             this.metroTile38.BackColor = System.Drawing.Color.Gray;
             this.metroTile38.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile38.CustomBackground = true;
+            this.metroTile38.CustomForeColor = true;
             this.metroTile38.Location = new System.Drawing.Point(267, 315);
             this.metroTile38.Name = "metroTile38";
             this.metroTile38.Size = new System.Drawing.Size(116, 78);
@@ -909,6 +947,7 @@
             this.metroTile39.BackColor = System.Drawing.Color.Gray;
             this.metroTile39.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile39.CustomBackground = true;
+            this.metroTile39.CustomForeColor = true;
             this.metroTile39.Location = new System.Drawing.Point(145, 315);
             this.metroTile39.Name = "metroTile39";
             this.metroTile39.Size = new System.Drawing.Size(116, 78);
@@ -929,6 +968,7 @@
             this.metroTile40.BackColor = System.Drawing.Color.Gray;
             this.metroTile40.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile40.CustomBackground = true;
+            this.metroTile40.CustomForeColor = true;
             this.metroTile40.Location = new System.Drawing.Point(23, 315);
             this.metroTile40.Name = "metroTile40";
             this.metroTile40.Size = new System.Drawing.Size(116, 78);
@@ -949,6 +989,7 @@
             this.metroTile41.BackColor = System.Drawing.Color.Gray;
             this.metroTile41.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile41.CustomBackground = true;
+            this.metroTile41.CustomForeColor = true;
             this.metroTile41.Location = new System.Drawing.Point(877, 231);
             this.metroTile41.Name = "metroTile41";
             this.metroTile41.Size = new System.Drawing.Size(116, 78);
@@ -969,6 +1010,7 @@
             this.metroTile42.BackColor = System.Drawing.Color.Gray;
             this.metroTile42.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile42.CustomBackground = true;
+            this.metroTile42.CustomForeColor = true;
             this.metroTile42.Location = new System.Drawing.Point(755, 231);
             this.metroTile42.Name = "metroTile42";
             this.metroTile42.Size = new System.Drawing.Size(116, 78);
@@ -989,6 +1031,7 @@
             this.metroTile43.BackColor = System.Drawing.Color.Gray;
             this.metroTile43.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile43.CustomBackground = true;
+            this.metroTile43.CustomForeColor = true;
             this.metroTile43.Location = new System.Drawing.Point(633, 231);
             this.metroTile43.Name = "metroTile43";
             this.metroTile43.Size = new System.Drawing.Size(116, 78);
@@ -1009,6 +1052,7 @@
             this.metroTile44.BackColor = System.Drawing.Color.Gray;
             this.metroTile44.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile44.CustomBackground = true;
+            this.metroTile44.CustomForeColor = true;
             this.metroTile44.Location = new System.Drawing.Point(511, 231);
             this.metroTile44.Name = "metroTile44";
             this.metroTile44.Size = new System.Drawing.Size(116, 78);
@@ -1029,6 +1073,7 @@
             this.metroTile45.BackColor = System.Drawing.Color.Gray;
             this.metroTile45.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile45.CustomBackground = true;
+            this.metroTile45.CustomForeColor = true;
             this.metroTile45.Location = new System.Drawing.Point(389, 231);
             this.metroTile45.Name = "metroTile45";
             this.metroTile45.Size = new System.Drawing.Size(116, 78);
@@ -1049,6 +1094,7 @@
             this.metroTile46.BackColor = System.Drawing.Color.Gray;
             this.metroTile46.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile46.CustomBackground = true;
+            this.metroTile46.CustomForeColor = true;
             this.metroTile46.Location = new System.Drawing.Point(267, 231);
             this.metroTile46.Name = "metroTile46";
             this.metroTile46.Size = new System.Drawing.Size(116, 78);
@@ -1069,6 +1115,7 @@
             this.metroTile47.BackColor = System.Drawing.Color.Gray;
             this.metroTile47.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile47.CustomBackground = true;
+            this.metroTile47.CustomForeColor = true;
             this.metroTile47.Location = new System.Drawing.Point(145, 231);
             this.metroTile47.Name = "metroTile47";
             this.metroTile47.Size = new System.Drawing.Size(116, 78);
@@ -1089,6 +1136,7 @@
             this.metroTile48.BackColor = System.Drawing.Color.Gray;
             this.metroTile48.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile48.CustomBackground = true;
+            this.metroTile48.CustomForeColor = true;
             this.metroTile48.Location = new System.Drawing.Point(23, 231);
             this.metroTile48.Name = "metroTile48";
             this.metroTile48.Size = new System.Drawing.Size(116, 78);
@@ -1109,6 +1157,7 @@
             this.metroTile49.BackColor = System.Drawing.Color.Gray;
             this.metroTile49.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile49.CustomBackground = true;
+            this.metroTile49.CustomForeColor = true;
             this.metroTile49.Location = new System.Drawing.Point(877, 147);
             this.metroTile49.Name = "metroTile49";
             this.metroTile49.Size = new System.Drawing.Size(116, 78);
@@ -1129,6 +1178,7 @@
             this.metroTile50.BackColor = System.Drawing.Color.Gray;
             this.metroTile50.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile50.CustomBackground = true;
+            this.metroTile50.CustomForeColor = true;
             this.metroTile50.Location = new System.Drawing.Point(755, 147);
             this.metroTile50.Name = "metroTile50";
             this.metroTile50.Size = new System.Drawing.Size(116, 78);
@@ -1149,6 +1199,7 @@
             this.metroTile51.BackColor = System.Drawing.Color.Gray;
             this.metroTile51.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile51.CustomBackground = true;
+            this.metroTile51.CustomForeColor = true;
             this.metroTile51.Location = new System.Drawing.Point(633, 147);
             this.metroTile51.Name = "metroTile51";
             this.metroTile51.Size = new System.Drawing.Size(116, 78);
@@ -1169,6 +1220,7 @@
             this.metroTile52.BackColor = System.Drawing.Color.Gray;
             this.metroTile52.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile52.CustomBackground = true;
+            this.metroTile52.CustomForeColor = true;
             this.metroTile52.Location = new System.Drawing.Point(511, 147);
             this.metroTile52.Name = "metroTile52";
             this.metroTile52.Size = new System.Drawing.Size(116, 78);
@@ -1189,6 +1241,7 @@
             this.metroTile53.BackColor = System.Drawing.Color.Gray;
             this.metroTile53.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile53.CustomBackground = true;
+            this.metroTile53.CustomForeColor = true;
             this.metroTile53.Location = new System.Drawing.Point(389, 147);
             this.metroTile53.Name = "metroTile53";
             this.metroTile53.Size = new System.Drawing.Size(116, 78);
@@ -1209,6 +1262,7 @@
             this.metroTile54.BackColor = System.Drawing.Color.Gray;
             this.metroTile54.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile54.CustomBackground = true;
+            this.metroTile54.CustomForeColor = true;
             this.metroTile54.Location = new System.Drawing.Point(267, 147);
             this.metroTile54.Name = "metroTile54";
             this.metroTile54.Size = new System.Drawing.Size(116, 78);
@@ -1229,6 +1283,7 @@
             this.metroTile55.BackColor = System.Drawing.Color.Gray;
             this.metroTile55.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile55.CustomBackground = true;
+            this.metroTile55.CustomForeColor = true;
             this.metroTile55.Location = new System.Drawing.Point(145, 147);
             this.metroTile55.Name = "metroTile55";
             this.metroTile55.Size = new System.Drawing.Size(116, 78);
@@ -1249,6 +1304,7 @@
             this.metroTile56.BackColor = System.Drawing.Color.Gray;
             this.metroTile56.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile56.CustomBackground = true;
+            this.metroTile56.CustomForeColor = true;
             this.metroTile56.Location = new System.Drawing.Point(23, 147);
             this.metroTile56.Name = "metroTile56";
             this.metroTile56.Size = new System.Drawing.Size(116, 78);
@@ -1269,6 +1325,7 @@
             this.metroTile57.BackColor = System.Drawing.Color.Gray;
             this.metroTile57.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile57.CustomBackground = true;
+            this.metroTile57.CustomForeColor = true;
             this.metroTile57.Location = new System.Drawing.Point(877, 63);
             this.metroTile57.Name = "metroTile57";
             this.metroTile57.Size = new System.Drawing.Size(116, 78);
@@ -1289,6 +1346,7 @@
             this.metroTile58.BackColor = System.Drawing.Color.Gray;
             this.metroTile58.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile58.CustomBackground = true;
+            this.metroTile58.CustomForeColor = true;
             this.metroTile58.Location = new System.Drawing.Point(755, 63);
             this.metroTile58.Name = "metroTile58";
             this.metroTile58.Size = new System.Drawing.Size(116, 78);
@@ -1309,6 +1367,7 @@
             this.metroTile59.BackColor = System.Drawing.Color.Gray;
             this.metroTile59.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile59.CustomBackground = true;
+            this.metroTile59.CustomForeColor = true;
             this.metroTile59.Location = new System.Drawing.Point(633, 63);
             this.metroTile59.Name = "metroTile59";
             this.metroTile59.Size = new System.Drawing.Size(116, 78);
@@ -1329,6 +1388,7 @@
             this.metroTile60.BackColor = System.Drawing.Color.Gray;
             this.metroTile60.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile60.CustomBackground = true;
+            this.metroTile60.CustomForeColor = true;
             this.metroTile60.Location = new System.Drawing.Point(511, 63);
             this.metroTile60.Name = "metroTile60";
             this.metroTile60.Size = new System.Drawing.Size(116, 78);
@@ -1349,6 +1409,7 @@
             this.metroTile61.BackColor = System.Drawing.Color.Gray;
             this.metroTile61.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile61.CustomBackground = true;
+            this.metroTile61.CustomForeColor = true;
             this.metroTile61.Location = new System.Drawing.Point(389, 63);
             this.metroTile61.Name = "metroTile61";
             this.metroTile61.Size = new System.Drawing.Size(116, 78);
@@ -1369,6 +1430,7 @@
             this.metroTile62.BackColor = System.Drawing.Color.Gray;
             this.metroTile62.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile62.CustomBackground = true;
+            this.metroTile62.CustomForeColor = true;
             this.metroTile62.Location = new System.Drawing.Point(267, 63);
             this.metroTile62.Name = "metroTile62";
             this.metroTile62.Size = new System.Drawing.Size(116, 78);
@@ -1389,6 +1451,7 @@
             this.metroTile63.BackColor = System.Drawing.Color.Gray;
             this.metroTile63.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile63.CustomBackground = true;
+            this.metroTile63.CustomForeColor = true;
             this.metroTile63.Location = new System.Drawing.Point(145, 63);
             this.metroTile63.Name = "metroTile63";
             this.metroTile63.Size = new System.Drawing.Size(116, 78);
@@ -1409,6 +1472,7 @@
             this.metroTile64.BackColor = System.Drawing.Color.Gray;
             this.metroTile64.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile64.CustomBackground = true;
+            this.metroTile64.CustomForeColor = true;
             this.metroTile64.Location = new System.Drawing.Point(23, 63);
             this.metroTile64.Name = "metroTile64";
             this.metroTile64.Size = new System.Drawing.Size(116, 78);

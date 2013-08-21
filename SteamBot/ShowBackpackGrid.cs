@@ -426,6 +426,7 @@ namespace MistClient
         private void metroTile_MouseLeave(object sender, EventArgs e)
         {
             var tile = (MetroTile)sender;
+            if (tile.Tag == null) return;
             var bmp = tile.TileImage;
             if (bmp.Size == new Size(116, 78) && !((TileTag)tile.Tag).Selected)
             {
@@ -436,6 +437,7 @@ namespace MistClient
         private void metroTile_Click(object sender, EventArgs e)
         {
             var tile = (MetroTile)sender;
+            if (tile.Tag == null) return;
             var tag = (TileTag) tile.Tag;
             tag.Selected = !tag.Selected;
             if (!tag.Selected) return;
@@ -460,15 +462,6 @@ namespace MistClient
             var item = tag.Item;
             if (item == null) return;
             var schemaitem = Trade.CurrentSchema.GetItem(item.Defindex);
-            var name = string.IsNullOrWhiteSpace(item.CustomName)
-                           ? schemaitem.ItemName
-                           : string.Format("\"{0}\" ({1})", item.CustomName, schemaitem.ItemName);
-            var type = schemaitem.ItemTypeName;
-            var desc = string.IsNullOrWhiteSpace(item.CustomDescription)
-                           ? schemaitem.ItemDescription
-                           : string.Format("\"{0}\" ({1})", item.CustomDescription, schemaitem.ItemDescription);
-            //var textarea = ttItem.RtbPCtrl;
-            
         }
 
         public class TileTag
