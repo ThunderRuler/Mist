@@ -595,7 +595,28 @@ namespace SteamBot
                 {
                     if (Bot.CurrentTrade == null)
                         return;
+                    if (Trade.MyInventory == null)
+                    {
+                        Bot.log.Error("Trade inventory is null!");
+                        return;
+                    }
+                    if (Trade.MyInventory.Items == null)
+                    {
+                        Bot.log.Error("Trade inventory item list is null!");
+                        return;
+                    }
                     Inventory.Item[] inventory = Trade.MyInventory.Items;
+                    Bot.log.Debug("Adding items to trade inventory list.");
+                    if (Trade.CurrentItemsGame == null)
+                    {
+                        Bot.log.Error("ItemsGame is null!");
+                        return;
+                    }
+                    if (Trade.CurrentSchema == null)
+                    {
+                        Bot.log.Error("Schema is null!");
+                        return;
+                    }
                     foreach (Inventory.Item item in inventory)
                     {
                         if (!item.IsNotTradeable)
