@@ -42,7 +42,7 @@ namespace MistClient
                 File.Delete("Update.zip");
             }
             // the URL to download the file from
-            string sUrlToReadFileFrom = "https://dl.dropbox.com/u/10793087/Mist_latest.zip";
+            string sUrlToReadFileFrom = "https://dl.dropboxusercontent.com/u/7557397/Mist_latest.zip";
             // the path to write the file to
             string sFilePathToWriteFileTo = "Update.zip";
             // first, we need to get the exact size (in bytes) of the file we are downloading
@@ -106,7 +106,6 @@ namespace MistClient
                     streamRemote.Close();
                 }
             }
-            Util.HTTPRequest("http://www.thectscommunity.com/dev/tracker.php");
             if (!File.Exists("Update.zip"))
             {
                 log.Error("[UPDATER] The file has failed to download.");

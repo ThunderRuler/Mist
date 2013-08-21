@@ -67,7 +67,7 @@
             this.label_newver.AutoSize = true;
             this.label_newver.Location = new System.Drawing.Point(23, 85);
             this.label_newver.Name = "label_newver";
-            this.label_newver.Size = new System.Drawing.Size(240, 38);
+            this.label_newver.Size = new System.Drawing.Size(242, 38);
             this.label_newver.Style = MetroFramework.MetroColorStyle.Blue;
             this.label_newver.StyleManager = this.metroStyleManager1;
             this.label_newver.TabIndex = 10;
@@ -79,12 +79,13 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(23, 123);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(238, 38);
+            this.metroLabel2.Size = new System.Drawing.Size(237, 38);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroLabel2.StyleManager = this.metroStyleManager1;
             this.metroLabel2.TabIndex = 11;
             this.metroLabel2.Text = "For major releases (X.0.0), you can also\r\ndownload it manually from";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabel2.Visible = false;
             // 
             // metroLink1
             // 
@@ -99,6 +100,7 @@
             this.metroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroLink1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLink1.UseStyleColors = true;
+            this.metroLink1.Visible = false;
             this.metroLink1.Click += new System.EventHandler(this.linkLabel1_LinkClicked);
             this.metroLink1.MouseHover += new System.EventHandler(this.linkLabel1_MouseHover);
             // 
@@ -172,7 +174,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.None;
             this.ClientSize = new System.Drawing.Size(407, 494);
             this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.button_install);

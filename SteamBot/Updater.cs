@@ -25,7 +25,6 @@ namespace MistClient
             label_newver.Text = "Mist v" + newVer + " is available (you have v" + Friends.mist_ver + ").\nWould you like to download it now?";
             this.newVer = newVer;
             this.log = log;
-            changelog = changelog.Replace("//", "\r\n");
             this.text_changelog.Text = changelog;
             Util.LoadTheme(metroStyleManager1);
         }

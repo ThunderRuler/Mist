@@ -37,6 +37,7 @@ namespace MistClient
             {
                 pictureBox1.Image = MistClient.Properties.Resources.mist;
             }
+            updatechecker.RunWorkerAsync();
             if (Properties.Settings.Default.Username != "")
                 text_username.Text = Properties.Settings.Default.Username;
             if (Properties.Settings.Default.apiKey != "")
@@ -192,29 +193,31 @@ namespace MistClient
 
         private void updatechecker_DoWork(object sender, DoWorkEventArgs e)
         {
-            string url = "http://www.thectscommunity.com/dev/update_check.php";
+            string url = "http://deathsnacks.tk/dota2/mist_update.txt";
             string response = Util.HTTPRequest(url);
             if (response != "")
             {
-                string latestVer = Util.ParseBetween(response, "<version>", "</version>");
+                var strings = response.Split('\n');
+                if (strings.Length < 2) return;
+                string latestVer = strings[0];
                 if (Properties.Settings.Default.SkipUpdate && Properties.Settings.Default.SkippedVersion != latestVer.Trim())
                 {
                     Properties.Settings.Default.SkipUpdate = false;
                     Properties.Settings.Default.Save();
-                    string[] changelog = Util.GetStringInBetween("<changelog>", "</changelog>", response, false, false);
-                    if (!string.IsNullOrEmpty(changelog[0]))
+                    string[] changelog = strings.Skip(1).ToArray();
+                    if (!string.IsNullOrEmpty(string.Join("\r\n", changelog)))
                     {
-                        Updater updater = new Updater(latestVer, changelog[0], log);
+                        Updater updater = new Updater(latestVer, string.Join("\r\n", changelog), log);
                         updater.ShowDialog();
                         updater.Activate();
                     }
                 }
                 else if (!Properties.Settings.Default.SkipUpdate && latestVer.Trim() != Friends.mist_ver)
                 {
-                    string[] changelog = Util.GetStringInBetween("<changelog>", "</changelog>", response, false, false);
-                    if (!string.IsNullOrEmpty(changelog[0]))
+                    string[] changelog = strings.Skip(1).ToArray();
+                    if (!string.IsNullOrEmpty(string.Join("\r\n", changelog)))
                     {
-                        Updater updater = new Updater(latestVer, changelog[0], log);
+                        Updater updater = new Updater(latestVer, string.Join("\r\n", changelog), log);
                         updater.ShowDialog();
                         updater.Activate();
                     }
