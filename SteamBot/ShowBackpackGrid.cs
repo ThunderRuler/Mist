@@ -136,6 +136,7 @@ namespace MistClient
                                                             Item = invitem,
                                                             TooltipText = GetTooltipText(invitem)
                                                         };
+                                         //ttItem.SetToolTip(tile, ((TileTag)tile.Tag).TooltipText);
                                          tile.Text = GetItemName(currentItem, invitem);
                                          tile.ForeColor =
                                                  ColorTranslator.FromHtml(
@@ -431,6 +432,8 @@ namespace MistClient
                 }
             }
             tile.TileImage = bmp;
+            if (ttItem.Tag == tile) return;
+            ttItem.Tag = tile;
             ttItem.Show(tag.TooltipText, tile);
             LastPopup = DateTime.UtcNow;
         }
@@ -444,7 +447,8 @@ namespace MistClient
             {
                 tile.TileImage = getImageFromURL(((TileTag) tile.Tag).ImageUrl);
             }
-            if ((DateTime.UtcNow - LastPopup).TotalMilliseconds < 100) return;
+            //if ((DateTime.UtcNow - LastPopup).TotalMilliseconds < 1000) return;
+            if (ttItem.Tag == tile) return;
             ttItem.Hide(tile);
         }
 
@@ -496,10 +500,12 @@ namespace MistClient
             {
                 foreach (var attribute in item.Attributes)
                 {
-                    if (attribute.Defindex == 134)
+                    var attribname = Trade.CurrentSchema.GetAttributeName(attribute.Defindex,
+                        attribute.FloatValue != null ? attribute.FloatValue : 0f,
+                        attribute.Value ?? "");
+                    if (attribname != "")
                     {
-                        text += string.Format(@"<span class=""effect"">Effect: {0}</span><br>",
-                                              Trade.CurrentSchema.GetEffectName(attribute.FloatValue));
+                        text += string.Format(@"<span class=""effect"">{0}</span><br>", attribname);
                     }
                 }
             }

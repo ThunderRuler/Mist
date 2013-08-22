@@ -1,4 +1,5 @@
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
@@ -73,6 +74,9 @@ namespace SteamTrade
         [JsonProperty("originNames")]
         public ItemOrigin[] OriginNames { get; set; }
 
+        [JsonProperty("attributes")]
+        public Attribute[] Attributes { get; set; }
+
         [JsonProperty("attribute_controlled_attached_particles")]
         public Particle[] Particles { get; set; }
 
@@ -115,6 +119,79 @@ namespace SteamTrade
                 return effect.Name;
             }
             return "";
+        }
+
+        public string GetHexFromColor(float value)
+        {
+            return "#" + ((int)value).ToString("X6");
+        }
+
+        public string GetAttributeName(int defindex, float floatvalue = 0f, string value = "")
+        {
+            var name = "";
+            Attribute attrib = null;
+            foreach (var attribute in Attributes.Where(attribute => attribute.Defindex == defindex))
+            {
+                attrib = attribute;
+            }
+            if (attrib == null || attrib.Hidden) return "";
+            switch (defindex)
+            {
+                //Effect
+                case 134:
+                {
+                    name += "Effect: " + GetEffectName(floatvalue);
+                    break;
+                }
+                //Color
+                case 142:
+                {
+                    name += "Color: " + "<span style=\"color: " + GetHexFromColor(floatvalue) + ";\">" + GetHexFromColor(floatvalue)
+                        + "</span>";
+                    break;
+                }
+                //Chest series
+                case 187:
+                {
+                    name += "Chest Series #" + floatvalue;
+                    break;
+                }
+                //Item find
+                case 215:
+                {
+                    name +=
+                        string.Format(
+                            "Item Find: {0}% increase in the chance of finding items for this hero while playing with this item equipped.",
+                            floatvalue);
+                    break;
+                }
+                case 321:
+                case 322:
+                case 323:
+                case 325:
+                case 387:
+                case 390:
+                case 391:
+                case 392:
+                case 398:
+                case 399:
+                {
+                    name += attrib.DescriptionString.Replace("%s1", floatvalue.ToString());
+                    break;
+                }
+                case 404:
+                case 405:
+                {
+                    name += attrib.DescriptionString.Replace("%s1", value);
+                    break;
+                }
+                default:
+                {
+                    name += attrib.DescriptionString;
+                    break;
+                }
+            }
+            return name;
         }
 
         public class ItemOrigin
@@ -163,6 +240,43 @@ namespace SteamTrade
 
             [JsonProperty("image_url")]
             public string ImageURL { get; set; }
+
+            [JsonProperty("styles")]
+            public Style[] Styles { get; set; }
+        }
+
+        public class Style
+        {
+            [JsonProperty("name")]
+            public string Name { get; set; }
+        }
+
+        public class Attribute
+        {
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("defindex")]
+            public int Defindex { get; set; }
+
+            [JsonProperty("attribute_class")]
+            public string AttributeClass { get; set; }
+
+            [JsonProperty("description_string")]
+            public string DescriptionString { get; set; }
+
+            [JsonProperty("description_format")]
+            public string DescriptionFormat { get; set; }
+
+            [JsonProperty("effect_type")]
+            public string EffectType { get; set; }
+
+            [JsonProperty("hidden")]
+            public bool Hidden { get; set; }
+
+            [JsonProperty("stored_as_integer")]
+            public bool StoredAsInteger { get; set; }
         }
 
         public class Particle
