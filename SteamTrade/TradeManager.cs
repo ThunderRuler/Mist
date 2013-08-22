@@ -237,7 +237,7 @@ namespace SteamTrade
             // fetch our inventory from the Steam API.
             MyInventory = Inventory.FetchInventory (me.ConvertToUInt64 (), apiKey);
 
-            if (MyInventory == null)
+            if (MyInventory == null || !MyInventory.IsGood || MyInventory.Items == null)
             {
                 throw new InventoryFetchException (me);
             }
