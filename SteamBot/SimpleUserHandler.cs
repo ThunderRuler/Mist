@@ -732,44 +732,6 @@ namespace SteamBot
                 string itemValue = "";
                 string completeName = GetItemName(schemaItem, inventoryItem, out itemValue, false);
                 ulong itemID = inventoryItem.Id;
-                //string itemValue = Util.GetPrice(schemaItem.Defindex, schemaItem.ItemQuality, inventoryItem);
-                double value = 0;
-                if (itemValue.Contains("ref"))
-                {
-                    string newValue = ShowTrade.ReplaceLastOccurrence(itemValue, "ref", "");
-                    value = Convert.ToDouble(newValue);
-                }
-                else if (itemValue.Contains("key"))
-                {
-                    string newValue = ShowTrade.ReplaceLastOccurrence(itemValue, "keys", "");
-                    value = Convert.ToDouble(newValue);
-                    value = value * BackpackTF.KeyPrice;
-                }
-                else if (itemValue.Contains("bud"))
-                {
-                    string newValue = ShowTrade.ReplaceLastOccurrence(itemValue, "buds", "");
-                    value = Convert.ToDouble(newValue);
-                    value = value * BackpackTF.BudPrice;
-                }
-                ShowTrade.OtherTotalValue += value;
-                if (ShowTrade.OtherTotalValue >= BackpackTF.BudPrice * 1.33)
-                {
-                    double formatPrice = ShowTrade.OtherTotalValue / BackpackTF.BudPrice;
-                    string label = "Total Value: " + formatPrice.ToString("0.00") + " buds";
-                    ShowTrade.UpdateLabel(label);
-                }
-                else if (ShowTrade.OtherTotalValue >= BackpackTF.KeyPrice)
-                {
-                    double formatPrice = ShowTrade.OtherTotalValue / BackpackTF.KeyPrice;
-                    string label = "Total Value: " + formatPrice.ToString("0.00") + " keys";
-                    ShowTrade.UpdateLabel(label);
-                }
-                else
-                {
-                    double formatPrice = ShowTrade.OtherTotalValue;
-                    string label = "Total Value: " + formatPrice.ToString("0.00") + " ref";
-                    ShowTrade.UpdateLabel(label);
-                }
                 ListOtherOfferings.Add(completeName, itemID, itemValue);
                 ShowTrade.list_otherofferings.SetObjects(ListOtherOfferings.Get());
                 ShowTrade.itemsAdded++;
@@ -791,44 +753,6 @@ namespace SteamBot
                 string itemValue = "";
                 string completeName = GetItemName(schemaItem, inventoryItem, out itemValue, false);
                 ulong itemID = inventoryItem.Id;
-                double value = 0;
-                if (itemValue.Contains("ref"))
-                {
-                    string newValue = ShowTrade.ReplaceLastOccurrence(itemValue, "ref", "");
-                    value = Convert.ToDouble(newValue);
-                }
-                else if (itemValue.Contains("key"))
-                {
-                    string newValue = ShowTrade.ReplaceLastOccurrence(itemValue, "keys", "");
-                    value = Convert.ToDouble(newValue);
-                    value = value * BackpackTF.KeyPrice;
-                }
-                else if (itemValue.Contains("bud"))
-                {
-                    string newValue = ShowTrade.ReplaceLastOccurrence(itemValue, "buds", "");
-                    value = Convert.ToDouble(newValue);
-                    value = value * BackpackTF.BudPrice;
-                }
-                ShowTrade.OtherTotalValue -= value;
-                if (ShowTrade.OtherTotalValue >= BackpackTF.BudPrice * 1.33)
-                {
-                    double formatPrice = ShowTrade.OtherTotalValue / BackpackTF.BudPrice;
-                    string label = "Total Value: " + formatPrice.ToString("0.00") + " buds";
-                    ShowTrade.UpdateLabel(label);
-                }
-                else if (ShowTrade.OtherTotalValue >= BackpackTF.KeyPrice)
-                {
-                    double formatPrice = ShowTrade.OtherTotalValue / BackpackTF.KeyPrice;
-                    string label = "Total Value: " + formatPrice.ToString("0.00") + " keys";
-                    ShowTrade.UpdateLabel(label);
-                }
-                else
-                {
-                    double formatPrice = ShowTrade.OtherTotalValue;
-                    string label = "Total Value: " + formatPrice.ToString("0.00") + " ref";
-                    ShowTrade.UpdateLabel(label);
-                }
-                ListOtherOfferings.Remove(completeName, itemID);
                 ShowTrade.list_otherofferings.SetObjects(ListOtherOfferings.Get());
                 ShowTrade.itemsAdded--;
                 if (ShowTrade.itemsAdded <= 0)

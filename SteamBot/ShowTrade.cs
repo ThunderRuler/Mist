@@ -370,42 +370,6 @@ namespace MistClient
             try
             {
                 ulong itemID = Convert.ToUInt64(column_id.GetValue(list_inventory.SelectedItem.RowObject));
-                string itemValue = column_value.GetValue(list_inventory.SelectedItem.RowObject).ToString();
-                // Check whether in ref, keys or buds first
-                double value = 0;
-                if (itemValue.Contains("ref"))
-                {
-                    string newValue = ReplaceLastOccurrence(itemValue, "ref", "");
-                    value = Convert.ToDouble(newValue);
-                }
-                else if (itemValue.Contains("key"))
-                {
-                    string newValue = ReplaceLastOccurrence(itemValue, "keys", "");
-                    Console.WriteLine("{0}, {1}", itemValue, newValue);
-                    value = Convert.ToDouble(newValue);
-                    value = value * BackpackTF.KeyPrice;
-                }
-                else if (itemValue.Contains("bud"))
-                {
-                    string newValue = ReplaceLastOccurrence(itemValue, "buds", "");
-                    value = Convert.ToDouble(newValue);
-                    value = value * BackpackTF.BudPrice;
-                }
-                YourTotalValue += value;
-                if (YourTotalValue >= BackpackTF.BudPrice * 1.33)
-                {
-                    double formatPrice = YourTotalValue / BackpackTF.BudPrice;
-                    label_yourvalue.Text = "Total Value: " + formatPrice.ToString("0.00") + " buds";
-                }
-                else if (YourTotalValue >= BackpackTF.KeyPrice)
-                {
-                    double formatPrice = YourTotalValue / BackpackTF.KeyPrice;
-                    label_yourvalue.Text = "Total Value: " + formatPrice.ToString("0.00") + " keys";
-                }
-                else
-                {
-                    label_yourvalue.Text = "Total Value: " + YourTotalValue.ToString("0.00") + " ref";
-                }
                 if (itemID != 0)
                 {
                     try
@@ -546,41 +510,6 @@ namespace MistClient
                     {
                         var currentItem = SteamTrade.Trade.CurrentSchema.GetItem(item.Defindex);
                         var itemName = GetItemName(currentItem, item);
-                        string itemValue = Util.GetPrice(item.Defindex, currentItem.ItemQuality, item);
-                        double value = 0;
-                        if (itemValue.Contains("ref"))
-                        {
-                            string newValue = ReplaceLastOccurrence(itemValue, "ref", "");
-                            value = Convert.ToDouble(newValue);
-                        }
-                        else if (itemValue.Contains("key"))
-                        {
-                            string newValue = ReplaceLastOccurrence(itemValue, "keys", "");
-                            Console.WriteLine("{0}, {1}", itemValue, newValue);
-                            value = Convert.ToDouble(newValue);
-                            value = value * BackpackTF.KeyPrice;
-                        }
-                        else if (itemValue.Contains("bud"))
-                        {
-                            string newValue = ReplaceLastOccurrence(itemValue, "buds", "");
-                            value = Convert.ToDouble(newValue);
-                            value = value * BackpackTF.BudPrice;
-                        }
-                        YourTotalValue += value;
-                        if (YourTotalValue >= BackpackTF.BudPrice * 1.33)
-                        {
-                            double formatPrice = YourTotalValue / BackpackTF.BudPrice;
-                            label_yourvalue.Text = "Total Value: " + formatPrice.ToString("0.00") + " buds";
-                        }
-                        else if (YourTotalValue >= BackpackTF.KeyPrice)
-                        {
-                            double formatPrice = YourTotalValue / BackpackTF.KeyPrice;
-                            label_yourvalue.Text = "Total Value: " + formatPrice.ToString("0.00") + " keys";
-                        }
-                        else
-                        {
-                            label_yourvalue.Text = "Total Value: " + YourTotalValue.ToString("0.00") + " ref";
-                        }
                         bot.log.Info("Adding " + itemName + ", " + item.Id);
                         try
                         {
@@ -760,41 +689,6 @@ namespace MistClient
         private void list_userofferings_ItemActivate(object sender, EventArgs e)
         {
             ulong itemID = Convert.ToUInt64(column_uo_id.GetValue(list_userofferings.SelectedItem.RowObject));
-            string itemValue = column_uo_value.GetValue(list_userofferings.SelectedItem.RowObject).ToString();
-            double value = 0;
-            if (itemValue.Contains("ref"))
-            {
-                string newValue = ReplaceLastOccurrence(itemValue, "ref", "");
-                value = Convert.ToDouble(newValue);
-            }
-            else if (itemValue.Contains("key"))
-            {
-                string newValue = ReplaceLastOccurrence(itemValue, "keys", "");
-                value = Convert.ToDouble(newValue);
-                value = value * BackpackTF.KeyPrice;
-            }
-            else if (itemValue.Contains("bud"))
-            {
-                string newValue = ReplaceLastOccurrence(itemValue, "buds", "");
-                value = Convert.ToDouble(newValue);
-                value = value * BackpackTF.BudPrice;
-            }
-            YourTotalValue -= value;
-            Console.WriteLine(YourTotalValue);
-            if (YourTotalValue >= BackpackTF.BudPrice * 1.33)
-            {
-                double formatPrice = YourTotalValue / BackpackTF.BudPrice;
-                label_yourvalue.Text = "Total Value: " + formatPrice.ToString("0.00") + " buds";
-            }
-            else if (YourTotalValue >= BackpackTF.KeyPrice)
-            {
-                double formatPrice = YourTotalValue / BackpackTF.KeyPrice;
-                label_yourvalue.Text = "Total Value: " + formatPrice.ToString("0.00") + " keys";
-            }
-            else
-            {
-                label_yourvalue.Text = "Total Value: " + YourTotalValue.ToString("0.00") + " ref";
-            }
             if (itemID != 0)
             {
                 try
