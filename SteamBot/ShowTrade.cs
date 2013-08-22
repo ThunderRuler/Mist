@@ -448,7 +448,7 @@ namespace MistClient
                                 text_log.ScrollToCaret();
                                 ResetTradeStatus();
                                 list_inventory.SelectedItem.Remove();
-                                ListUserOfferings.Add(itemName, itemID, itemValue);
+                                ListUserOfferings.Add(itemName, itemID);
                                 ListInventory.Remove(itemName, itemID);
                                 list_userofferings.SetObjects(ListUserOfferings.Get());
                                 //list_inventory.SetObjects(ListInventory.Get());
@@ -574,7 +574,7 @@ namespace MistClient
                             text_log.AppendText(" [" + DateTime.Now.ToLongTimeString() + "]\r\n");
                             text_log.ScrollToCaret();
                             ResetTradeStatus();
-                            ListUserOfferings.Add(itemName, item.Id, itemValue);
+                            ListUserOfferings.Add(itemName, item.Id);
                             ListInventory.Remove(itemName, item.Id);
                             list_userofferings.SetObjects(ListUserOfferings.Get());
                             list_inventory.SetObjects(ListInventory.Get());
@@ -771,7 +771,7 @@ namespace MistClient
                             text_log.ScrollToCaret();
                             ResetTradeStatus();
                             list_userofferings.SelectedItem.Remove();
-                            ListInventory.Add(itemName, itemID, img, itemValue);
+                            ListInventory.Add(itemName, itemID, img);
                             ListUserOfferings.Remove(itemName, itemID);
                             //list_inventory.SetObjects(ListInventory.Get());
                             list_userofferings.SetObjects(ListUserOfferings.Get());
