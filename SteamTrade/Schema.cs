@@ -74,7 +74,16 @@ namespace SteamTrade
         public ItemOrigin[] OriginNames { get; set; }
 
         [JsonProperty("attribute_controlled_attached_particles")]
-        public Attribute[] Attributes { get; set; }
+        public Particle[] Particles { get; set; }
+
+        [JsonProperty("item_levels")]
+        public ItemLevel[] ItemLevels { get; set; }
+
+        [JsonProperty("kill_eater_ranks")]
+        public KillEaterRank[] KillEaterRanks { get; set; }
+
+        [JsonProperty("kill_eater_score_types")]
+        public KillEaterScoreType[] KillEaterScoreTypes { get; set; }
 
         /// <summary>
         /// Find an SchemaItem by it's defindex.
@@ -101,7 +110,7 @@ namespace SteamTrade
 
         public string GetEffectName(float value)
         {
-            foreach (var effect in Attributes.Where(effect => effect.Id == value))
+            foreach (var effect in Particles.Where(effect => effect.Id == value))
             {
                 return effect.Name;
             }
@@ -156,13 +165,59 @@ namespace SteamTrade
             public string ImageURL { get; set; }
         }
 
-        public class Attribute
+        public class Particle
         {
             [JsonProperty("id")]
             public float Id;
 
             [JsonProperty("name")]
             public string Name;
+        }
+
+        public class ItemLevel
+        {
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("levels")]
+            public LevelInfo[] Levels { get; set; }
+        }
+
+        public class KillEaterRank
+        {
+
+            [JsonProperty("level")]
+            public int Level { get; set; }
+
+            [JsonProperty("required_score")]
+            public int RequiredScore { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+        }
+
+        public class KillEaterScoreType
+        {
+
+            [JsonProperty("type")]
+            public int Type { get; set; }
+
+            [JsonProperty("type_name")]
+            public string TypeName { get; set; }
+        }
+
+        public class LevelInfo
+        {
+
+            [JsonProperty("level")]
+            public int Level { get; set; }
+
+            [JsonProperty("required_score")]
+            public int RequiredScore { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
         }
 
         protected class SchemaResult
