@@ -351,8 +351,9 @@
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Release xcopy /y "$(TargetPath)" "$(TargetDir)package\Mist.exe"
+if $(ConfigurationName) == Release xcopy /y "$(TargetDir)Mist.exe.config" "$(TargetDir)package\Mist.exe.config"
+if $(ConfigurationName) == Release xcopy /y "$(TargetDir)*.dll" "$(TargetDir)package\lib"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>xcopy /y $(SolutionDir)Lib\Ionic.Zip.Reduced.dll $(SolutionDir)Bin\$(ConfigurationName)\lib\</PreBuildEvent>
