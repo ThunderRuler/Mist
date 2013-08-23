@@ -592,14 +592,14 @@ namespace MistClient
                 return;
             }
         }
-
+         
         string GetItemName(SteamTrade.Schema.Item schemaItem, SteamTrade.Inventory.Item inventoryItem, bool id = false)
         {
             var currentItem = SteamTrade.Trade.CurrentSchema.GetItem(schemaItem.Defindex);
             string name = "";
             var type = Convert.ToInt32(inventoryItem.Quality.ToString());
-            if (QualityToName(type) != "Unique")
-                name += QualityToName(type) + " ";
+            if (Util.QualityToName(type) != "Unique")
+                name += Util.QualityToName(type) + " ";
             name += currentItem.ItemName;
             name += " (" + SteamTrade.Trade.CurrentItemsGame.GetItemRarity(schemaItem.Defindex.ToString()) + ")";
 
@@ -649,41 +649,6 @@ namespace MistClient
             if (id)
                 name += " :" + inventoryItem.Id;
             return name;
-        }
-
-        string QualityToName(int quality)
-        {
-            switch (quality)
-            {
-                case 1:
-                    return "Genuine";
-                case 2:
-                    return "Vintage";
-                case 3:
-                    return "Unusual";
-                case 4:
-                    return "Unique";
-                case 5:
-                    return "Community";
-                case 6:
-                    return "Valve";
-                case 7:
-                    return "Self-Made";
-                case 8:
-                    return "Customized";
-                case 9:
-                    return "Strange";
-                case 10:
-                    return "Completed";
-                case 11:
-                    return "Haunted";
-                case 12:
-                    return "Tournament";
-                case 13:
-                    return "Favored";
-                default:
-                    return "";
-            }
         }
 
         private void list_userofferings_ItemActivate(object sender, EventArgs e)

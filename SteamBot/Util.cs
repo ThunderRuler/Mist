@@ -9,7 +9,7 @@ using MetroFramework.Forms;
 
 namespace MistClient
 {
-    class Util
+    public class Util
     {
         public static void LoadTheme(MetroFramework.Components.MetroStyleManager MetroStyleManager)
         {
@@ -202,6 +202,41 @@ namespace MistClient
             catch
             {
                 return "Unknown";
+            }
+        }
+
+        public static string QualityToName(int quality)
+        {
+            switch (quality)
+            {
+                case 1:
+                    return "Genuine";
+                case 2:
+                    return "Vintage";
+                case 3:
+                    return "Unusual";
+                case 4:
+                    return "Unique";
+                case 5:
+                    return "Community";
+                case 6:
+                    return "Valve";
+                case 7:
+                    return "Self-Made";
+                case 8:
+                    return "Customized";
+                case 9:
+                    return "Strange";
+                case 10:
+                    return "Completed";
+                case 11:
+                    return "Haunted";
+                case 12:
+                    return "Tournament";
+                case 13:
+                    return "Favored";
+                default:
+                    return "";
             }
         }
     }

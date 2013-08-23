@@ -76,11 +76,11 @@ namespace MistClient
                 string name = "";
                 string price = null;
                 var type = Convert.ToInt32(item.Quality.ToString());
-                if (QualityToName(type) != "Unique")
-                    name += QualityToName(type) + " ";
+                if (Util.QualityToName(type) != "Unique")
+                    name += Util.QualityToName(type) + " ";
                 name += currentItem.ItemName;
                 name += " (" + SteamTrade.Trade.CurrentItemsGame.GetItemRarity(item.Defindex.ToString()) + ")";
-                if (QualityToName(type) == "Unusual")
+                if (Util.QualityToName(type) == "Unusual")
                 {
                     isUnusual = true;
                     try
@@ -166,11 +166,11 @@ namespace MistClient
             var currentItem = Trade.CurrentSchema.GetItem(schemaItem.Defindex);
             string name = "";
             var type = Convert.ToInt32(inventoryItem.Quality.ToString());
-            if (QualityToName(type) != "Unique")
-                name += QualityToName(type) + " ";
+            if (Util.QualityToName(type) != "Unique")
+                name += Util.QualityToName(type) + " ";
             name += currentItem.ItemName;
             name += " (" + SteamTrade.Trade.CurrentItemsGame.GetItemRarity(schemaItem.Defindex.ToString()) + ")";
-            if (QualityToName(type) == "Unusual")
+            if (Util.QualityToName(type) == "Unusual")
             {
                 try
                 {
@@ -239,41 +239,6 @@ namespace MistClient
             if (id)
                 name += " :" + inventoryItem.Id;
             return name;
-        }
-
-        string QualityToName(int quality)
-        {
-            switch (quality)
-            {
-                case 1:
-                    return "Genuine";
-                case 2:
-                    return "Vintage";
-                case 3:
-                    return "Unusual";
-                case 4:
-                    return "Unique";
-                case 5:
-                    return "Community";
-                case 6:
-                    return "Valve";
-                case 7:
-                    return "Self-Made";
-                case 8:
-                    return "Customized";
-                case 9:
-                    return "Strange";
-                case 10:
-                    return "Completed";
-                case 11:
-                    return "Haunted";
-                case 12:
-                    return "Tournament";
-                case 13:
-                    return "Favored";
-                default:
-                    return "";
-            }
         }
 
         public static string EffectToName(float effect)

@@ -625,12 +625,12 @@ namespace SteamBot
                             string name = "";
                             string itemValue = "";
                             var type = Convert.ToInt32(item.Quality.ToString());
-                            if (QualityToName(type) != "Unique")
-                                name += QualityToName(type) + " ";
+                            if (Util.QualityToName(type) != "Unique")
+                                name += Util.QualityToName(type) + " ";
                             name += currentItem.ItemName;
                             name += " (" + SteamTrade.Trade.CurrentItemsGame.GetItemRarity(item.Defindex.ToString()) +
                                     ")";
-                            if (QualityToName(type) == "Unusual")
+                            if (Util.QualityToName(type) == "Unusual")
                             {
                                 try
                                 {
@@ -774,11 +774,11 @@ namespace SteamBot
             var currentItem = Trade.CurrentSchema.GetItem(schemaItem.Defindex);
             string name = "";
             var type = Convert.ToInt32(inventoryItem.Quality.ToString());
-            if (QualityToName(type) != "Unique")
-                name += QualityToName(type) + " ";            
+            if (Util.QualityToName(type) != "Unique")
+                name += Util.QualityToName(type) + " ";            
             name += currentItem.ItemName;
             name += " (" + SteamTrade.Trade.CurrentItemsGame.GetItemRarity(schemaItem.Defindex.ToString()) + ")";
-            if (QualityToName(type) == "Unusual")
+            if (Util.QualityToName(type) == "Unusual")
             {
                 isUnusual = true;
                 try
