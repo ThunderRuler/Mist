@@ -253,6 +253,7 @@ namespace MistClient
         {
             if (pageNum == 1) return;
             pageNum--;
+            metroProgressSpinner1.Size = new Size(970, 666);
             ClearBP();
             try
             {
@@ -273,6 +274,7 @@ namespace MistClient
         {
             if (pageNum == maxPage) return;
             pageNum++;
+            metroProgressSpinner1.Size = new Size(970, 666);
             ClearBP();
             try
             {
@@ -291,6 +293,7 @@ namespace MistClient
 
         private void chkMisplaced_CheckedChanged(object sender, EventArgs e)
         {
+            metroProgressSpinner1.Size = new Size(970, 666);
             ClearBP(true);
             try
             {
@@ -435,6 +438,7 @@ namespace MistClient
 
         private void btnTakeAll_Click(object sender, EventArgs e)
         {
+            metroProgressSpinner1.Size = new Size(970, 666);
             var dict = new Dictionary<uint, uint>();
             foreach (var item in MisplacedItemList)
             {
