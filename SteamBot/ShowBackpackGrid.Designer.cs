@@ -100,6 +100,8 @@
             this.metroTile64 = new MetroFramework.Controls.MetroTile();
             this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
             this.chkMisplaced = new MetroFramework.Controls.MetroCheckBox();
+            this.chkManage = new MetroFramework.Controls.MetroCheckBox();
+            this.btnTakeAll = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1512,12 +1514,42 @@
             this.chkMisplaced.UseVisualStyleBackColor = true;
             this.chkMisplaced.CheckedChanged += new System.EventHandler(this.chkMisplaced_CheckedChanged);
             // 
+            // chkManage
+            // 
+            this.chkManage.AutoSize = true;
+            this.chkManage.Location = new System.Drawing.Point(699, 743);
+            this.chkManage.Name = "chkManage";
+            this.chkManage.Size = new System.Drawing.Size(153, 15);
+            this.chkManage.Style = MetroFramework.MetroColorStyle.Blue;
+            this.chkManage.StyleManager = this.metroStyleManager1;
+            this.chkManage.TabIndex = 133;
+            this.chkManage.Text = "Manage Inventory Mode";
+            this.chkManage.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.chkManage.UseVisualStyleBackColor = true;
+            this.chkManage.Visible = false;
+            this.chkManage.CheckedChanged += new System.EventHandler(this.chkManage_CheckedChanged);
+            // 
+            // btnTakeAll
+            // 
+            this.btnTakeAll.Location = new System.Drawing.Point(116, 742);
+            this.btnTakeAll.Name = "btnTakeAll";
+            this.btnTakeAll.Size = new System.Drawing.Size(145, 23);
+            this.btnTakeAll.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnTakeAll.StyleManager = this.metroStyleManager1;
+            this.btnTakeAll.TabIndex = 134;
+            this.btnTakeAll.Text = "Take All Misplaced Items";
+            this.btnTakeAll.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnTakeAll.Visible = false;
+            this.btnTakeAll.Click += new System.EventHandler(this.btnTakeAll_Click);
+            // 
             // ShowBackpackGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1018, 781);
+            this.Controls.Add(this.btnTakeAll);
+            this.Controls.Add(this.chkManage);
             this.Controls.Add(this.metroProgressSpinner1);
             this.Controls.Add(this.chkMisplaced);
             this.Controls.Add(this.lnkPage);
@@ -1672,5 +1704,7 @@
         private MetroFramework.Controls.MetroTile metroTile16;
         private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner1;
         private MetroFramework.Controls.MetroCheckBox chkMisplaced;
+        private MetroFramework.Controls.MetroCheckBox chkManage;
+        private MetroFramework.Controls.MetroButton btnTakeAll;
     }
 }

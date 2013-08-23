@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MistClient;
 using BrightIdeasSoftware;
 using SteamKit2;
+using SteamKit2.GC.Internal;
 using SteamTrade;
 using System.Media;
 using ToastNotifications;
@@ -791,9 +792,14 @@ namespace SteamBot
                 game_id = new GameID(appId),
                 game_extra_info = "Mist - Portable Steam Client",
             };
-
             playMsg.Body.games_played.Add(game);
             SteamClient.Send(playMsg);
+            if (appId == 570)
+            {
+                Thread.Sleep(1000);
+                var helloMsg = new ClientGCMsgProtobuf<CMsgClientHello>(4006);
+                SteamGC.Send(helloMsg, 570);
+            }
         }
 
         public void DisconnectFromGC()

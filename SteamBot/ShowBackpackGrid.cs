@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
+using MistClient.Dota2GC;
 using SteamBot;
 using SteamKit2;
 using SteamTrade;
@@ -31,12 +32,18 @@ namespace MistClient
         private Dictionary<string, Bitmap> ImageCache = new Dictionary<string, Bitmap>();
         private HtmlToolTip ttItem = new HtmlToolTip();
         private int maxPage;
+        private bool Self;
 
         public ShowBackpackGrid(Bot bot, SteamID SID)
         {
             InitializeComponent();
             this.bot = bot;
             this.SID = SID;
+            if (SID == bot.SteamUser.SteamID)
+            {
+                Self = true;
+                chkManage.Visible = true;
+            }
             this.Text = bot.SteamFriends.GetFriendPersonaName(SID) + "'s Backpack";
             Util.LoadTheme(metroStyleManager1);
             lnkPage.Text = pageNum.ToString();
@@ -69,12 +76,13 @@ namespace MistClient
             Invoke((Action)(() =>
             {
                 loadBP = new Thread(LoadBP);
-                loadBP.Start();
+                loadBP.Start(false);
             }));
         }
 
-        void LoadBP()
+        void LoadBP(object misplacedobj)
         {
+            var misplaced = (bool) misplacedobj;
             ListBackpack.Clear();
             bot.GetOtherInventory(SID);
             Inventory.Item[] inventory = bot.OtherInventory.Items;
@@ -95,7 +103,7 @@ namespace MistClient
                     MisplacedItemList.Add(item);
             }
             maxPage = (int)Math.Ceiling(((double)bot.OtherInventory.NumSlots / 64));
-            UpdateBP(false);
+            UpdateBP(misplaced);
         }
 
         void UpdateBP(object misplacedobj)
@@ -155,11 +163,16 @@ namespace MistClient
                                  }));
         }
 
-        void ClearBP()
+        private void ClearBP(bool clearlist = false)
         {
+            if (clearlist)
+            {
+                ItemList.Clear();
+                MisplacedItemList.Clear();
+            }
             for (var i = 1; i <= 64; i++)
             {
-                var tile = (MetroTile)Controls.Find("metroTile" + i, true)[0];
+                var tile = (MetroTile) Controls.Find("metroTile" + i, true)[0];
                 tile.TileImage = new Bitmap(1, 1);
                 tile.UseTileImage = false;
                 tile.CustomForeColor = false;
@@ -278,13 +291,13 @@ namespace MistClient
 
         private void chkMisplaced_CheckedChanged(object sender, EventArgs e)
         {
-            ClearBP();
+            ClearBP(true);
             try
             {
                 loadBP.Abort();
                 Invoke((Action)(() =>
                 {
-                    loadBP = new Thread(UpdateBP);
+                    loadBP = new Thread(LoadBP);
                     loadBP.Start(chkMisplaced.Checked);
                 }));
             }
@@ -409,6 +422,47 @@ namespace MistClient
             public Inventory.Item Item;
             public bool Selected;
             public string TooltipText;
+        }
+
+        private void chkManage_CheckedChanged(object sender, EventArgs e)
+        {
+            btnTakeAll.Visible = chkManage.Checked;
+            if (chkManage.Checked)
+                bot.ConnectToGC(570);
+            else
+                bot.DisconnectFromGC();
+        }
+
+        private void btnTakeAll_Click(object sender, EventArgs e)
+        {
+            var dict = new Dictionary<uint, uint>();
+            foreach (var item in MisplacedItemList)
+            {
+                if (dict.ContainsKey((uint)item.Id)) continue;
+                var pos = 1;
+                while (true)
+                {
+                    if (!ItemList.ContainsKey(pos) && !dict.ContainsValue((uint)pos))
+                        break;
+                    pos++;
+                }
+                dict.Add((uint)item.Id, (uint)pos);
+            }
+            Items.SetItemPositions(bot, dict);
+            ClearBP();
+            try
+            {
+                loadBP.Abort();
+                Invoke((Action)(() =>
+                {
+                    loadBP = new Thread(LoadBP);
+                    loadBP.Start(chkMisplaced.Checked);
+                }));
+            }
+            catch (Exception ex)
+            {
+                Bot.Print(ex);
+            }
         }
     }
 }

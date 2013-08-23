@@ -106,6 +106,9 @@
     <Compile Include="ChatTab.Designer.cs">
       <DependentUpon>ChatTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dota2GC\Items.cs" />
+    <Compile Include="Dota2GC\MsgDelete.cs" />
+    <Compile Include="Dota2GC\MsgSetItemPosition.cs" />
     <Compile Include="ShowBackpackGrid.cs">
       <SubType>Form</SubType>
     </Compile>
