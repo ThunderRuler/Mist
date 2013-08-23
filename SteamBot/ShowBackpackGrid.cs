@@ -177,6 +177,7 @@ namespace MistClient
                 tile.UseTileImage = false;
                 tile.CustomForeColor = false;
                 tile.Text = "";
+                tile.Tag = null;
             }
         }
 
