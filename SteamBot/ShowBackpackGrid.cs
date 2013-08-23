@@ -30,7 +30,7 @@ namespace MistClient
         private int pageNum = 1;
         private Dictionary<string, Bitmap> ImageCache = new Dictionary<string, Bitmap>();
         private HtmlToolTip ttItem = new HtmlToolTip();
-        private DateTime LastPopup = DateTime.UtcNow;
+        private int maxPage;
 
         public ShowBackpackGrid(Bot bot, SteamID SID)
         {
@@ -94,6 +94,7 @@ namespace MistClient
                 if (item.ItemPosition == -1)
                     MisplacedItemList.Add(item);
             }
+            maxPage = (int)Math.Ceiling(((double)bot.OtherInventory.NumSlots / 64));
             UpdateBP(false);
         }
 
@@ -257,7 +258,7 @@ namespace MistClient
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (pageNum == 10) return;
+            if (pageNum == maxPage) return;
             pageNum++;
             ClearBP();
             try
@@ -311,7 +312,6 @@ namespace MistClient
             if (ttItem.Tag == tile) return;
             ttItem.Tag = tile;
             ttItem.Show(tag.TooltipText, tile);
-            LastPopup = DateTime.UtcNow;
         }
 
         private void metroTile_MouseLeave(object sender, EventArgs e)
