@@ -394,6 +394,11 @@ namespace MistClient
                     }
                 }
             }
+            if (item.Style != null)
+            {
+                text += string.Format(@"<span class=""effect"">Style: {0}</span><br>",
+                    Trade.CurrentSchema.GetStyle(item.Defindex, (int)item.Style));
+            }
             text += string.Format(@"<span class=""description"">{0}</span>", desc);
             return text;
         }

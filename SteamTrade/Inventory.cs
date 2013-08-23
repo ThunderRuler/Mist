@@ -135,6 +135,9 @@ namespace SteamTrade
             [JsonProperty("inventory")]
             public uint InventoryToken { get; set; }
 
+            [JsonProperty("style")]
+            public int? Style { get; set; }
+
             public short ItemPosition
             {
                 get { return InBackpack ? (short) ((InventoryToken << 16) >> 16) : (short) -1; }

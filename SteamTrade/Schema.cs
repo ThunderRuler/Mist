@@ -132,6 +132,12 @@ namespace SteamTrade
             return attributes.FirstOrDefault(x => x.Defindex == defindex);
         }
 
+        public string GetStyle(int itemindex, int style)
+        {
+            var item = GetItem(itemindex);
+            return item.Styles[style].Name;
+        }
+
         public string GetAttributeName(int defindex, Inventory.ItemAttribute[] attributes, float floatvalue = 0f, string value = "")
         {
             var name = "";
