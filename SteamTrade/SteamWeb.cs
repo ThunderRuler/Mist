@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Collections.Specialized;
 using System.Net;
@@ -16,9 +17,28 @@ namespace SteamTrade
     {
         public static string Fetch (string url, string method, NameValueCollection data = null, CookieContainer cookies = null, bool ajax = true)
         {
-            HttpWebResponse response = Request (url, method, data, cookies, ajax);
-            StreamReader reader = new StreamReader (response.GetResponseStream ());
-            return reader.ReadToEnd ();
+            try
+            {
+                HttpWebResponse response = Request (url, method, data, cookies, ajax);
+                StreamReader reader = new StreamReader (response.GetResponseStream ());
+                return reader.ReadToEnd ();
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine("[SteamWeb] Fetch had an exception: {0}", e);
+                //Fallback to WebClient.
+                if (cookies == null)
+                {
+                    using (var wc = new WebClient {Proxy = null})
+                    {
+                        if (method == "GET")
+                            return wc.DownloadString(url);
+                        if (method == "POST" && data != null)
+                            return Encoding.UTF8.GetString(wc.UploadValues(url, data));
+                    }
+                }
+                throw e;
+            }
         }
 
         public static HttpWebResponse Request (string url, string method, NameValueCollection data = null, CookieContainer cookies = null, bool ajax = true)
