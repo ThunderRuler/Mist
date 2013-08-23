@@ -385,7 +385,7 @@ namespace MistClient
             {
                 foreach (var attribute in item.Attributes)
                 {
-                    var attribname = Trade.CurrentSchema.GetAttributeName(attribute.Defindex,
+                    var attribname = Trade.CurrentSchema.GetAttributeName(attribute.Defindex, item.Attributes,
                         attribute.FloatValue != null ? attribute.FloatValue : 0f,
                         attribute.Value ?? "");
                     if (attribname != "")

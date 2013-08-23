@@ -2,6 +2,7 @@ using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 using System.Net;
 using System.IO;
@@ -126,7 +127,12 @@ namespace SteamTrade
             return "#" + ((int)value).ToString("X6");
         }
 
-        public string GetAttributeName(int defindex, float floatvalue = 0f, string value = "")
+        public Inventory.ItemAttribute GetAttribute(Inventory.ItemAttribute[] attributes, int defindex)
+        {
+            return attributes.FirstOrDefault(x => x.Defindex == defindex);
+        }
+
+        public string GetAttributeName(int defindex, Inventory.ItemAttribute[] attributes, float floatvalue = 0f, string value = "")
         {
             var name = "";
             Attribute attrib = null;
@@ -134,7 +140,7 @@ namespace SteamTrade
             {
                 attrib = attribute;
             }
-            if (attrib == null || attrib.Hidden) return "";
+            if (attrib == null || (attrib.Hidden && attrib.Defindex != 214)) return "";
             switch (defindex)
             {
                 //Effect
@@ -183,6 +189,35 @@ namespace SteamTrade
                 case 405:
                 {
                     name += attrib.DescriptionString.Replace("%s1", value);
+                    break;
+                }
+                //Kill eater score
+                case 214:
+                {
+                    var typeattrib = GetAttribute(attributes, 292);
+                    foreach (var type in KillEaterScoreTypes)
+                    {
+                        if (type.Type == typeattrib.FloatValue)
+                        {
+                            name += type.TypeName;
+                            name += ": " + value;
+                            break;
+                        }
+                    }
+                    break;
+                }
+                case 294:
+                {
+                    var typeattrib = GetAttribute(attributes, 293);
+                    foreach (var type in KillEaterScoreTypes)
+                    {
+                        if (type.Type == typeattrib.FloatValue)
+                        {
+                            name += type.TypeName;
+                            name += ": " + value;
+                            break;
+                        }
+                    }
                     break;
                 }
                 default:
