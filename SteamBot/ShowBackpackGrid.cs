@@ -54,6 +54,7 @@ namespace MistClient
 }
 .name {
     Font: 17pt Tahoma;
+    color: #fff;
 }
 .type {
     color: #b0c0d0;
@@ -360,18 +361,26 @@ namespace MistClient
         {
             var text = "<div align=\"center\">";
             var schemaitem = Trade.CurrentSchema.GetItem(item.Defindex);
+            var itemname = (Util.QualityToName(int.Parse(item.Quality)) == "" ||
+                Util.QualityToName(int.Parse(item.Quality)) == "Unique"
+                ? ""
+                : Util.QualityToName(int.Parse(item.Quality)) + " ")
+                           + schemaitem.ItemName;
             var name = string.IsNullOrWhiteSpace(item.CustomName)
-                           ? schemaitem.ItemName
-                           : string.Format("\"{0}\" ({1})", item.CustomName, schemaitem.ItemName);
-            var type = "";
-            type += schemaitem.ItemTypeName;
+                           ? itemname
+                           : string.Format("\"{0}\" ({1})", item.CustomName, itemname);
+            var type = (Util.QualityToName(int.Parse(item.Quality)) == "" ||
+                Util.QualityToName(int.Parse(item.Quality)) == "Unique"
+                ? ""
+                : Util.QualityToName(int.Parse(item.Quality)) + " ") +
+                       (Trade.CurrentItemsGame.GetItemRarity(item.Defindex.ToString())) + " " + schemaitem.ItemTypeName;
             var desc = string.IsNullOrWhiteSpace(item.CustomDescription)
                            ? schemaitem.ItemDescription
                            : string.Format("\"{0}\" ({1})", item.CustomDescription, schemaitem.ItemDescription);
             text += string.Format(@"<span class=""name"" style=""color:{0}"">{1}</span><br>",
-                                  Trade.CurrentItemsGame.GetRarityColor(
-                                      Trade.CurrentItemsGame.GetItemRarity(item.Defindex.ToString())), name);
-            text += string.Format(@"<span class=""type"">{0}</span><br>", type);
+                Util.GetQualityColor(item.Quality), name);
+            text += string.Format(@"<span class=""type"" style=""color:{0}"">{1}</span><br>",
+                Trade.CurrentItemsGame.GetRarityColor(Trade.CurrentItemsGame.GetItemRarity(item.Defindex.ToString())), type);
             if (item.Attributes != null)
             {
                 foreach (var attribute in item.Attributes)

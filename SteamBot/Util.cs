@@ -239,5 +239,43 @@ namespace MistClient
                     return "";
             }
         }
+
+        public static string GetQualityColor(string quality)
+        {
+            return GetQualityColor(int.Parse(quality));
+        }
+
+        public static string GetQualityColor(int quality)
+        {
+            switch (quality)
+            {
+                case 1:
+                    return "#4D7455";
+                case 2:
+                    return "#476291";
+                case 3:
+                    return "#8650AC";
+                case 4:
+                    return "#D2D2D2";
+                case 5:
+                    return "#70B04A";
+                case 6:
+                    return "#A50F79";
+                case 7:
+                    return "#70B04A";
+                case 8:
+                    return "#00FF00";
+                case 9:
+                    return "#CF6A32";
+                case 10:
+                case 11:
+                case 12:
+                    return "#8650AC";
+                case 13:
+                    return "#FFFF00";
+                default:
+                    return "#FFFFFF";
+            }
+        }
     }
 }
