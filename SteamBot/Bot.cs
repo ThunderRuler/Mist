@@ -676,7 +676,7 @@ namespace SteamBot
                 SteamClient.Connect ();
                 main.Invoke((Action)(() =>
                 {
-                    main.label_status.Text = "Disconnected from Steam Network! Retrying...";
+                    main.label_status.Text = "Disconnected from Steam! Retrying...";
                 }));
             });
             #endregion
