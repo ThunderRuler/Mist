@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Web;
 using System.Security.Cryptography;
+using System.Web.Management;
 using Newtonsoft.Json;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
@@ -31,6 +32,11 @@ namespace SteamTrade
                 {
                     using (var wc = new WebClient {Proxy = null})
                     {
+                        wc.Headers.Add(HttpRequestHeader.Accept, "text/javascript, text/html, application/xml, text/xml, */*");
+                        wc.Headers.Add(HttpRequestHeader.ContentType, "application/x-www-form-urlencoded; charset=UTF-8");
+                        wc.Headers.Add(HttpRequestHeader.Host, "steamcommunity.com");
+                        wc.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11");
+                        wc.Headers.Add(HttpRequestHeader.Referer, "http://steamcommunity.com/trade/1");
                         if (method == "GET")
                             return wc.DownloadString(url);
                         if (method == "POST" && data != null)
