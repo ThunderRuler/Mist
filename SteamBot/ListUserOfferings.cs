@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json.Linq;
+using SteamTrade;
 
 namespace MistClient
 {
@@ -10,14 +12,16 @@ namespace MistClient
         string itemName;
         ulong itemID;
         string price;
+        private Inventory.Item item;
 
         static List<ListUserOfferings> list = new List<ListUserOfferings>();
 
-        public ListUserOfferings(string itemName, ulong itemID, string price)
+        public ListUserOfferings(string itemName, ulong itemID, string price, Inventory.Item item)
         {
             this.itemName = itemName;
             this.itemID = itemID;
             this.price = price;
+            this.item = item;
         }
 
         public string ItemName
@@ -38,10 +42,16 @@ namespace MistClient
             set { }
         }
 
-        public static void Add(string itemName, ulong itemID, string price = null)
+        public Inventory.Item Item
         {
-            ListUserOfferings item = new ListUserOfferings(itemName, itemID, price);
-            list.Add(item);
+            get { return item; }
+            set { }
+        }
+
+        public static void Add(string itemName, ulong itemID, Inventory.Item item, string price = null)
+        {
+            ListUserOfferings ite = new ListUserOfferings(itemName, itemID, price, item);
+            list.Add(ite);
         }
 
         public static void Remove(string itemName, ulong itemID)

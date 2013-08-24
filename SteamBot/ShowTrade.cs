@@ -383,11 +383,16 @@ namespace MistClient
                     {
                         var itemName = list_inventory.SelectedItem.Text.Trim();
                         bool valid = false;
+                        Inventory.Item invItem = null;
                         bot.GetInventory();
                         foreach (var item in bot.MyInventory.Items)
                         {
                             if (item.Id == itemID)
+                            {
+                                invItem = item;
                                 valid = true;
+                                break;
+                            }
                         }
                         if (valid)
                         {
@@ -455,10 +460,11 @@ namespace MistClient
                                 text_log.ScrollToCaret();
                                 ResetTradeStatus();
                                 list_inventory.SelectedItem.Remove();
-                                ListUserOfferings.Add(itemName, itemID);
+                                ListUserOfferings.Add(itemName, itemID, invItem);
                                 ListInventory.Remove(itemName, itemID);
                                 list_userofferings.SetObjects(ListUserOfferings.Get());
-                                //list_inventory.SetObjects(ListInventory.Get());
+                                var count = ListUserOfferings.Get().Count(x => x.Item.Defindex == invItem.Defindex);
+                                AppendText(string.Format("Current count of {0}: {1}", Trade.CurrentSchema.GetItem(invItem.Defindex).ItemName, count));
                             }
                             catch (SteamTrade.Exceptions.TradeException ex)
                             {
@@ -581,10 +587,12 @@ namespace MistClient
                             text_log.AppendText(" [" + DateTime.Now.ToLongTimeString() + "]\r\n");
                             text_log.ScrollToCaret();
                             ResetTradeStatus();
-                            ListUserOfferings.Add(itemName, item.Id);
+                            ListUserOfferings.Add(itemName, item.Id, item);
                             ListInventory.Remove(itemName, item.Id);
                             list_userofferings.SetObjects(ListUserOfferings.Get());
                             list_inventory.SetObjects(ListInventory.Get());
+                            var count = ListUserOfferings.Get().Count(x => x.Item.Defindex == item.Defindex);
+                            AppendText(string.Format("Current count of {0}: {1}", Trade.CurrentSchema.GetItem(item.Defindex).ItemName, count));
                         }
                         catch (Exception ex)
                         {

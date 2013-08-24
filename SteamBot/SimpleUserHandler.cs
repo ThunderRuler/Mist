@@ -1,3 +1,4 @@
+using System.Linq;
 using SteamKit2;
 using System.Collections.Generic;
 using SteamTrade;
@@ -741,6 +742,8 @@ namespace SteamBot
                 }
                 string itemName = GetItemName(schemaItem, inventoryItem, out itemValue, false);
                 ShowTrade.AppendText(Bot.SteamFriends.GetFriendPersonaName(OtherSID) + " added: ", itemName);
+                var count = ListOtherOfferings.Get().Count(x => x.Item.Defindex == inventoryItem.Defindex);
+                ShowTrade.AppendText(string.Format("Current count of {0}: {1}", schemaItem.ItemName, count));
                 ChatTab.AppendLog(OtherSID, "[Trade Chat] " + Bot.SteamFriends.GetFriendPersonaName(OtherSID) + " added: " + itemName + "\r\n");
                 ShowTrade.ResetTradeStatus();
             }));
@@ -761,6 +764,8 @@ namespace SteamBot
                 }
                 string itemName = GetItemName(schemaItem, inventoryItem, out itemValue, false);
                 ShowTrade.AppendText(Bot.SteamFriends.GetFriendPersonaName(OtherSID) + " removed: ", itemName);
+                var count = ListOtherOfferings.Get().Count(x => x.Item.Defindex == inventoryItem.Defindex);
+                ShowTrade.AppendText(string.Format("Number of {0}: {1}", schemaItem.ItemName, count));
                 ChatTab.AppendLog(OtherSID, "[Trade Chat] " + Bot.SteamFriends.GetFriendPersonaName(OtherSID) + " removed: " + itemName + "\r\n");
                 ShowTrade.ResetTradeStatus();
             }));
