@@ -11,6 +11,7 @@ using System.IO;
 using BrightIdeasSoftware;
 using SteamBot;
 using MetroFramework.Forms;
+using SteamTrade;
 
 namespace MistClient
 {
@@ -32,6 +33,12 @@ namespace MistClient
         public ShowTrade(Bot bot, string name)
         {
             InitializeComponent();
+            list_inventory.CellToolTip.InitialDelay = list_inventory.CellToolTip.ReshowDelay = 0;
+            list_otherofferings.CellToolTip.InitialDelay = list_otherofferings.CellToolTip.ReshowDelay = 0;
+            list_userofferings.CellToolTip.InitialDelay = list_userofferings.CellToolTip.ReshowDelay = 0;
+            list_inventory.CellToolTip.SetMaxWidth(450);
+            list_otherofferings.CellToolTip.SetMaxWidth(450);
+            list_userofferings.CellToolTip.SetMaxWidth(450);
             Util.LoadTheme(metroStyleManager1);
             this.Text = "Trading with " + name;
             this.bot = bot;
@@ -865,6 +872,70 @@ namespace MistClient
             {
                 text_search.Clear();
                 this.list_inventory.SetObjects(ListInventory.Get());
+            }
+        }
+
+        private void list_inventory_CellToolTipShowing(object sender, ToolTipShowingEventArgs e)
+        {
+            if (e.HitTest == null || e.HitTest.RowObject == null) return;
+            var itemId = (ulong) column_id.GetValue(e.HitTest.RowObject);
+            bot.GetInventory();
+            foreach (var item in bot.MyInventory.Items.Where(item => item.Id == itemId))
+            {
+                e.Text = GetTooltipText(item);
+            }
+        }
+
+        private string GetTooltipText(Inventory.Item item)
+        {
+            var text = "";
+            var schemaitem = Trade.CurrentSchema.GetItem(item.Defindex);
+            var itemname = (Util.QualityToName(int.Parse(item.Quality)) == "" ||
+                Util.QualityToName(int.Parse(item.Quality)) == "Unique"
+                ? ""
+                : Util.QualityToName(int.Parse(item.Quality)) + " ")
+                           + schemaitem.ItemName;
+            var name = string.IsNullOrWhiteSpace(item.CustomName)
+                           ? itemname
+                           : string.Format("\"{0}\" ({1})", item.CustomName, itemname);
+            var type = (Util.QualityToName(int.Parse(item.Quality)) == "" ||
+                Util.QualityToName(int.Parse(item.Quality)) == "Unique"
+                ? ""
+                : Util.QualityToName(int.Parse(item.Quality)) + " ") +
+                       (Trade.CurrentItemsGame.GetItemRarity(item.Defindex.ToString())) + " " + schemaitem.ItemTypeName;
+            var desc = string.IsNullOrWhiteSpace(item.CustomDescription)
+                           ? schemaitem.ItemDescription
+                           : string.Format("\"{0}\" ({1})", item.CustomDescription, schemaitem.ItemDescription);
+            text += string.Format(@"{0} | ", type);
+            if (item.Attributes != null)
+            {
+                foreach (var attribute in item.Attributes)
+                {
+                    var attribname = Trade.CurrentSchema.GetAttributeName(attribute.Defindex, item.Attributes,
+                        attribute.FloatValue != null ? attribute.FloatValue : 0f,
+                        attribute.Value ?? "");
+                    if (attribname != "")
+                    {
+                        text += string.Format(@"{0} | ", attribname);
+                    }
+                }
+            }
+            if (item.Style != null)
+            {
+                text += string.Format(@"Style: {0}",
+                    Trade.CurrentSchema.GetStyle(item.Defindex, (int)item.Style));
+            }
+            return text;
+        }
+
+        private void list_otherofferings_CellToolTipShowing(object sender, ToolTipShowingEventArgs e)
+        {
+            if (e.HitTest == null || e.HitTest.RowObject == null) return;
+            var itemId = (ulong)column_id.GetValue(e.HitTest.RowObject);
+            if (itemId == 0) return;
+            foreach (var item in ListOtherOfferings.Get().Where(item => item.Item.Id == itemId))
+            {
+                e.Text = GetTooltipText(item.Item);
             }
         }
     }

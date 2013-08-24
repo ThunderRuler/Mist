@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SteamKit2.GC.TF2.Internal;
+using SteamTrade;
 
 namespace MistClient
 {
@@ -10,14 +12,16 @@ namespace MistClient
         string itemName;
         ulong itemID;
         string price;
+        private Inventory.Item item;
 
         static List<ListOtherOfferings> list = new List<ListOtherOfferings>();
 
-        public ListOtherOfferings(string itemName, ulong itemID, string price)
+        public ListOtherOfferings(string itemName, ulong itemID, string price, Inventory.Item item)
         {
             this.itemName = itemName;
             this.itemID = itemID;
             this.price = price;
+            this.item = item;
         }
 
         public string ItemName
@@ -38,10 +42,16 @@ namespace MistClient
             set { }
         }
 
-        public static void Add(string itemName, ulong itemID, string price)
+        public Inventory.Item Item
         {
-            ListOtherOfferings item = new ListOtherOfferings(itemName, itemID, price);
-            list.Add(item);
+            get { return item; }
+            set { }
+        }
+
+        public static void Add(string itemName, ulong itemID, string price, Inventory.Item item)
+        {
+            ListOtherOfferings ite = new ListOtherOfferings(itemName, itemID, price, item);
+            list.Add(ite);
         }
 
         public static void Remove(string itemName, ulong itemID)

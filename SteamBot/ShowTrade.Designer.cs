@@ -84,6 +84,7 @@
             this.list_inventory.TabIndex = 0;
             this.list_inventory.UseCompatibleStateImageBehavior = false;
             this.list_inventory.View = System.Windows.Forms.View.Details;
+            this.list_inventory.CellToolTipShowing += new System.EventHandler<BrightIdeasSoftware.ToolTipShowingEventArgs>(this.list_inventory_CellToolTipShowing);
             this.list_inventory.ItemActivate += new System.EventHandler(this.list_inventory_ItemActivate);
             // 
             // column_inventory
@@ -150,6 +151,7 @@
             this.list_userofferings.TabIndex = 7;
             this.list_userofferings.UseCompatibleStateImageBehavior = false;
             this.list_userofferings.View = System.Windows.Forms.View.Details;
+            this.list_userofferings.CellToolTipShowing += new System.EventHandler<BrightIdeasSoftware.ToolTipShowingEventArgs>(this.list_inventory_CellToolTipShowing);
             this.list_userofferings.ItemActivate += new System.EventHandler(this.list_userofferings_ItemActivate);
             // 
             // column_userofferings
@@ -218,6 +220,7 @@
             this.list_otherofferings.TabIndex = 8;
             this.list_otherofferings.UseCompatibleStateImageBehavior = false;
             this.list_otherofferings.View = System.Windows.Forms.View.Details;
+            this.list_otherofferings.CellToolTipShowing += new System.EventHandler<BrightIdeasSoftware.ToolTipShowingEventArgs>(this.list_otherofferings_CellToolTipShowing);
             // 
             // column_otherofferings
             // 

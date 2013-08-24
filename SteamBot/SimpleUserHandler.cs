@@ -732,7 +732,7 @@ namespace SteamBot
                 string itemValue = "";
                 string completeName = GetItemName(schemaItem, inventoryItem, out itemValue, false);
                 ulong itemID = inventoryItem.Id;
-                ListOtherOfferings.Add(completeName, itemID, itemValue);
+                ListOtherOfferings.Add(completeName, itemID, itemValue, inventoryItem);
                 ShowTrade.list_otherofferings.SetObjects(ListOtherOfferings.Get());
                 ShowTrade.itemsAdded++;
                 if (ShowTrade.itemsAdded > 0)
