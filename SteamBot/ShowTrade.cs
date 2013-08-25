@@ -36,6 +36,51 @@ namespace MistClient
             list_inventory.CellToolTip.InitialDelay = list_inventory.CellToolTip.ReshowDelay = 0;
             list_otherofferings.CellToolTip.InitialDelay = list_otherofferings.CellToolTip.ReshowDelay = 0;
             list_userofferings.CellToolTip.InitialDelay = list_userofferings.CellToolTip.ReshowDelay = 0;
+            list_inventory.CellToolTipGetter = (column, modelObject) =>
+            {
+                if (list_inventory.SelectedItem == null) return null;
+                var itemId = (ulong)column_id.GetValue(modelObject);
+                if ((ulong)column_id.GetValue(list_inventory.SelectedItem.RowObject) != itemId) return null;
+                if (itemId == 0) return null;
+                bot.GetInventory();
+                foreach (var item in bot.MyInventory.Items)
+                {
+                    if (item.Id == itemId)
+                    {
+                        return GetTooltipText(item);
+                    }
+                }
+                return null;
+            };
+            list_userofferings.CellToolTipGetter = (column, modelObject) =>
+            {
+                if (list_userofferings.SelectedItem == null) return null;
+                var itemId = (ulong)column_id.GetValue(modelObject);
+                if ((ulong)column_id.GetValue(list_userofferings.SelectedItem.RowObject) != itemId) return null;
+                if (itemId == 0) return null;
+                bot.GetInventory();
+                foreach (var item in bot.MyInventory.Items)
+                {
+                    if (item.Id == itemId)
+                    {
+                        return GetTooltipText(item);
+                    }
+                }
+                return null;
+            };
+            list_otherofferings.CellToolTipGetter = (column, modelObject) =>
+            {
+                var itemId = (ulong) column_id.GetValue(modelObject);
+                if (itemId == 0) return null;
+                foreach (var item in ListOtherOfferings.Get())
+                {
+                    if (item.ItemID == itemId)
+                    {
+                        return GetTooltipText(item.Item);
+                    }
+                }
+                return null;
+            };
             list_inventory.CellToolTip.SetMaxWidth(450);
             list_otherofferings.CellToolTip.SetMaxWidth(450);
             list_userofferings.CellToolTip.SetMaxWidth(450);
@@ -883,17 +928,6 @@ namespace MistClient
             }
         }
 
-        private void list_inventory_CellToolTipShowing(object sender, ToolTipShowingEventArgs e)
-        {
-            if (e.HitTest == null || e.HitTest.RowObject == null) return;
-            var itemId = (ulong) column_id.GetValue(e.HitTest.RowObject);
-            bot.GetInventory();
-            foreach (var item in bot.MyInventory.Items.Where(item => item.Id == itemId))
-            {
-                e.Text = GetTooltipText(item);
-            }
-        }
-
         private string GetTooltipText(Inventory.Item item)
         {
             var text = "";
@@ -933,18 +967,38 @@ namespace MistClient
                 text += string.Format(@"Style: {0}",
                     Trade.CurrentSchema.GetStyle(item.Defindex, (int)item.Style));
             }
+            text = text.TrimEnd(new[] {'|', ' '});
             return text;
         }
 
         private void list_otherofferings_CellToolTipShowing(object sender, ToolTipShowingEventArgs e)
         {
-            if (e.HitTest == null || e.HitTest.RowObject == null) return;
+            /*if (e.HitTest == null || e.HitTest.RowObject == null) return;
             var itemId = (ulong)column_id.GetValue(e.HitTest.RowObject);
             if (itemId == 0) return;
-            foreach (var item in ListOtherOfferings.Get().Where(item => item.Item.Id == itemId))
+            foreach (var item in ListOtherOfferings.Get())
             {
-                e.Text = GetTooltipText(item.Item);
-            }
+                if (item.ItemID == itemId)
+                {
+                    e.Text = GetTooltipText(item.Item);
+                    break;
+                }
+            }*/
+        }
+
+        private void list_inventory_CellToolTipShowing(object sender, ToolTipShowingEventArgs e)
+        {
+            /*if (e.HitTest == null || e.HitTest.RowObject == null) return;
+            var itemId = (ulong)column_id.GetValue(e.HitTest.RowObject);
+            bot.GetInventory();
+            foreach (var item in bot.MyInventory.Items)
+            {
+                if (item.Id == itemId)
+                {
+                    e.Text = GetTooltipText(item);
+                    break;
+                }
+            }*/
         }
     }
 }
