@@ -33,6 +33,7 @@ namespace MistClient
         private HtmlToolTip ttItem = new HtmlToolTip();
         private int maxPage;
         private bool Self;
+        private List<Inventory.Item> selectedItems = new List<Inventory.Item>(); 
 
         public ShowBackpackGrid(Bot bot, SteamID SID)
         {
@@ -352,7 +353,12 @@ namespace MistClient
             if (tile.Tag == null) return;
             var tag = (TileTag) tile.Tag;
             tag.Selected = !tag.Selected;
-            if (!tag.Selected) return;
+            if (!tag.Selected)
+            {
+                selectedItems.Remove(tag.Item);
+                return;
+            }
+            selectedItems.Add(tag.Item);
             var oldbmp = tile.TileImage;
             var bmp = new Bitmap(oldbmp);
             if (bmp.Size == new Size(116, 78) && !((TileTag)tile.Tag).Selected)
