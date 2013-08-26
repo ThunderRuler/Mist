@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Linq;
 using SteamKit2;
 using System.Collections.Generic;
@@ -728,6 +729,7 @@ namespace SteamBot
 
         public override void OnTradeAddItem(Schema.Item schemaItem, Inventory.Item inventoryItem)
         {
+            Debug.WriteLine("New item added: ID: {0} | DefIndex: {1}", inventoryItem.Id, inventoryItem.Defindex);
             Bot.main.Invoke((Action)(() =>
             {
                 string itemValue = "";
@@ -751,6 +753,7 @@ namespace SteamBot
 
         public override void OnTradeRemoveItem(Schema.Item schemaItem, Inventory.Item inventoryItem)
         {
+            Debug.WriteLine("Item removed: ID: {0} | DefIndex: {1}", inventoryItem.Id, inventoryItem.Defindex);
             Bot.main.Invoke((Action)(() =>
             {
                 string itemValue = "";
