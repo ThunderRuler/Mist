@@ -49,8 +49,6 @@ namespace MistClient
                 Password = Decrypt(Properties.Settings.Default.Password);
                 check_remember.Checked = true;
             }
-            if (ForceLogin)
-                button_login_Click(this, null);
         }
 
         private static void MakePortable(ApplicationSettingsBase settings)
@@ -102,7 +100,8 @@ namespace MistClient
 
         private void Login_Load(object sender, EventArgs e)
         {
-            
+            if (ForceLogin)
+                button_login_Click(this, null);
         }
 
         public static string Encrypt(string plainText)
