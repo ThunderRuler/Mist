@@ -122,6 +122,11 @@ namespace SteamBot
                     }
                 }
             }).Start();
+            if (args.Length > 0 && args[0] == "-login")
+            {
+                login.ForceLogin = true;
+                mainLog.Info("-login parameter detected, logging in automatically with saved credentials.");
+            }
             Application.Run(login);
         }
 

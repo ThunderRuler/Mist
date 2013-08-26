@@ -24,6 +24,7 @@ namespace MistClient
         public string APIKey;
         public static bool LoginClicked = false;
         public bool wrongAPI = false;
+        public bool ForceLogin;
         Log log;        
 
         public Login(Log log)
@@ -48,6 +49,8 @@ namespace MistClient
                 Password = Decrypt(Properties.Settings.Default.Password);
                 check_remember.Checked = true;
             }
+            if (ForceLogin)
+                button_login_Click(this, null);
         }
 
         private static void MakePortable(ApplicationSettingsBase settings)
