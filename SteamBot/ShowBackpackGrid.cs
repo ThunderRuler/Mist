@@ -347,7 +347,7 @@ namespace MistClient
 
         private void metroTile_Click(object sender, EventArgs e)
         {
-            if (!Self) return;
+            if (!Self || !chkManage.Checked) return;
             var tile = (MetroTile)sender;
             if (tile.Tag == null) return;
             var tag = (TileTag) tile.Tag;
