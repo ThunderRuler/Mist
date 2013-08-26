@@ -133,6 +133,17 @@ namespace MistClient
                 }
                 var currentItem = Trade.CurrentSchema.GetItem(invitem.Defindex);
                 var img = getImageFromURL(currentItem.ImageURL);
+                var selected = false;
+                if (selectedItems.Contains(invitem))
+                {
+                    selected = true;
+                    var img2 = new Bitmap(img);
+                    using (var g = Graphics.FromImage(img2))
+                    {
+                        g.DrawRectangle(new Pen(Brushes.DarkRed, 3), new Rectangle(0, 0, img2.Width, img2.Height));
+                    }
+                    img = img2;
+                }
                 Invoke((Action) (() =>
                                      {
                                          var tile = (MetroTile)Controls.Find("metroTile" + (64 - h), true)[0];
@@ -145,9 +156,9 @@ namespace MistClient
                                                         {
                                                             ImageUrl = currentItem.ImageURL,
                                                             Item = invitem,
-                                                            TooltipText = GetTooltipText(invitem)
+                                                            TooltipText = GetTooltipText(invitem),
+                                                            Selected = selected
                                                         };
-                                         //ttItem.SetToolTip(tile, ((TileTag)tile.Tag).TooltipText);
                                          tile.Text = GetItemName(currentItem, invitem);
                                          tile.ForeColor =
                                                  ColorTranslator.FromHtml(
@@ -437,7 +448,7 @@ namespace MistClient
 
         private void chkManage_CheckedChanged(object sender, EventArgs e)
         {
-            btnTakeAll.Visible = chkManage.Checked;
+            btnTakeAll.Visible = btnDeselect.Visible = chkManage.Checked;
             if (chkManage.Checked)
                 bot.ConnectToGC(570);
             else
@@ -468,6 +479,24 @@ namespace MistClient
                 Invoke((Action)(() =>
                 {
                     loadBP = new Thread(LoadBP);
+                    loadBP.Start(chkMisplaced.Checked);
+                }));
+            }
+            catch (Exception ex)
+            {
+                Bot.Print(ex);
+            }
+        }
+
+        private void btnDeselect_Click(object sender, EventArgs e)
+        {
+            selectedItems.Clear();
+            try
+            {
+                loadBP.Abort();
+                Invoke((Action)(() =>
+                {
+                    loadBP = new Thread(UpdateBP);
                     loadBP.Start(chkMisplaced.Checked);
                 }));
             }

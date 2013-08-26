@@ -102,6 +102,7 @@
             this.chkMisplaced = new MetroFramework.Controls.MetroCheckBox();
             this.chkManage = new MetroFramework.Controls.MetroCheckBox();
             this.btnTakeAll = new MetroFramework.Controls.MetroButton();
+            this.btnDeselect = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1542,12 +1543,26 @@
             this.btnTakeAll.Visible = false;
             this.btnTakeAll.Click += new System.EventHandler(this.btnTakeAll_Click);
             // 
+            // btnDeselect
+            // 
+            this.btnDeselect.Location = new System.Drawing.Point(267, 742);
+            this.btnDeselect.Name = "btnDeselect";
+            this.btnDeselect.Size = new System.Drawing.Size(116, 23);
+            this.btnDeselect.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnDeselect.StyleManager = this.metroStyleManager1;
+            this.btnDeselect.TabIndex = 135;
+            this.btnDeselect.Text = "Deselect Items";
+            this.btnDeselect.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnDeselect.Visible = false;
+            this.btnDeselect.Click += new System.EventHandler(this.btnDeselect_Click);
+            // 
             // ShowBackpackGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1018, 781);
+            this.Controls.Add(this.btnDeselect);
             this.Controls.Add(this.btnTakeAll);
             this.Controls.Add(this.chkManage);
             this.Controls.Add(this.metroProgressSpinner1);
@@ -1706,5 +1721,6 @@
         private MetroFramework.Controls.MetroCheckBox chkMisplaced;
         private MetroFramework.Controls.MetroCheckBox chkManage;
         private MetroFramework.Controls.MetroButton btnTakeAll;
+        private MetroFramework.Controls.MetroButton btnDeselect;
     }
 }
