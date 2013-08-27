@@ -204,6 +204,7 @@ namespace MistClient
                 tile.Text = "";
                 tile.Tag = null;
             }
+            lblItemStatus.Text = "";
         }
 
         string GetItemName(Schema.Item schemaItem, Inventory.Item inventoryItem, bool id = false)
@@ -570,6 +571,7 @@ namespace MistClient
             Items.SetItemPositions(bot, dict);
             Thread.Sleep(500);
             ClearBP(true);
+            Invoke((Action)(() => lblItemStatus.Text = "Items moved, inventory updating."));
             try
             {
                 loadBP.Abort();

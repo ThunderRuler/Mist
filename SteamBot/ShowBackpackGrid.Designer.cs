@@ -106,6 +106,7 @@
             this.ctxItem = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnMoveItems = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRefresh = new MetroFramework.Controls.MetroButton();
+            this.lblItemStatus = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.ctxItem.SuspendLayout();
             this.SuspendLayout();
@@ -1714,12 +1715,24 @@
             this.btnRefresh.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // lblItemStatus
+            // 
+            this.lblItemStatus.AutoSize = true;
+            this.lblItemStatus.Location = new System.Drawing.Point(470, 746);
+            this.lblItemStatus.Name = "lblItemStatus";
+            this.lblItemStatus.Size = new System.Drawing.Size(0, 0);
+            this.lblItemStatus.Style = MetroFramework.MetroColorStyle.Blue;
+            this.lblItemStatus.StyleManager = this.metroStyleManager1;
+            this.lblItemStatus.TabIndex = 137;
+            this.lblItemStatus.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // ShowBackpackGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1018, 781);
+            this.Controls.Add(this.lblItemStatus);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDeselect);
             this.Controls.Add(this.btnTakeAll);
@@ -1885,5 +1898,6 @@
         private System.Windows.Forms.ContextMenuStrip ctxItem;
         private System.Windows.Forms.ToolStripMenuItem btnMoveItems;
         private MetroFramework.Controls.MetroButton btnRefresh;
+        private MetroFramework.Controls.MetroLabel lblItemStatus;
     }
 }
