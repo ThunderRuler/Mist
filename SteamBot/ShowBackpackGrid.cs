@@ -23,6 +23,14 @@ namespace MistClient
 {
     public partial class ShowBackpackGrid : MetroForm
     {
+        public class TileTag
+        {
+            public string ImageUrl;
+            public Inventory.Item Item;
+            public bool Selected;
+            public string TooltipText;
+        }
+
         Bot bot;
         SteamID SID;
         Thread loadBP;
@@ -33,7 +41,8 @@ namespace MistClient
         private HtmlToolTip ttItem = new HtmlToolTip();
         private int maxPage;
         private bool Self;
-        private List<Inventory.Item> selectedItems = new List<Inventory.Item>(); 
+        private List<Inventory.Item> selectedItems = new List<Inventory.Item>();
+        private MetroTile currentTile;
 
         public ShowBackpackGrid(Bot bot, SteamID SID)
         {
@@ -83,6 +92,10 @@ namespace MistClient
 
         void LoadBP(object misplacedobj)
         {
+            Invoke((Action)(() =>
+            {
+                metroProgressSpinner1.Size = new Size(970, 666);
+            }));
             var misplaced = (bool) misplacedobj;
             ListBackpack.Clear();
             bot.GetOtherInventory(SID);
@@ -384,12 +397,31 @@ namespace MistClient
 
         private void metroTile_MouseMove(object sender, MouseEventArgs e)
         {
-            var tile = (MetroTile)sender;
+            /*var tile = (MetroTile)sender;
             if (tile.Tag == null) return;
             var tag = (TileTag)tile.Tag;
             if (tag.Item == null) return;
             var item = tag.Item;
-            if (item == null) return;
+            if (item == null) return;*/
+        }
+
+        private void metroTile_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (!e.Button.HasFlag(MouseButtons.Right)) return;
+            var tile = (MetroTile)sender;
+            btnMoveItems.Enabled = true;
+            if (tile.Tag != null)
+            {
+                var tag = (TileTag) tile.Tag;
+                if (tag.Item != null)
+                {
+                    btnMoveItems.Enabled = false;
+                }
+            }
+            if (chkMisplaced.Checked || !chkManage.Checked || selectedItems.Count == 0) 
+                btnMoveItems.Enabled = false;
+            currentTile = tile;
+            ctxItem.Show(tile, e.Location);
         }
 
         private string GetTooltipText(Inventory.Item item)
@@ -438,14 +470,6 @@ namespace MistClient
             return text;
         }
 
-        public class TileTag
-        {
-            public string ImageUrl;
-            public Inventory.Item Item;
-            public bool Selected;
-            public string TooltipText;
-        }
-
         private void chkManage_CheckedChanged(object sender, EventArgs e)
         {
             btnTakeAll.Visible = btnDeselect.Visible = chkManage.Checked;
@@ -472,7 +496,7 @@ namespace MistClient
                 dict.Add((uint)item.Id, (uint)pos);
             }
             Items.SetItemPositions(bot, dict);
-            ClearBP();
+            ClearBP(true);
             try
             {
                 loadBP.Abort();
@@ -497,6 +521,79 @@ namespace MistClient
                 Invoke((Action)(() =>
                 {
                     loadBP = new Thread(UpdateBP);
+                    loadBP.Start(chkMisplaced.Checked);
+                }));
+            }
+            catch (Exception ex)
+            {
+                Bot.Print(ex);
+            }
+        }
+
+        private void btnMoveItems_Click(object sender, EventArgs e)
+        {
+            var slot = (64 - int.Parse(currentTile.Name.Split('e')[2]) + 1) + ((pageNum - 1)*64);
+            var dict = new Dictionary<uint, uint>();
+            var force = false;
+            var h = 0;
+            for (int i = 0; i < selectedItems.Count; i++)
+            {
+                var newslot = slot + i + h;
+                if (ItemList.ContainsKey(newslot))
+                {
+                    if (force)
+                    {
+                        h++;
+                        i--;
+                        continue;
+                    }
+                    else
+                    {
+                        var response =
+                            MessageBox.Show("There is not enough consecutive spaces to move selected items.\r\n" +
+                                            "Do you wish to continue?", "Backpack", MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning);
+                        if (response == DialogResult.Yes)
+                        {
+                            i--;
+                            h++;
+                            force = true;
+                            continue;
+                        }
+                        else
+                            return;
+                    }
+                }
+                if (!dict.ContainsKey((uint) selectedItems[i].Id))
+                    dict.Add((uint) selectedItems[i].Id, (uint) newslot);
+            }
+            Items.SetItemPositions(bot, dict);
+            Thread.Sleep(500);
+            ClearBP(true);
+            try
+            {
+                loadBP.Abort();
+                Invoke((Action)(() =>
+                {
+                    loadBP = new Thread(LoadBP);
+                    loadBP.Start(chkMisplaced.Checked);
+                }));
+            }
+            catch (Exception ex)
+            {
+                Bot.Print(ex);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            ClearBP(true);
+            try
+            {
+                loadBP.Abort();
+                Invoke((Action)(() =>
+                {
+                    loadBP = new Thread(LoadBP);
                     loadBP.Start(chkMisplaced.Checked);
                 }));
             }

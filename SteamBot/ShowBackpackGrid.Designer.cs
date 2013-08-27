@@ -103,7 +103,11 @@
             this.chkManage = new MetroFramework.Controls.MetroCheckBox();
             this.btnTakeAll = new MetroFramework.Controls.MetroButton();
             this.btnDeselect = new MetroFramework.Controls.MetroButton();
+            this.ctxItem = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnMoveItems = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRefresh = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
+            this.ctxItem.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroStyleManager1
@@ -114,6 +118,7 @@
             // metroTile8
             // 
             this.metroTile8.ActiveControl = null;
+            this.metroTile8.AllowDrop = true;
             this.metroTile8.BackColor = System.Drawing.Color.Gray;
             this.metroTile8.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile8.CustomBackground = true;
@@ -131,6 +136,7 @@
             this.metroTile8.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile8.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // btnBack
             // 
@@ -170,6 +176,7 @@
             // metroTile7
             // 
             this.metroTile7.ActiveControl = null;
+            this.metroTile7.AllowDrop = true;
             this.metroTile7.BackColor = System.Drawing.Color.Gray;
             this.metroTile7.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile7.CustomBackground = true;
@@ -187,10 +194,12 @@
             this.metroTile7.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile7.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile6
             // 
             this.metroTile6.ActiveControl = null;
+            this.metroTile6.AllowDrop = true;
             this.metroTile6.BackColor = System.Drawing.Color.Gray;
             this.metroTile6.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile6.CustomBackground = true;
@@ -208,10 +217,12 @@
             this.metroTile6.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile6.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile5
             // 
             this.metroTile5.ActiveControl = null;
+            this.metroTile5.AllowDrop = true;
             this.metroTile5.BackColor = System.Drawing.Color.Gray;
             this.metroTile5.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile5.CustomBackground = true;
@@ -229,10 +240,12 @@
             this.metroTile5.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile5.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile4
             // 
             this.metroTile4.ActiveControl = null;
+            this.metroTile4.AllowDrop = true;
             this.metroTile4.BackColor = System.Drawing.Color.Gray;
             this.metroTile4.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile4.CustomBackground = true;
@@ -250,10 +263,12 @@
             this.metroTile4.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile4.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile3
             // 
             this.metroTile3.ActiveControl = null;
+            this.metroTile3.AllowDrop = true;
             this.metroTile3.BackColor = System.Drawing.Color.Gray;
             this.metroTile3.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile3.CustomBackground = true;
@@ -271,10 +286,12 @@
             this.metroTile3.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile3.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
+            this.metroTile2.AllowDrop = true;
             this.metroTile2.BackColor = System.Drawing.Color.Gray;
             this.metroTile2.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile2.CustomBackground = true;
@@ -292,10 +309,12 @@
             this.metroTile2.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile2.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile1
             // 
             this.metroTile1.ActiveControl = null;
+            this.metroTile1.AllowDrop = true;
             this.metroTile1.BackColor = System.Drawing.Color.Gray;
             this.metroTile1.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile1.CustomBackground = true;
@@ -313,10 +332,12 @@
             this.metroTile1.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile1.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile9
             // 
             this.metroTile9.ActiveControl = null;
+            this.metroTile9.AllowDrop = true;
             this.metroTile9.BackColor = System.Drawing.Color.Gray;
             this.metroTile9.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile9.CustomBackground = true;
@@ -334,10 +355,12 @@
             this.metroTile9.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile9.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile10
             // 
             this.metroTile10.ActiveControl = null;
+            this.metroTile10.AllowDrop = true;
             this.metroTile10.BackColor = System.Drawing.Color.Gray;
             this.metroTile10.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile10.CustomBackground = true;
@@ -355,10 +378,12 @@
             this.metroTile10.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile10.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile11
             // 
             this.metroTile11.ActiveControl = null;
+            this.metroTile11.AllowDrop = true;
             this.metroTile11.BackColor = System.Drawing.Color.Gray;
             this.metroTile11.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile11.CustomBackground = true;
@@ -376,10 +401,12 @@
             this.metroTile11.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile11.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile12
             // 
             this.metroTile12.ActiveControl = null;
+            this.metroTile12.AllowDrop = true;
             this.metroTile12.BackColor = System.Drawing.Color.Gray;
             this.metroTile12.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile12.CustomBackground = true;
@@ -397,10 +424,12 @@
             this.metroTile12.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile12.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile12.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile13
             // 
             this.metroTile13.ActiveControl = null;
+            this.metroTile13.AllowDrop = true;
             this.metroTile13.BackColor = System.Drawing.Color.Gray;
             this.metroTile13.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile13.CustomBackground = true;
@@ -418,10 +447,12 @@
             this.metroTile13.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile13.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile13.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile14
             // 
             this.metroTile14.ActiveControl = null;
+            this.metroTile14.AllowDrop = true;
             this.metroTile14.BackColor = System.Drawing.Color.Gray;
             this.metroTile14.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile14.CustomBackground = true;
@@ -439,10 +470,12 @@
             this.metroTile14.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile14.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile14.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile15
             // 
             this.metroTile15.ActiveControl = null;
+            this.metroTile15.AllowDrop = true;
             this.metroTile15.BackColor = System.Drawing.Color.Gray;
             this.metroTile15.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile15.CustomBackground = true;
@@ -460,10 +493,12 @@
             this.metroTile15.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile15.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile15.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile16
             // 
             this.metroTile16.ActiveControl = null;
+            this.metroTile16.AllowDrop = true;
             this.metroTile16.BackColor = System.Drawing.Color.Gray;
             this.metroTile16.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile16.CustomBackground = true;
@@ -481,10 +516,12 @@
             this.metroTile16.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile16.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile16.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile16.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile17
             // 
             this.metroTile17.ActiveControl = null;
+            this.metroTile17.AllowDrop = true;
             this.metroTile17.BackColor = System.Drawing.Color.Gray;
             this.metroTile17.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile17.CustomBackground = true;
@@ -502,10 +539,12 @@
             this.metroTile17.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile17.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile17.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile17.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile18
             // 
             this.metroTile18.ActiveControl = null;
+            this.metroTile18.AllowDrop = true;
             this.metroTile18.BackColor = System.Drawing.Color.Gray;
             this.metroTile18.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile18.CustomBackground = true;
@@ -523,10 +562,12 @@
             this.metroTile18.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile18.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile18.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile18.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile19
             // 
             this.metroTile19.ActiveControl = null;
+            this.metroTile19.AllowDrop = true;
             this.metroTile19.BackColor = System.Drawing.Color.Gray;
             this.metroTile19.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile19.CustomBackground = true;
@@ -544,10 +585,12 @@
             this.metroTile19.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile19.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile19.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile19.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile20
             // 
             this.metroTile20.ActiveControl = null;
+            this.metroTile20.AllowDrop = true;
             this.metroTile20.BackColor = System.Drawing.Color.Gray;
             this.metroTile20.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile20.CustomBackground = true;
@@ -565,10 +608,12 @@
             this.metroTile20.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile20.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile20.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile20.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile21
             // 
             this.metroTile21.ActiveControl = null;
+            this.metroTile21.AllowDrop = true;
             this.metroTile21.BackColor = System.Drawing.Color.Gray;
             this.metroTile21.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile21.CustomBackground = true;
@@ -586,10 +631,12 @@
             this.metroTile21.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile21.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile21.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile21.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile22
             // 
             this.metroTile22.ActiveControl = null;
+            this.metroTile22.AllowDrop = true;
             this.metroTile22.BackColor = System.Drawing.Color.Gray;
             this.metroTile22.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile22.CustomBackground = true;
@@ -607,10 +654,12 @@
             this.metroTile22.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile22.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile22.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile22.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile23
             // 
             this.metroTile23.ActiveControl = null;
+            this.metroTile23.AllowDrop = true;
             this.metroTile23.BackColor = System.Drawing.Color.Gray;
             this.metroTile23.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile23.CustomBackground = true;
@@ -628,10 +677,12 @@
             this.metroTile23.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile23.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile23.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile23.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile24
             // 
             this.metroTile24.ActiveControl = null;
+            this.metroTile24.AllowDrop = true;
             this.metroTile24.BackColor = System.Drawing.Color.Gray;
             this.metroTile24.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile24.CustomBackground = true;
@@ -649,10 +700,12 @@
             this.metroTile24.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile24.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile24.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile24.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile25
             // 
             this.metroTile25.ActiveControl = null;
+            this.metroTile25.AllowDrop = true;
             this.metroTile25.BackColor = System.Drawing.Color.Gray;
             this.metroTile25.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile25.CustomBackground = true;
@@ -670,10 +723,12 @@
             this.metroTile25.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile25.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile25.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile25.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile26
             // 
             this.metroTile26.ActiveControl = null;
+            this.metroTile26.AllowDrop = true;
             this.metroTile26.BackColor = System.Drawing.Color.Gray;
             this.metroTile26.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile26.CustomBackground = true;
@@ -691,10 +746,12 @@
             this.metroTile26.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile26.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile26.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile26.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile27
             // 
             this.metroTile27.ActiveControl = null;
+            this.metroTile27.AllowDrop = true;
             this.metroTile27.BackColor = System.Drawing.Color.Gray;
             this.metroTile27.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile27.CustomBackground = true;
@@ -712,10 +769,12 @@
             this.metroTile27.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile27.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile27.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile27.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile28
             // 
             this.metroTile28.ActiveControl = null;
+            this.metroTile28.AllowDrop = true;
             this.metroTile28.BackColor = System.Drawing.Color.Gray;
             this.metroTile28.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile28.CustomBackground = true;
@@ -733,10 +792,12 @@
             this.metroTile28.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile28.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile28.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile28.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile29
             // 
             this.metroTile29.ActiveControl = null;
+            this.metroTile29.AllowDrop = true;
             this.metroTile29.BackColor = System.Drawing.Color.Gray;
             this.metroTile29.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile29.CustomBackground = true;
@@ -754,10 +815,12 @@
             this.metroTile29.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile29.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile29.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile29.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile30
             // 
             this.metroTile30.ActiveControl = null;
+            this.metroTile30.AllowDrop = true;
             this.metroTile30.BackColor = System.Drawing.Color.Gray;
             this.metroTile30.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile30.CustomBackground = true;
@@ -775,10 +838,12 @@
             this.metroTile30.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile30.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile30.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile30.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile31
             // 
             this.metroTile31.ActiveControl = null;
+            this.metroTile31.AllowDrop = true;
             this.metroTile31.BackColor = System.Drawing.Color.Gray;
             this.metroTile31.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile31.CustomBackground = true;
@@ -796,10 +861,12 @@
             this.metroTile31.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile31.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile31.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile31.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile32
             // 
             this.metroTile32.ActiveControl = null;
+            this.metroTile32.AllowDrop = true;
             this.metroTile32.BackColor = System.Drawing.Color.Gray;
             this.metroTile32.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile32.CustomBackground = true;
@@ -817,10 +884,12 @@
             this.metroTile32.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile32.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile32.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile32.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile33
             // 
             this.metroTile33.ActiveControl = null;
+            this.metroTile33.AllowDrop = true;
             this.metroTile33.BackColor = System.Drawing.Color.Gray;
             this.metroTile33.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile33.CustomBackground = true;
@@ -838,10 +907,12 @@
             this.metroTile33.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile33.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile33.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile33.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile34
             // 
             this.metroTile34.ActiveControl = null;
+            this.metroTile34.AllowDrop = true;
             this.metroTile34.BackColor = System.Drawing.Color.Gray;
             this.metroTile34.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile34.CustomBackground = true;
@@ -859,10 +930,12 @@
             this.metroTile34.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile34.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile34.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile34.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile35
             // 
             this.metroTile35.ActiveControl = null;
+            this.metroTile35.AllowDrop = true;
             this.metroTile35.BackColor = System.Drawing.Color.Gray;
             this.metroTile35.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile35.CustomBackground = true;
@@ -880,10 +953,12 @@
             this.metroTile35.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile35.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile35.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile35.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile36
             // 
             this.metroTile36.ActiveControl = null;
+            this.metroTile36.AllowDrop = true;
             this.metroTile36.BackColor = System.Drawing.Color.Gray;
             this.metroTile36.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile36.CustomBackground = true;
@@ -901,10 +976,12 @@
             this.metroTile36.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile36.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile36.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile36.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile37
             // 
             this.metroTile37.ActiveControl = null;
+            this.metroTile37.AllowDrop = true;
             this.metroTile37.BackColor = System.Drawing.Color.Gray;
             this.metroTile37.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile37.CustomBackground = true;
@@ -922,10 +999,12 @@
             this.metroTile37.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile37.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile37.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile37.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile38
             // 
             this.metroTile38.ActiveControl = null;
+            this.metroTile38.AllowDrop = true;
             this.metroTile38.BackColor = System.Drawing.Color.Gray;
             this.metroTile38.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile38.CustomBackground = true;
@@ -943,10 +1022,12 @@
             this.metroTile38.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile38.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile38.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile38.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile39
             // 
             this.metroTile39.ActiveControl = null;
+            this.metroTile39.AllowDrop = true;
             this.metroTile39.BackColor = System.Drawing.Color.Gray;
             this.metroTile39.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile39.CustomBackground = true;
@@ -964,10 +1045,12 @@
             this.metroTile39.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile39.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile39.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile39.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile40
             // 
             this.metroTile40.ActiveControl = null;
+            this.metroTile40.AllowDrop = true;
             this.metroTile40.BackColor = System.Drawing.Color.Gray;
             this.metroTile40.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile40.CustomBackground = true;
@@ -985,10 +1068,12 @@
             this.metroTile40.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile40.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile40.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile40.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile41
             // 
             this.metroTile41.ActiveControl = null;
+            this.metroTile41.AllowDrop = true;
             this.metroTile41.BackColor = System.Drawing.Color.Gray;
             this.metroTile41.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile41.CustomBackground = true;
@@ -1006,10 +1091,12 @@
             this.metroTile41.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile41.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile41.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile41.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile42
             // 
             this.metroTile42.ActiveControl = null;
+            this.metroTile42.AllowDrop = true;
             this.metroTile42.BackColor = System.Drawing.Color.Gray;
             this.metroTile42.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile42.CustomBackground = true;
@@ -1027,10 +1114,12 @@
             this.metroTile42.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile42.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile42.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile42.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile43
             // 
             this.metroTile43.ActiveControl = null;
+            this.metroTile43.AllowDrop = true;
             this.metroTile43.BackColor = System.Drawing.Color.Gray;
             this.metroTile43.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile43.CustomBackground = true;
@@ -1048,10 +1137,12 @@
             this.metroTile43.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile43.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile43.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile43.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile44
             // 
             this.metroTile44.ActiveControl = null;
+            this.metroTile44.AllowDrop = true;
             this.metroTile44.BackColor = System.Drawing.Color.Gray;
             this.metroTile44.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile44.CustomBackground = true;
@@ -1069,10 +1160,12 @@
             this.metroTile44.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile44.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile44.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile44.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile45
             // 
             this.metroTile45.ActiveControl = null;
+            this.metroTile45.AllowDrop = true;
             this.metroTile45.BackColor = System.Drawing.Color.Gray;
             this.metroTile45.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile45.CustomBackground = true;
@@ -1090,10 +1183,12 @@
             this.metroTile45.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile45.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile45.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile45.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile46
             // 
             this.metroTile46.ActiveControl = null;
+            this.metroTile46.AllowDrop = true;
             this.metroTile46.BackColor = System.Drawing.Color.Gray;
             this.metroTile46.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile46.CustomBackground = true;
@@ -1111,10 +1206,12 @@
             this.metroTile46.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile46.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile46.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile46.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile47
             // 
             this.metroTile47.ActiveControl = null;
+            this.metroTile47.AllowDrop = true;
             this.metroTile47.BackColor = System.Drawing.Color.Gray;
             this.metroTile47.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile47.CustomBackground = true;
@@ -1132,10 +1229,12 @@
             this.metroTile47.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile47.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile47.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile47.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile48
             // 
             this.metroTile48.ActiveControl = null;
+            this.metroTile48.AllowDrop = true;
             this.metroTile48.BackColor = System.Drawing.Color.Gray;
             this.metroTile48.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile48.CustomBackground = true;
@@ -1153,10 +1252,12 @@
             this.metroTile48.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile48.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile48.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile48.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile49
             // 
             this.metroTile49.ActiveControl = null;
+            this.metroTile49.AllowDrop = true;
             this.metroTile49.BackColor = System.Drawing.Color.Gray;
             this.metroTile49.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile49.CustomBackground = true;
@@ -1174,10 +1275,12 @@
             this.metroTile49.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile49.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile49.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile49.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile50
             // 
             this.metroTile50.ActiveControl = null;
+            this.metroTile50.AllowDrop = true;
             this.metroTile50.BackColor = System.Drawing.Color.Gray;
             this.metroTile50.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile50.CustomBackground = true;
@@ -1195,10 +1298,12 @@
             this.metroTile50.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile50.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile50.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile50.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile51
             // 
             this.metroTile51.ActiveControl = null;
+            this.metroTile51.AllowDrop = true;
             this.metroTile51.BackColor = System.Drawing.Color.Gray;
             this.metroTile51.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile51.CustomBackground = true;
@@ -1216,10 +1321,12 @@
             this.metroTile51.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile51.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile51.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile51.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile52
             // 
             this.metroTile52.ActiveControl = null;
+            this.metroTile52.AllowDrop = true;
             this.metroTile52.BackColor = System.Drawing.Color.Gray;
             this.metroTile52.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile52.CustomBackground = true;
@@ -1237,10 +1344,12 @@
             this.metroTile52.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile52.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile52.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile52.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile53
             // 
             this.metroTile53.ActiveControl = null;
+            this.metroTile53.AllowDrop = true;
             this.metroTile53.BackColor = System.Drawing.Color.Gray;
             this.metroTile53.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile53.CustomBackground = true;
@@ -1258,10 +1367,12 @@
             this.metroTile53.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile53.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile53.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile53.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile54
             // 
             this.metroTile54.ActiveControl = null;
+            this.metroTile54.AllowDrop = true;
             this.metroTile54.BackColor = System.Drawing.Color.Gray;
             this.metroTile54.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile54.CustomBackground = true;
@@ -1279,10 +1390,12 @@
             this.metroTile54.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile54.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile54.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile54.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile55
             // 
             this.metroTile55.ActiveControl = null;
+            this.metroTile55.AllowDrop = true;
             this.metroTile55.BackColor = System.Drawing.Color.Gray;
             this.metroTile55.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile55.CustomBackground = true;
@@ -1300,10 +1413,12 @@
             this.metroTile55.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile55.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile55.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile55.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile56
             // 
             this.metroTile56.ActiveControl = null;
+            this.metroTile56.AllowDrop = true;
             this.metroTile56.BackColor = System.Drawing.Color.Gray;
             this.metroTile56.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile56.CustomBackground = true;
@@ -1321,10 +1436,12 @@
             this.metroTile56.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile56.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile56.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile56.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile57
             // 
             this.metroTile57.ActiveControl = null;
+            this.metroTile57.AllowDrop = true;
             this.metroTile57.BackColor = System.Drawing.Color.Gray;
             this.metroTile57.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile57.CustomBackground = true;
@@ -1342,10 +1459,12 @@
             this.metroTile57.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile57.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile57.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile57.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile58
             // 
             this.metroTile58.ActiveControl = null;
+            this.metroTile58.AllowDrop = true;
             this.metroTile58.BackColor = System.Drawing.Color.Gray;
             this.metroTile58.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile58.CustomBackground = true;
@@ -1363,10 +1482,12 @@
             this.metroTile58.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile58.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile58.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile58.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile59
             // 
             this.metroTile59.ActiveControl = null;
+            this.metroTile59.AllowDrop = true;
             this.metroTile59.BackColor = System.Drawing.Color.Gray;
             this.metroTile59.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile59.CustomBackground = true;
@@ -1384,10 +1505,12 @@
             this.metroTile59.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile59.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile59.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile59.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile60
             // 
             this.metroTile60.ActiveControl = null;
+            this.metroTile60.AllowDrop = true;
             this.metroTile60.BackColor = System.Drawing.Color.Gray;
             this.metroTile60.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile60.CustomBackground = true;
@@ -1405,10 +1528,12 @@
             this.metroTile60.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile60.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile60.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile60.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile61
             // 
             this.metroTile61.ActiveControl = null;
+            this.metroTile61.AllowDrop = true;
             this.metroTile61.BackColor = System.Drawing.Color.Gray;
             this.metroTile61.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile61.CustomBackground = true;
@@ -1426,10 +1551,12 @@
             this.metroTile61.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile61.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile61.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile61.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile62
             // 
             this.metroTile62.ActiveControl = null;
+            this.metroTile62.AllowDrop = true;
             this.metroTile62.BackColor = System.Drawing.Color.Gray;
             this.metroTile62.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile62.CustomBackground = true;
@@ -1447,10 +1574,12 @@
             this.metroTile62.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile62.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile62.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile62.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile63
             // 
             this.metroTile63.ActiveControl = null;
+            this.metroTile63.AllowDrop = true;
             this.metroTile63.BackColor = System.Drawing.Color.Gray;
             this.metroTile63.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile63.CustomBackground = true;
@@ -1468,10 +1597,12 @@
             this.metroTile63.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile63.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile63.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile63.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroTile64
             // 
             this.metroTile64.ActiveControl = null;
+            this.metroTile64.AllowDrop = true;
             this.metroTile64.BackColor = System.Drawing.Color.Gray;
             this.metroTile64.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroTile64.CustomBackground = true;
@@ -1489,6 +1620,7 @@
             this.metroTile64.MouseEnter += new System.EventHandler(this.metroTile_MouseEnter);
             this.metroTile64.MouseLeave += new System.EventHandler(this.metroTile_MouseLeave);
             this.metroTile64.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseMove);
+            this.metroTile64.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroTile_MouseUp);
             // 
             // metroProgressSpinner1
             // 
@@ -1532,7 +1664,7 @@
             // 
             // btnTakeAll
             // 
-            this.btnTakeAll.Location = new System.Drawing.Point(116, 742);
+            this.btnTakeAll.Location = new System.Drawing.Point(197, 742);
             this.btnTakeAll.Name = "btnTakeAll";
             this.btnTakeAll.Size = new System.Drawing.Size(145, 23);
             this.btnTakeAll.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1545,7 +1677,7 @@
             // 
             // btnDeselect
             // 
-            this.btnDeselect.Location = new System.Drawing.Point(267, 742);
+            this.btnDeselect.Location = new System.Drawing.Point(348, 743);
             this.btnDeselect.Name = "btnDeselect";
             this.btnDeselect.Size = new System.Drawing.Size(116, 23);
             this.btnDeselect.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1556,12 +1688,39 @@
             this.btnDeselect.Visible = false;
             this.btnDeselect.Click += new System.EventHandler(this.btnDeselect_Click);
             // 
+            // ctxItem
+            // 
+            this.ctxItem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnMoveItems});
+            this.ctxItem.Name = "ctxItem";
+            this.ctxItem.Size = new System.Drawing.Size(209, 26);
+            // 
+            // btnMoveItems
+            // 
+            this.btnMoveItems.Name = "btnMoveItems";
+            this.btnMoveItems.Size = new System.Drawing.Size(208, 22);
+            this.btnMoveItems.Text = "Move selected items here";
+            this.btnMoveItems.Click += new System.EventHandler(this.btnMoveItems_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(116, 742);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnRefresh.StyleManager = this.metroStyleManager1;
+            this.btnRefresh.TabIndex = 136;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // ShowBackpackGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1018, 781);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDeselect);
             this.Controls.Add(this.btnTakeAll);
             this.Controls.Add(this.chkManage);
@@ -1642,6 +1801,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowBackpackGrid_FormClosing);
             this.Load += new System.EventHandler(this.ShowBackpackGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
+            this.ctxItem.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1722,5 +1882,8 @@
         private MetroFramework.Controls.MetroCheckBox chkManage;
         private MetroFramework.Controls.MetroButton btnTakeAll;
         private MetroFramework.Controls.MetroButton btnDeselect;
+        private System.Windows.Forms.ContextMenuStrip ctxItem;
+        private System.Windows.Forms.ToolStripMenuItem btnMoveItems;
+        private MetroFramework.Controls.MetroButton btnRefresh;
     }
 }
