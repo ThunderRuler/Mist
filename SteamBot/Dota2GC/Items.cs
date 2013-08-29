@@ -46,6 +46,12 @@ namespace MistClient.Dota2GC
             bot.SteamGC.Send(msg, 570);
         }
 
+        public static void SortItems(Bot bot, uint sorttype)
+        {
+            var msg = new ClientGCMsgProtobuf<CMsgSortItems>(1041) {Body = {sort_type = sorttype}};
+            bot.SteamGC.Send(msg, 570);
+        }
+
         public static void SetItemPosition(Bot bot, SteamTrade.Inventory.Item item, short position)
         {
             byte[] bPos = BitConverter.GetBytes(position);
@@ -62,5 +68,15 @@ namespace MistClient.Dota2GC
 
             bot.SteamGC.Send(aMsg, 570);
         }
+    }
+
+    public enum SortType
+    {
+        AscendingName = 1,
+        DescendingName,
+        Rarity,
+        Unknown1,
+        Unknown2,
+        Unknown3
     }
 }
