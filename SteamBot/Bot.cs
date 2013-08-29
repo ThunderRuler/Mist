@@ -632,7 +632,8 @@ namespace SteamBot
                     callback.Response == EEconTradeResponse.TooSoon ||
                     callback.Response == EEconTradeResponse.TradeBannedInitiator ||
                     callback.Response == EEconTradeResponse.TradeBannedTarget ||
-                    callback.Response == EEconTradeResponse.NotLoggedIn) // uh...
+                    callback.Response == EEconTradeResponse.NotLoggedIn ||
+                    (int)callback.Response == 25) // uh...
                 {
                     if (callback.Response == EEconTradeResponse.Cancel)
                         TradeResponse(callback.OtherClient, "had asked to trade with you, but has cancelled their request.");
@@ -656,6 +657,8 @@ namespace SteamBot
                         TradeResponse(callback.OtherClient, "You cannot trade with this person because they are trade-banned.");
                     if (callback.Response == EEconTradeResponse.NotLoggedIn)
                         TradeResponse(callback.OtherClient, "Trade failed to initialize because you are not logged in.");
+                    if ((int)callback.Response == 25)
+                        TradeResponse(callback.OtherClient, "You must have had Steam Guard enabled for at least 15 days before you can participate in a trade.");
                     CloseTrade();
                 }
 
