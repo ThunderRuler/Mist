@@ -147,7 +147,7 @@ namespace MistClient
                 var currentItem = Trade.CurrentSchema.GetItem(invitem.Defindex);
                 var img = getImageFromURL(currentItem.ImageURL);
                 var selected = false;
-                if (selectedItems.Contains(invitem))
+                if (selectedItems.Count(x => x.Id == invitem.Id) > 0)
                 {
                     selected = true;
                     var img2 = new Bitmap(img);
