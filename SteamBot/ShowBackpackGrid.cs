@@ -604,5 +604,23 @@ namespace MistClient
                 Bot.Print(ex);
             }
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Left:
+                    {
+                        btnBack_Click(this, null);
+                        return true;
+                    }
+                case Keys.Right:
+                    {
+                        btnNext_Click(this, null);
+                        return true;
+                    }
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

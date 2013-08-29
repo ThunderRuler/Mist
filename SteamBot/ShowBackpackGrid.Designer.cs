@@ -1807,6 +1807,7 @@
             this.Controls.Add(this.metroTile7);
             this.Controls.Add(this.metroTile8);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "ShowBackpackGrid";
             this.Resizable = false;
             this.Text = "Backpack Viewer";
