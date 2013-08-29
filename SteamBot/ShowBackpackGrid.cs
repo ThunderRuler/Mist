@@ -54,7 +54,7 @@ namespace MistClient
                 Self = true;
                 chkManage.Visible = true;
             }
-            this.Text = bot.SteamFriends.GetFriendPersonaName(SID) + "'s Backpack";
+            this.Text = bot.SteamFriends.GetFriendPersonaName(SID) + "'s Dota 2 Backpack";
             Util.LoadTheme(metroStyleManager1);
             lnkPage.Text = pageNum.ToString();
             ttItem.AllowLinksHandling = false;
