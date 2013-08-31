@@ -109,6 +109,7 @@
     <Compile Include="Dota2GC\Items.cs" />
     <Compile Include="Dota2GC\MsgDelete.cs" />
     <Compile Include="Dota2GC\MsgSetItemPosition.cs" />
+    <Compile Include="Dota2GC\MsgSetItemStyle.cs" />
     <Compile Include="ShowBackpackGrid.cs">
       <SubType>Form</SubType>
     </Compile>

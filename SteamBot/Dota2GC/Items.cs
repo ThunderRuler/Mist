@@ -52,6 +52,14 @@ namespace MistClient.Dota2GC
             bot.SteamGC.Send(msg, 570);
         }
 
+        public static void SetStyle(Bot bot, uint item_id, uint style)
+        {
+            var msg = new ClientGCMsg<MsgSetItemStyle>();
+            msg.Write(item_id);
+            msg.Write(style);
+            bot.SteamGC.Send(msg, 570);
+        }
+
         public static void SetItemPosition(Bot bot, SteamTrade.Inventory.Item item, short position)
         {
             byte[] bPos = BitConverter.GetBytes(position);
