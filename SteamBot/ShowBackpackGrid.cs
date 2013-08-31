@@ -411,16 +411,22 @@ namespace MistClient
             if (!e.Button.HasFlag(MouseButtons.Right)) return;
             var tile = (MetroTile)sender;
             btnMoveItems.Enabled = true;
+            deleteItemToolStripMenuItem.Enabled = false;
             if (tile.Tag != null)
             {
                 var tag = (TileTag) tile.Tag;
                 if (tag.Item != null)
                 {
                     btnMoveItems.Enabled = false;
+                    deleteItemToolStripMenuItem.Enabled = true;
                 }
             }
-            if (chkMisplaced.Checked || !chkManage.Checked || selectedItems.Count == 0) 
-                btnMoveItems.Enabled = false;
+            if (chkMisplaced.Checked || !chkManage.Checked)
+            {
+                if (selectedItems.Count == 0)
+                    btnMoveItems.Enabled = false;
+                deleteItemToolStripMenuItem.Enabled = false;
+            }
             currentTile = tile;
             ctxItem.Show(tile, e.Location);
         }
@@ -621,6 +627,46 @@ namespace MistClient
                     }
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void deleteItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = ((TileTag) currentTile.Tag).Item;
+            var schemaitem = Trade.CurrentSchema.GetItem(item.Defindex);
+            var response =
+                MessageBox.Show(
+                    string.Format("Are you sure you want to delete {0} (ID: {1}) with the following attributes:\r\n{2}",
+                        (Util.QualityToName(int.Parse(item.Quality)) == "" ||
+                         Util.QualityToName(int.Parse(item.Quality)) == "Unique"
+                            ? ""
+                            : Util.QualityToName(int.Parse(item.Quality)) + " ")
+                        + schemaitem.ItemName, item.Id,
+                        item.Attributes.Select(
+                            attribute =>
+                                Trade.CurrentSchema.GetAttributeName(attribute.Defindex, item.Attributes,
+                                    attribute.FloatValue != null ? attribute.FloatValue : 0f, attribute.Value ?? ""))
+                            .Where(attribname => attribname != "")
+                            .Aggregate("",
+                                (current, attribname) =>
+                                    current + string.Format(@"{0}\r\n", attribname))), "Delete Item?", MessageBoxButtons.YesNo);
+            if (response != DialogResult.Yes) return;
+            Items.DeleteItem(bot, item.Id);
+            Thread.Sleep(500);
+            ClearBP(true);
+            Invoke((Action)(() => lblItemStatus.Text = "Item deleted, inventory updating."));
+            try
+            {
+                loadBP.Abort();
+                Invoke((Action)(() =>
+                {
+                    loadBP = new Thread(LoadBP);
+                    loadBP.Start(chkMisplaced.Checked);
+                }));
+            }
+            catch (Exception ex)
+            {
+                Bot.Print(ex);
+            }
         }
     }
 }

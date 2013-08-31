@@ -107,6 +107,7 @@
             this.btnMoveItems = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRefresh = new MetroFramework.Controls.MetroButton();
             this.lblItemStatus = new MetroFramework.Controls.MetroLabel();
+            this.deleteItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.ctxItem.SuspendLayout();
             this.SuspendLayout();
@@ -1692,9 +1693,10 @@
             // ctxItem
             // 
             this.ctxItem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnMoveItems});
+            this.btnMoveItems,
+            this.deleteItemToolStripMenuItem});
             this.ctxItem.Name = "ctxItem";
-            this.ctxItem.Size = new System.Drawing.Size(209, 26);
+            this.ctxItem.Size = new System.Drawing.Size(209, 70);
             // 
             // btnMoveItems
             // 
@@ -1725,6 +1727,13 @@
             this.lblItemStatus.StyleManager = this.metroStyleManager1;
             this.lblItemStatus.TabIndex = 137;
             this.lblItemStatus.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // deleteItemToolStripMenuItem
+            // 
+            this.deleteItemToolStripMenuItem.Name = "deleteItemToolStripMenuItem";
+            this.deleteItemToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.deleteItemToolStripMenuItem.Text = "Delete";
+            this.deleteItemToolStripMenuItem.Click += new System.EventHandler(this.deleteItemToolStripMenuItem_Click);
             // 
             // ShowBackpackGrid
             // 
@@ -1900,5 +1909,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnMoveItems;
         private MetroFramework.Controls.MetroButton btnRefresh;
         private MetroFramework.Controls.MetroLabel lblItemStatus;
+        private System.Windows.Forms.ToolStripMenuItem deleteItemToolStripMenuItem;
     }
 }
