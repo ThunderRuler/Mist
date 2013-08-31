@@ -94,6 +94,9 @@ namespace SteamBot
 
         public static string MachineAuthData;
 
+        public int CurrentGame;
+        public bool ConnectedToGC;
+
         public Bot(Configuration.BotInfo config, Log log, string apiKey, UserHandlerCreator handlerCreator, Login _login, bool debug = false)
         {
             this.main = _login;
@@ -685,6 +688,21 @@ namespace SteamBot
             });
             #endregion
 
+            #region GC
+            msg.Handle<SteamGameCoordinator.MessageCallback> (callback =>
+            {
+                switch (callback.EMsg)
+                {
+                    case (uint) EGCBaseMsg.k_EMsgGCClientWelcome:
+                    {
+                        ConnectedToGC = true;
+                        CurrentGame = (int) callback.AppID;
+                        break;
+                    }
+                }
+            });
+            #endregion
+
             if (!hasrun && IsLoggedIn)
             {
                 Thread main = new Thread(GUI);
@@ -816,6 +834,11 @@ namespace SteamBot
             SteamClient.Send(deregMsg);
 
             ConnectToGC(0);
+
+            CurrentGame = 0;
+            ConnectedToGC = false;
+            var byeMsg = new ClientGCMsgProtobuf<CMsgClientGoodbye>((int) EGCBaseMsg.k_EMsgGCClientGoodbye);
+            SteamGC.Send(byeMsg, 570);
         }
 
         void UserLogOn()

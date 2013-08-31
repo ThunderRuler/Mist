@@ -484,6 +484,8 @@ namespace MistClient
                 bot.ConnectToGC(570);
             else
                 bot.DisconnectFromGC();
+            while (!bot.ConnectedToGC)
+                Thread.Sleep(50);
         }
 
         private void btnTakeAll_Click(object sender, EventArgs e)
