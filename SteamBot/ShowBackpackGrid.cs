@@ -481,11 +481,13 @@ namespace MistClient
         {
             btnTakeAll.Visible = btnDeselect.Visible = chkManage.Checked;
             if (chkManage.Checked)
+            {
                 bot.ConnectToGC(570);
+                while (!bot.ConnectedToGC)
+                    Thread.Sleep(50);
+            }
             else
                 bot.DisconnectFromGC();
-            while (!bot.ConnectedToGC)
-                Thread.Sleep(50);
         }
 
         private void btnTakeAll_Click(object sender, EventArgs e)
