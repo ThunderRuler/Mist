@@ -105,9 +105,9 @@
             this.btnDeselect = new MetroFramework.Controls.MetroButton();
             this.ctxItem = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnMoveItems = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRefresh = new MetroFramework.Controls.MetroButton();
             this.lblItemStatus = new MetroFramework.Controls.MetroLabel();
-            this.deleteItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.ctxItem.SuspendLayout();
             this.SuspendLayout();
@@ -1679,7 +1679,7 @@
             // 
             // btnDeselect
             // 
-            this.btnDeselect.Location = new System.Drawing.Point(348, 743);
+            this.btnDeselect.Location = new System.Drawing.Point(348, 742);
             this.btnDeselect.Name = "btnDeselect";
             this.btnDeselect.Size = new System.Drawing.Size(116, 23);
             this.btnDeselect.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1696,7 +1696,7 @@
             this.btnMoveItems,
             this.deleteItemToolStripMenuItem});
             this.ctxItem.Name = "ctxItem";
-            this.ctxItem.Size = new System.Drawing.Size(209, 70);
+            this.ctxItem.Size = new System.Drawing.Size(209, 48);
             // 
             // btnMoveItems
             // 
@@ -1704,6 +1704,13 @@
             this.btnMoveItems.Size = new System.Drawing.Size(208, 22);
             this.btnMoveItems.Text = "Move selected items here";
             this.btnMoveItems.Click += new System.EventHandler(this.btnMoveItems_Click);
+            // 
+            // deleteItemToolStripMenuItem
+            // 
+            this.deleteItemToolStripMenuItem.Name = "deleteItemToolStripMenuItem";
+            this.deleteItemToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.deleteItemToolStripMenuItem.Text = "Delete";
+            this.deleteItemToolStripMenuItem.Click += new System.EventHandler(this.deleteItemToolStripMenuItem_Click);
             // 
             // btnRefresh
             // 
@@ -1727,13 +1734,6 @@
             this.lblItemStatus.StyleManager = this.metroStyleManager1;
             this.lblItemStatus.TabIndex = 137;
             this.lblItemStatus.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // deleteItemToolStripMenuItem
-            // 
-            this.deleteItemToolStripMenuItem.Name = "deleteItemToolStripMenuItem";
-            this.deleteItemToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.deleteItemToolStripMenuItem.Text = "Delete";
-            this.deleteItemToolStripMenuItem.Click += new System.EventHandler(this.deleteItemToolStripMenuItem_Click);
             // 
             // ShowBackpackGrid
             // 
