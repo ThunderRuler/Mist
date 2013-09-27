@@ -30,7 +30,7 @@ namespace SteamTrade
                 //Fallback to WebClient.
                 if (cookies == null)
                 {
-                    using (var wc = new WebClient {Proxy = null})
+                    using (var wc = new WebClient())
                     {
                         wc.Headers.Add(HttpRequestHeader.Accept, "text/javascript, text/html, application/xml, text/xml, */*");
                         wc.Headers.Add(HttpRequestHeader.ContentType, "application/x-www-form-urlencoded; charset=UTF-8");

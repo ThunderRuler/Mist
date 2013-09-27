@@ -53,7 +53,7 @@ namespace SteamTrade
             catch (NullReferenceException ex)
             {
                 //.net 4.5 will error out on Request.
-                using (var wc = new WebClient() {Proxy = null})
+                using (var wc = new WebClient())
                 {
                     result = wc.DownloadString(url);
                 }

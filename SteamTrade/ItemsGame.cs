@@ -26,7 +26,7 @@ namespace SteamTrade
                 var prevurl = File.ReadAllText(cachefile + ".dat");
                 if (prevurl != url)
                 {
-                    using (var wc = new WebClient { Proxy = null })
+                    using (var wc = new WebClient())
                     {
                         result = wc.DownloadString(url);
                         File.WriteAllText(cachefile, result);
@@ -36,7 +36,7 @@ namespace SteamTrade
             }
             else
             {
-                using (var wc = new WebClient {Proxy = null})
+                using (var wc = new WebClient())
                 {
                     result = wc.DownloadString(url);
                     File.WriteAllText(cachefile, result);
